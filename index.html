@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+        crossorigin="anonymous"></script>
+    <!-- Include in <head> to load fonts from Google -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .video-background {
+            background: #000;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -99;
+        }
+        
+        .video-foreground,
+        .video-background iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        #vidtop-content {
+            top: 0;
+            color: #fff;
+        }
+        
+        .vid-info {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 33%;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            padding: 1rem;
+            font-family: Avenir, Helvetica, sans-serif;
+        }
+        
+        .vid-info h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0;
+            line-height: 1.2;
+        }
+        
+        .vid-info a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.5);
+            transition: .6s background;
+            border-bottom: none;
+            margin: 1rem auto;
+            text-align: center;
+        }
+        
+        @media (min-aspect-ratio: 16/9) {
+            .video-foreground {
+                height: 300%;
+                top: -100%;
+            }
+        }
+        
+        @media (max-aspect-ratio: 16/9) {
+            .video-foreground {
+                width: 300%;
+                left: -100%;
+            }
+        }
+        
+        @media all and (max-width: 600px) {
+            .vid-info {
+                width: 50%;
+                padding: .5rem;
+            }
+            .vid-info h1 {
+                margin-bottom: .2rem;
+            }
+        }
+        
+        @media all and (max-width: 500px) {
+            .vid-info .acronym {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-background">
+        <div class="video-foreground">
+            <iframe src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ"
+                frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="vidtop-content">
+        <!--   <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+  <iframe frameborder="0" height="100%" width="100%" 
+    src="https://youtube.com/embed/YgmIibSnZs0?autoplay=1&controls=0&showinfo=0&autohide=1&rel=0&loop=1&playsinline=0" allowfullscreen="allowfullscreen">
+  </iframe>
+</div>-->
+        <div class="ybile">
+            <h1 class="ybile-r1">Listen</h1>
+
+            <h1 class="ybile-r2">To the clouds</h1>
+            <h1 class="ybile-r3">live, as the world moves</h1>
+        </div>
+
+        <h1>Airports</h1>
+        <div style="text-align:center">
+            <audio id="stream" src="http://mtl2.liveatc.net/esow" autoplay controls volume="0.4">
+                <p>Your browser does not support the <code>audio</code> element.</p>
+            </audio>
+            <p class="current">Stockholm</p>
+        </div>
+        <ul id="picker">
+            <li data-code="esow">Stockholm</li>
+            <li data-code="esgg">Gothenburg</li>
+            <li data-code="espa">Luleå</li>
+            <li data-code="kjfk_twr">JFK Tower</li>
+            <li data-code="ksfo_twr">San Fransisco Tower</li>
+            <li data-code="klax6">Los Angeles, KLAX</li>
+        </ul>
+
+        <h1 style="margin-top:3rem;">Ambient music</h1>
+        <div style="text-align:center;">
+            <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true"></iframe>
+        </div>
+
+        <div style="width:800px; margin:0 auto; background: rgba(255,255,255,.55); padding:20px;margin-top:5rem;color:black; ">
+        <h1 style="">Thank you</h1>
+        <p style="font-family:Lora;line-height: 1.4em;">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>). If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br/><br />It uses a bunch of open API's, all mentioned below.  Inspired by <a href=" http://youarelistening.to/">You are listening to</a>. Thank you <a href="http://www.liveatc.net/">Live ATC</a> for live feeds of flight radio and thank you <a href="http://tobiasahlin.com/typesource/">Typesource by Tobias Ahlin</a> for the font inspiration. The video background is from <a href="https://www.youtube.com/watch?v=YgmIibSnZs0">this youtube clip</a>. And the ambient music playing from soundcloud is linked above. Built with love and whipped cream by Anders.
+</div>
+        <script>
+            var stream=document.getElementById("stream");
+            stream.volume=0.5;
+    $("#picker li").on("click", function () {
+        var code = $(this).data("code");
+        var url = "http://mtl2.liveatc.net/" + code;
+        $("#stream").attr("src", url);
+        $(".current").text($(this).text());
+
+    });
+    </script>
+        <style type="text/css">
+            .current {
+                font-family: Lora, serif;
+            }
+            
+            .ybile {
+                color: #fffeec;
+                font-family: Montserrat, sans-serif;
+                text-align: center;
+                line-height: 3em;
+                padding-top: 6em;
+                padding-bottom: 18em;
+                text-transform: uppercase;
+            }
+            
+            .ybile-r1 {
+                font-size: 3.5em;
+                font-weight: 400;
+                line-height: 1.1em;
+                font-family: Lora;
+                font-style: italic;
+                display: inline-block;
+                position: relative;
+                text-transform: lowercase;
+            }
+            
+            .ybile-r2 {
+                font-weight: 200;
+                font-size: 7.8em;
+                line-height: 1em;
+            }
+            
+            .ybile-r3 {
+                font-weight: 200;
+                font-size: 4.8em;
+                line-height: 1.1em;
+            }
+            
+            .ybile-r1:before,
+            .ybile-r1:after {
+                background: url(http://tobiasahlin.com/images/typesource/arrow.svg) no-repeat center center/5em 0.5em;
+                content: "";
+                left: -5.8em;
+                position: absolute;
+                width: 5em;
+                height: 1.25em;
+            }
+            
+            .ybile-r1:after {
+                left: auto;
+                right: -5.8em;
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
+            
+            #picker {
+                display: flex;
+                justify-content: center;
+                margin-top: 3rem;
+                flex-wrap: wrap;
+            }
+            
+            ul#picker li {
+                width: 140px;
+                background: rgba(0, 0, 0, .5);
+                border-radius: 100px;
+                height: 140px;
+                display: flex;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+                text-align: center;
+                cursor: pointer;
+            }
+            
+            h1 {
+                text-align: center;
+            }
+            
+            body {
+                font-family: Montserrat;
+            }
+        </style>
+</body>
+
+</html>
