@@ -72,7 +72,7 @@
         .mobilewarning {
             display:none;
         }
-        @media(max-with: 500px) {
+        @media only screen and (max-device-width: 480px) {
             .mobilewarning {
                 display:block;
             }
@@ -129,6 +129,7 @@
 
             <h1 class="ybile-r2">To the clouds</h1>
             <h1 class="ybile-r3">live, as the world flies</h1>
+            <p class="mobilewarning">(doesn't seem to work on a mobile device, sorry)</p>
         </div>
 
         <h1>Airports</h1>
@@ -137,7 +138,6 @@
                 <p>Your browser does not support the <code>audio</code> element.</p>
             </audio>
             <p class="current">Stockholm</p>
-            <p class="mobilewarning">(doesn't seem to work on a mobile device, sorry)</p>
         </div>
         <ul id="picker">
             <li data-code="esow">Stockholm</li>
