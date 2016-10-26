@@ -69,13 +69,14 @@
             margin: 1rem auto;
             text-align: center;
         }
-
+        
         .mobilewarning {
-            display:none;
+            display: none;
         }
+        
         @media only screen and (max-device-width: 480px) {
             .mobilewarning {
-                display:block;
+                display: block;
             }
         }
         
@@ -143,7 +144,7 @@
             <p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
         </div>
         <ul id="picker">
-              
+
             <li data-code="ktme">Houston</li>
             <li data-code="eidw3">Dublin</li>
             <li data-code="klga_twr">LaGuardia, NYC</li>
@@ -162,7 +163,7 @@
         </ul>
 
         <h1 style="margin-top:3rem;">Ambient music</h1>
-        <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100"/></p>
+        <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
         <div style="text-align:center;">
             <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
         </div>
@@ -255,12 +256,12 @@ window.setInterval(function(){
                 padding-top: 6em;
                 padding-bottom: 18em;
                 text-transform: uppercase;
-                text-shadow: 0 0 40px rgba(0,0,0,0.3)
+                text-shadow: 0 0 40px rgba(0, 0, 0, 0.3)
             }
-
+            
             .ybile h1 {
-                    margin-bottom: 0;
-                    margin-top: 0;
+                margin-bottom: 0;
+                margin-top: 0;
             }
             
             .ybile-r1 {
@@ -322,10 +323,17 @@ window.setInterval(function(){
                 margin: 10px;
                 text-align: center;
                 cursor: pointer;
+                transition: all 0.2s ease;
             }
-
-            #picker li a,#picker li a:visited {
-                color:#fffbbd;
+            
+            #picker li a,
+            #picker li a:visited {
+                color: #fffbbd;
+            }
+            
+            #picker li:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 10px rgba(109, 151, 204, 0.71);
             }
             
             h1 {
@@ -334,8 +342,8 @@ window.setInterval(function(){
             
             body {
                 font-family: Montserrat;
-                margin:0;
-                padding:0;
+                margin: 0;
+                padding: 0;
             }
         </style>
 </body>
