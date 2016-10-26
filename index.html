@@ -144,6 +144,10 @@
             <li data-code="ktme">Houston</li>
             <li data-code="eidw3">Dublin</li>
             <li data-code="klga_twr">LaGuardia, NYC</li>
+            <li data-code="scel">Santiago, SCL</li>
+            <li data-code="katl_twr">Atlanta, ATL</li>
+            <li data-code="ebbr_arr">Brussels, BRU</li>
+            <li data-code="lfll">Lyon, LYS</li>            
             <li data-code="eham4">Amsterdam</li>
             <li data-code="kdfw_twr_hp">Dallas, Fort Worth</li>
             <li data-code="lfpo_dep">Paris, ORY</li>
@@ -151,6 +155,8 @@
             <li data-code="esow">Stockholm</li>
             <li data-code="esgg">Gothenburg</li>
             <li data-code="espa">Luleå</li>
+            <li data-code="cyul_twr2">Montreal, YUL</li>
+            <li data-code="omdb_twr">Dubai, DXB</li>            
             <li data-code="rjtt_control">Tokyo, HND</li>
             <li data-code="kmsp_twr">MSP, Minneapolis</li>
             <li data-code="kjfk_twr">JFK Tower, NYC</li>
@@ -229,6 +235,8 @@ $("#picker li").on("click", function () {
     var url = "http://mtl2.liveatc.net/" + code;
     $("#stream").attr("src", url);
     $(".current").text($(this).text());
+    $("#picker li").removeClass("active");
+    $(this).addClass("active");
 });
 
 </script>
@@ -364,6 +372,10 @@ window.setInterval(function(){
                 text-align: center;
                 cursor: pointer;
                 transition: all 0.2s ease;
+            }
+
+            #picker li.active {
+                border: 3px solid rgb(214, 211, 163);
             }
             
             #picker li a,
