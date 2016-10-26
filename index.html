@@ -158,6 +158,7 @@
             <li data-code="kjfk_twr">JFK Tower, NYC</li>
             <li data-code="ksfo_twr">San Fransisco Tower</li>
             <li data-code="klax6">Los Angeles, KLAX</li>
+            <li><a href="https://twitter.com/home?status=%40andersaberg%20Hey,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*">Missing your airport?</a></li>
         </ul>
 
         <h1 style="margin-top:3rem;">Ambient music</h1>
@@ -201,6 +202,7 @@ $("#soundcloud_player_iframe").attr("src", scsrc);
             stream.volume=0.5;
     $("#picker li").on("click", function () {
         var code = $(this).data("code");
+        if(!code) return;
         var url = "http://mtl2.liveatc.net/" + code;
         $("#stream").attr("src", url);
         $(".current").text($(this).text());
@@ -313,6 +315,10 @@ window.setInterval(function(){
                 margin: 10px;
                 text-align: center;
                 cursor: pointer;
+            }
+
+            #picker li a,#picker li a:visited {
+                color:#fffbbd;
             }
             
             h1 {
