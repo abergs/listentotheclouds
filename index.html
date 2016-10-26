@@ -216,6 +216,22 @@ $("#soundcloud_player_iframe").attr("src", scsrc);
   ga('create', 'UA-37656767-12', 'auto');
   ga('send', 'pageview');
 
+  // This will count the number of times the function runs.
+pageTimer = 0;
+// Periodically run the function
+window.setInterval(function(){
+  // Increment the counter
+  pageTimer = pageTimer + 1
+  // Assumes it runs every 30 seconds
+  theNow = pageTimer * 60
+  ga('send', {
+    hitType: 'event',
+    eventCategory: 'Timer',
+    eventAction: theNow + ' seconds on page',
+    eventLabel: $(".current").text()
+  });
+}, 60000); // Run every 30 seconds
+
 </script>
         <style type="text/css">
             .current {
