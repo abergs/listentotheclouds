@@ -179,6 +179,13 @@
         </div>
         <script src="https://w.soundcloud.com/player/api.js"></script>
         <script>
+
+            $(function() {
+   var links = $('#picker li');
+   var randomNum = Math.floor(Math.random()*(links.length -1));  
+   links.get(randomNum).click();
+}); 
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
