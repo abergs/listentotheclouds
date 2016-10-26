@@ -121,11 +121,15 @@
     </div>
 
     <div id="vidtop-content">
-        <!--   <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
-  <iframe frameborder="0" height="100%" width="100%" 
-    src="https://youtube.com/embed/YgmIibSnZs0?autoplay=1&controls=0&showinfo=0&autohide=1&rel=0&loop=1&playsinline=0" allowfullscreen="allowfullscreen">
-  </iframe>
-</div>-->
+
+        <div id="vcontrols">
+            <div class="clearfix"><span>
+            Airport chatter: </span><input id="vc_radio" type="range" min=0 max=100 value="50" />
+            </div>
+            <div class="clearfix"><span>Ambient music:</span> <input id="vc_music" type="range" min=0 max=100 value="50" />
+            </div>
+        </div>
+
         <div class="ybile">
             <h1 class="ybile-r1">Listen</h1>
 
@@ -136,21 +140,13 @@
         </div>
 
         <h1>Airports</h1>
-        <div style="text-align:center">
-            <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4">
-                <p>Your browser does not support the <code>audio</code> element.</p>
-            </audio>
-            <p class="current">Chicago</p>
-            <p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
-        </div>
         <ul id="picker">
-
             <li data-code="ktme">Houston</li>
             <li data-code="eidw3">Dublin</li>
             <li data-code="klga_twr">LaGuardia, NYC</li>
             <li data-code="eham4">Amsterdam</li>
             <li data-code="kdfw_twr_hp">Dallas, Fort Worth</li>
-            <li data-code="lfpo_dep">Paris, ORY</li>            
+            <li data-code="lfpo_dep">Paris, ORY</li>
             <li data-code="kord7">Chicago</li>
             <li data-code="esow">Stockholm</li>
             <li data-code="esgg">Gothenburg</li>
@@ -162,6 +158,13 @@
             <li data-code="klax6">Los Angeles, KLAX</li>
             <li><a href="https://twitter.com/home?status=%40andersaberg%20Hey,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*">Missing your airport?</a></li>
         </ul>
+        <div style="text-align:center">
+            <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4">
+                <p>Your browser does not support the <code>audio</code> element.</p>
+            </audio>
+            <p class="current">Chicago</p>
+            <p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
+        </div>
 
         <h1 style="margin-top:3rem;">Ambient music</h1>
         <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
@@ -194,30 +197,41 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-$('#vc_control').on("change", function () {
-    var value = $(this).val() / 100;
-    var player         = SC.Widget("soundcloud_player_iframe");
-//var player = soundcloud.getPlayer('soundcloud_player_iframe');
-console.log(value);
-player.setVolume(value);
+$('#vc_music, #vc_control').on('change', function () {
+    setMusic($(this).val());
 });
+$('#vc_radio').on('change', function () {
+    setRadio($(this).val());
+});
+
+function setRadio(v) {
+    var stream=document.getElementById("stream");
+    stream.volume= v / 100;
+    $('#vc_radio').val(v);
+}
+function setMusic(v) {
+    var player         = SC.Widget("soundcloud_player_iframe");
+    player.setVolume(v / 100);
+    $('#vc_music, #vc_control').val(v);
+}
 
 var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0,152);
 $("#soundcloud_player_iframe").attr("src", scsrc);
 
+// default volumes
+setRadio(50);
+setMusic(50);
 
+$("#picker li").on("click", function () {
+    var code = $(this).data("code");
+    if(!code) return;
+    var url = "http://mtl2.liveatc.net/" + code;
+    $("#stream").attr("src", url);
+    $(".current").text($(this).text());
+});
 
-            var stream=document.getElementById("stream");
-            stream.volume=0.5;
-    $("#picker li").on("click", function () {
-        var code = $(this).data("code");
-        if(!code) return;
-        var url = "http://mtl2.liveatc.net/" + code;
-        $("#stream").attr("src", url);
-        $(".current").text($(this).text());
+</script>
 
-    });
-    </script>
         <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -245,6 +259,29 @@ window.setInterval(function(){
 
 </script>
         <style type="text/css">
+            #vcontrols {
+                position: fixed;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                background: rgba(0, 0, 0, .3);
+                border-bottom-left-radius: 10px;
+                min-width: 280px;
+            }
+
+            #vcontrols div:first-child {
+                margin-bottom: 18px;
+            }
+            
+            #vcontrols span {
+                float: left;
+            }
+            
+            #vcontrols input {
+                width: 100px;
+                float: right;
+            }
+            
             .current {
                 font-family: Lora, serif;
             }
@@ -255,7 +292,7 @@ window.setInterval(function(){
                 text-align: center;
                 line-height: 3em;
                 padding-top: 6em;
-                padding-bottom: 18em;
+                padding-bottom: 10em;
                 text-transform: uppercase;
                 text-shadow: 0 0 40px rgba(0, 0, 0, 0.3)
             }
@@ -346,6 +383,29 @@ window.setInterval(function(){
                 margin: 0;
                 padding: 0;
             }
+            
+            .clearfix:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }
+            
+            .clearfix {
+                display: inline-block;
+            }
+            /* start commented backslash hack \*/
+            
+            * html .clearfix {
+                height: 1%;
+            }
+            
+            .clearfix {
+                display: block;
+            }
+            /* close commented backslash hack */
         </style>
 </body>
 
