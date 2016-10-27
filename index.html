@@ -123,6 +123,17 @@
     <div id="vidtop-content">
 
         <div id="vcontrols">
+            <div class="playpause">
+                <button class="button js-button">
+                    <svg width="100%" height="100%" viewBox="0 0 36 36" >
+                        <defs>
+                            <path id="pause-icon" data-state="playing" d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" />
+                            <path id="play-icon"  data-state="paused"  d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" />
+                        </defs>
+                        <use xlink:href="#pause-icon" />
+                    </svg>
+                </button>
+            </div>
             <div class="clearfix"><span>
             Airport chatter: </span><input id="vc_radio" type="range" min=0 max=100 value="50" />
             </div>
@@ -180,7 +191,7 @@
             <li data-code="kbos_twr">Boston-Logan, BOS</li>
             <li data-code="epwa2">Warsaw, WAW</li>
             <li data-code="epmo">Warsaw, WMI</li>
-            
+
             <li data-code="cyow3">Ottawa, YOW</li>
             <li data-code="cyul_twr2">Quebec, YUL</li>
             <li data-code="cyyz7">Toronto, YYZ</li>
@@ -188,15 +199,15 @@
             <li data-code="ekch_twr">Copenhagen, CPH</li>
             <li data-code="kphl_final">Philadelphia, PHL</li>
             <li data-code="krdu_app2">Durham, RDU</li>
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
 
             <li><a href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
         </ul>
@@ -322,10 +333,41 @@ window.setInterval(function(){
                 border-top-left-radius: 10px;
                 min-width: 280px;
                 color: #333;
+                z-index: 2;
+                padding-top: 30px;
             }
             
-            #vcontrols div:first-child {
-                margin-bottom: 18px;
+            .playpause {
+                position: absolute;
+                top: -25px;
+                width: 50px;
+                left: calc(50% - 25px);
+                background: white;
+                border-radius: 100%;
+                height: 50px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+                display: flex;
+                overflow: hidden;
+                border: 2px solid white;
+                outline: none;
+            }
+
+            .playpause[data-state="paused"] {
+                border: 2px solid #ff6c6c;
+                box-shadow: 0 0 10px rgba(255, 22, 22, .5);
+            }
+            
+            .playpause button {
+                background: white;
+                border: 0;
+                margin: 0;
+                padding: 0;
+                fill: #333;
+                outline: none;
+            }
+            
+            #vcontrols div:nth-child(2) {
+                margin-bottom: 4px;
             }
             
             #vcontrols span {
@@ -466,6 +508,89 @@ window.setInterval(function(){
             }
             /* close commented backslash hack */
         </style>
+
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript">
+"use strict";
+
+/* global d3, document */
+var playButton = {
+    el: document.querySelector(".js-button"),
+
+    states: {
+        playing: {
+            nextState: "paused",
+            iconEl: document.querySelector("#pause-icon")
+        },
+        paused:  {
+            nextState: "playing",
+            iconEl: document.querySelector("#play-icon")
+        }
+    },
+
+    animationDuration: 350,
+
+    init: function () {
+        this.setInitialState();
+        this.replaceUseEl();
+        //this.el.addEventListener("click", this.goToNextState.bind(this));
+    },
+
+    setInitialState: function () {
+      var initialIconRef = this.el.querySelector("use").getAttribute("xlink:href");
+      var stateName = this.el.querySelector(initialIconRef).getAttribute("data-state");
+      this.setState(stateName);
+    },
+
+    replaceUseEl: function () {
+        d3.select(this.el.querySelector("use")).remove();
+        d3.select(this.el.querySelector("svg")).append("path")
+            .attr("class", "js-icon")
+            .attr("d", this.stateIconPath());
+    },
+
+    goToNextState: function () {
+        this.setState(this.state.nextState);
+
+        d3.select(this.el.querySelector(".js-icon")).transition()
+            .duration(this.animationDuration)
+            .attr("d", this.stateIconPath());
+    },
+
+    setState: function (stateName) {
+        this.state = this.states[stateName];
+    },
+
+    stateIconPath: function () {
+        return this.state.iconEl.getAttribute("d");
+    }
+};
+
+playButton.init();
+$('.js-button').on("click", function () {
+
+    playButton.goToNextState();
+    var state = playButton.state;
+    console.log("Current state: ", state);
+
+    var play = state.nextState !== "playing";
+    
+    var stream = document.getElementById("stream");
+    var player         = SC.Widget("soundcloud_player_iframe");
+    
+    if(play){
+        $('.playpause').attr("data-state","playing");
+        stream.play();
+        player.play();
+    }else {
+        $('.playpause').attr("data-state","paused");
+        stream.pause();
+        player.pause();
+    }
+    
+
+});
+</script>
 </body>
 
 </html>
