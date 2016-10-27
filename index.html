@@ -42,6 +42,10 @@
             color: #fffbbd;
             background: rgba(0, 0, 0, 0.25);
         }
+
+        .spacemode #vidtop-content {
+            background: rgba(0, 0, 0, 0.55);
+        }
         
         .vid-info {
             position: absolute;
@@ -362,6 +366,7 @@ var spacestream = "http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autopla
 var origbg = null;
 var isInspace = false;
 function spaceModeOn(){
+    $('body').addClass("spacemode");
     isInspace = true;
     var stream = document.getElementById("stream");
     stream.pause();
@@ -374,6 +379,7 @@ function spaceModeOn(){
 
 function spaceModeOff() {
     if(isInspace) {
+        $('body').removeClass("spacemode");
         $('.video-foreground').html(origbg);
     }
     isInspace = false;
