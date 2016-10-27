@@ -218,19 +218,21 @@ function setRadio(v) {
     var stream=document.getElementById("stream");
     stream.volume= v / 100;
     $('#vc_radio').val(v);
+    localStorage.setItem("vc_radio", v);
 }
 function setMusic(v) {
     var player         = SC.Widget("soundcloud_player_iframe");
     player.setVolume(v / 100);
     $('#vc_music, #vc_control').val(v);
+    localStorage.setItem("vc_music", v);
 }
 
 var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0,152);
 $("#soundcloud_player_iframe").attr("src", scsrc);
 
 // default volumes
-setRadio(50);
-setMusic(50);
+setRadio(localStorage.getItem("vc_radio") || 50);
+setMusic(localStorage.getItem("vc_music") || 50);
 
 $("#picker li").on("click", function () {
     var code = $(this).data("code");
