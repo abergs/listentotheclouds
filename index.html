@@ -147,7 +147,7 @@
             <li data-code="scel">Santiago, SCL</li>
             <li data-code="katl_twr">Atlanta, ATL</li>
             <li data-code="ebbr_arr">Brussels, BRU</li>
-            <li data-code="lfll">Lyon, LYS</li>            
+            <li data-code="lfll">Lyon, LYS</li>
             <li data-code="eham4">Amsterdam</li>
             <li data-code="kdfw_twr_hp">Dallas, Fort Worth</li>
             <li data-code="lfpo_dep">Paris, ORY</li>
@@ -157,11 +157,11 @@
             <li data-code="esgg">Gothenburg</li>
             <li data-code="espa">Luleå</li>
             <li data-code="cyul_twr2">Montreal, YUL</li>
-            <li data-code="omdb_twr">Dubai, DXB</li>            
+            <li data-code="omdb_twr">Dubai, DXB</li>
             <li data-code="rjtt_control">Tokyo, HND</li>
             <li data-code="kmsp_twr">Minneapolis, MSP</li>
             <li data-code="kcle1_2">Cleveland-Hopkins, CLE</li>
-            <li data-code="kphx_app_s">Phoenix, PHX</li>            
+            <li data-code="kphx_app_s">Phoenix, PHX</li>
             <li data-code="kjfk_twr">JFK Tower, NYC</li>
             <li data-code="ksfo_twr">San Fransisco Tower</li>
             <li data-code="klax6">Los Angeles, KLAX</li>
@@ -172,7 +172,7 @@
             <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4">
                 <p>Your browser does not support the <code>audio</code> element.</p>
             </audio>
-            
+
             <p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
         </div>
 
@@ -232,8 +232,14 @@ var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/p
 $("#soundcloud_player_iframe").attr("src", scsrc);
 
 // default volumes
-setRadio(localStorage.getItem("vc_radio") || 50);
-setMusic(localStorage.getItem("vc_music") || 50);
+$(function () {
+    setRadio(localStorage.getItem("vc_radio") || 50);
+    setMusic(localStorage.getItem("vc_music") || 50);
+    setTimeout(function () {
+        setRadio(localStorage.getItem("vc_radio") || 50);
+        setMusic(localStorage.getItem("vc_music") || 50);
+    },3000);
+});
 
 $("#picker li").on("click", function () {
     var code = $(this).data("code");
@@ -279,12 +285,12 @@ window.setInterval(function(){
                 bottom: 0;
                 right: 0;
                 padding: 20px;
-                background:white;
+                background: white;
                 border-top-left-radius: 10px;
                 min-width: 280px;
-                color:#333;
+                color: #333;
             }
-
+            
             #vcontrols div:first-child {
                 margin-bottom: 18px;
             }
@@ -379,7 +385,7 @@ window.setInterval(function(){
                 cursor: pointer;
                 transition: all 0.2s ease;
             }
-
+            
             #picker li.active {
                 border: 3px solid rgb(214, 211, 163);
             }
