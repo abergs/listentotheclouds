@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Listen To The Clouds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="http://listentothe.cloud/share4.jpg" />
     <meta property="og:type"          content="website" />
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
@@ -74,11 +75,46 @@
         .mobilewarning {
             display: none;
         }
+
+        .mobile-only {
+            display:none;
+        }
         
         @media only screen and (max-device-width: 480px) {
+            .mobile-only {
+                display:block;
+            }
             .mobilewarning {
                 display: block;
             }
+
+            .ybile {
+                overflow:hidden;
+            }
+
+            body {
+                font-size:10px;
+            }
+
+            #soundcloud_player_iframe {
+                max-width:100%;
+            }
+
+            #vcontrols {
+                left:0;
+                border-top-right-radius:10px;
+            }
+
+            #vidtop-content {
+                padding-bottom: 100px;
+            }
+            .video-background {
+                background: url("mbg.jpg") black;
+            }
+            .video-foreground {
+                display:none;
+            }
+
         }
         
         @media (min-aspect-ratio: 16/9) {
@@ -157,7 +193,7 @@
             <h1 class="ybile-r2">To the clouds</h1>
             <h1 class="ybile-r3">live, as the world flies</h1>
             <p>Perfect background noise while you work or relax</p>
-            <p class="mobilewarning">(doesn't seem to work on a mobile device, sorry)</p>
+            <p class="mobilewarning">(Works better if you are not on a mobile device... sorry)</p>
             
 	<!-- Your share button code -->
     <div style="text-align:center">
@@ -168,6 +204,9 @@
  
 
         <h1>Airports</h1>
+        <div style="text-align:center" class="mobile-only">
+            <p>Live: <span class="current">Chicago</span></p>
+        </div>
         <ul id="picker">
             <li data-code="ktme">Houston</li>
             <li data-code="eidw3">Dublin</li>
@@ -244,7 +283,7 @@
             <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
         </div>
 
-        <div style="width:800px; margin:0 auto; background: rgba(255,255,255,.55); padding:20px;margin-top:5rem;color:black; ">
+        <div style="max-width:800px; margin:0 auto; background: rgba(255,255,255,.55); padding:20px;margin-top:5rem;color:black; ">
             <h1 style="">Thank you</h1>
             <p style="text-align:center"><script id='fbx9hgl'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//button.flattr.com/view/?fid=el6vxk&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbx9hgl');</script></p>
             <p style="font-family:Lora;line-height: 1.4em;">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>).
@@ -462,6 +501,7 @@ window.setInterval(function(){
                 justify-content: center;
                 margin-top: 3rem;
                 flex-wrap: wrap;
+                padding: 0;
             }
             
             ul#picker li {
@@ -585,12 +625,17 @@ var playButton = {
 };
 
 playButton.init();
+var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+if(isMobile) {
+   changestate(); 
+}
 $('.js-button').on("click", function () {
+    changestate();
+});
 
+function changestate() {
     playButton.goToNextState();
     var state = playButton.state;
-    console.log("Current state: ", state);
-
     var play = state.nextState !== "playing";
     
     var stream = document.getElementById("stream");
@@ -605,9 +650,7 @@ $('.js-button').on("click", function () {
         stream.pause();
         player.pause();
     }
-    
-
-});
+}
 </script>
 </body>
 
