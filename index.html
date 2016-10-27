@@ -241,10 +241,10 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-$('#vc_music, #vc_control').on('change', function () {
+$('#vc_music, #vc_control').on('change input', function () {
     setMusic($(this).val());
 });
-$('#vc_radio').on('change', function () {
+$('#vc_radio').on('change input', function () {
     setRadio($(this).val());
 });
 
