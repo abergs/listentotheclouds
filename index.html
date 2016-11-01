@@ -42,7 +42,7 @@
             color: #fffbbd;
             background: rgba(0, 0, 0, 0.25);
         }
-
+        
         .spacemode #vidtop-content {
             background: rgba(0, 0, 0, 0.55);
         }
@@ -113,9 +113,8 @@
             .video-foreground {
                 display: none;
             }
-
             .spacemode .video-foreground {
-                display:block;
+                display: block;
             }
         }
         
@@ -180,7 +179,7 @@ window.setInterval(function(){
 <body>
     <div class="video-background">
         <div class="video-foreground">
-            <iframe src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0"
+            <iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
                 frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
@@ -416,15 +415,39 @@ function spaceModeOff() {
 
 }
 
+function handleVisibilityChange() {
+    var video = document.getElementById("video");
+    if(!video) return;
+    console.log("has video");
+    var iframe = video.contentWindow;
+  
+    var func;
+    if (document.hidden) {
+        func = 'pauseVideo';
+    } else  {
+        func = 'playVideo';
+    }
+    iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+}
+
+document.addEventListener("visibilitychange", handleVisibilityChange, false);
+
 </script>
         <style type="text/css">
-        .thankyou {
-            max-width:800px; margin:0 auto; background: rgba(255,255,255,.55); padding:20px;margin-top:5rem;color:black;
-        }
-
-        .thankyou a, .thankyou a:visited {
-            color:black;
-        }
+            .thankyou {
+                max-width: 800px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, .55);
+                padding: 20px;
+                margin-top: 5rem;
+                color: black;
+            }
+            
+            .thankyou a,
+            .thankyou a:visited {
+                color: black;
+            }
+            
             #vcontrols {
                 position: fixed;
                 bottom: 0;
@@ -484,10 +507,11 @@ function spaceModeOff() {
                 font-family: Lora, serif;
             }
             
-            a, a:visited {
+            a,
+            a:visited {
                 color: #fffdd2;
             }
-
+            
             .ybile {
                 color: #fffdd2;
                 font-family: Montserrat, sans-serif;
@@ -565,7 +589,7 @@ function spaceModeOff() {
                 text-align: center;
                 cursor: pointer;
                 transition: all 0.2s ease;
-                padding:10px;
+                padding: 10px;
             }
             
             #picker li.active {
@@ -676,7 +700,8 @@ var playButton = {
 playButton.init();
 var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 if(isMobile) {
-   changestate(); 
+   changestate();
+   jQuery('.video-foreground').html("");
 }
 $('.js-button').on("click", function () {
     changestate();
