@@ -226,7 +226,47 @@ window.setInterval(function(){
                 <div class="fb-share-button" data-href="http://listentothe.cloud/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flistentothe.cloud%2F&amp;src=sdkpreparse">Share</a></div>
             </div>
 
+            <div style="text-align:center" class="donate">
+                <p>Would you donate to support this?</p>
+                <div id="supportbtns"><button id="yesbtn">Yes</button><button id="nobtn">No</button></div>
+                <div id="support">
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
+                </div>
+            </div>
+            <style>
+                .donate button,
+                .btn {
+                    background: #4267b2;
+                    padding: 7px 15px;
+                    border:none;
+                    border-radius: 5px;
+                    color: #fffdd2;
+                    margin: 0 10px;
+                    font-weight: bold;
+                    text-transform:initial;
+                    text-decoration:none;
+                }
+
+                .donate button:hover, .btn:hover {
+background: #365899;
+                }
+                
+                #support {
+                    display: none;
+                }
+            </style>
+            <script>
+                $("#yesbtn").on("click", function () {
+                    $("#supportbtns").hide();
+                    $("#support").show();
+                });
+                $("#nobtn").on("click", function () {
+                    $(this).text("Okey :(");
+                });
+            </script>
         </div>
+
+
 
 
         <h1>Airports</h1>
@@ -291,8 +331,6 @@ window.setInterval(function(){
             <li data-code="kmci1_local">Kansas City, MCI</li>
             <li data-code="kric1">Richmond, RIC</li>
             <li data-code="kmvy">Vineyard Haven, MVY</li>
-            
-            
 
 
 
@@ -304,10 +342,12 @@ window.setInterval(function(){
 
 
 
-            <li><a href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
+
+
+            <li><a target="_blank" href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
         </ul>
         <div style="text-align:center">
-            <p>(Question: Do you want me to add a "sleep mode" button? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdP99Nt0q8cxDThYm-vWe9NAC0R6S_oYntoVTCq9mZK-SAjqQ/viewform">Answer here</a>)</p>
+            <p>(Question: Do you want me to add a "sleep mode" button? <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdP99Nt0q8cxDThYm-vWe9NAC0R6S_oYntoVTCq9mZK-SAjqQ/viewform">Answer here</a>)</p>
             <p>Live: <span class="current">Chicago</span></p>
             <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4">
                 <p>Your browser does not support the <code>audio</code> element.</p>
