@@ -2,153 +2,153 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>Listen To The Clouds</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="http://listentothe.cloud/share4.jpg" />
-    <meta property="og:type" content="website" />
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-        crossorigin="anonymous"></script>
-    <!-- Include in <head> to load fonts from Google -->
-    <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        
-        .video-background {
-            background: #000;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -99;
-        }
-        
-        .video-foreground,
-        .video-background iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        
-        #vidtop-content {
-            top: 0;
-            color: #fffbbd;
-            background: rgba(0, 0, 0, 0.25);
-        }
-        
-        .spacemode #vidtop-content {
-            background: rgba(0, 0, 0, 0.55);
-        }
-        
-        .vid-info {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 33%;
-            background: rgba(0, 0, 0, 0.3);
-            color: #fff;
-            padding: 1rem;
-            font-family: Avenir, Helvetica, sans-serif;
-        }
-        
-        .vid-info h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-top: 0;
-            line-height: 1.2;
-        }
-        
-        .vid-info a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            background: rgba(0, 0, 0, 0.5);
-            transition: .6s background;
-            border-bottom: none;
-            margin: 1rem auto;
-            text-align: center;
-        }
-        
-        .mobilewarning {
-            display: none;
-        }
-        
-        .mobile-only {
-            display: none;
-        }
-        
-        @media only screen and (max-device-width: 480px) {
-            .mobile-only {
-                display: block;
-            }
-            .mobilewarning {
-                display: block;
-            }
-            .ybile {
-                overflow: hidden;
-            }
-            body {
-                font-size: 10px;
-            }
-            #soundcloud_player_iframe {
-                max-width: 100%;
-            }
-            #vcontrols {
-                left: 0;
-                border-top-right-radius: 10px;
-            }
-            #vidtop-content {
-                padding-bottom: 100px;
-            }
-            .video-background {
-                background: url("mbg.jpg") black;
-            }
-            .video-foreground {
-                display: none;
-            }
-            .spacemode .video-foreground {
-                display: block;
-            }
-        }
-        
-        @media (min-aspect-ratio: 16/9) {
-            .video-foreground {
-                height: 300%;
-                top: -100%;
-            }
-        }
-        
-        @media (max-aspect-ratio: 16/9) {
-            .video-foreground {
-                width: 300%;
-                left: -100%;
-            }
-        }
-        
-        @media all and (max-width: 600px) {
-            .vid-info {
-                width: 50%;
-                padding: .5rem;
-            }
-            .vid-info h1 {
-                margin-bottom: .2rem;
-            }
-        }
-        
-        @media all and (max-width: 500px) {
-            .vid-info .acronym {
-                display: none;
-            }
-        }
-    </style>
-    <script>
+	<meta charset="utf-8" />
+	<title>Listen To The Clouds</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image" content="http://listentothe.cloud/share4.jpg" />
+	<meta property="og:type" content="website" />
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+		crossorigin="anonymous"></script>
+	<!-- Include in <head> to load fonts from Google -->
+	<link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		
+		.video-background {
+			background: #000;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -99;
+		}
+		
+		.video-foreground,
+		.video-background iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+		
+		#vidtop-content {
+			top: 0;
+			color: #fffbbd;
+			background: rgba(0, 0, 0, 0.25);
+		}
+		
+		.spacemode #vidtop-content {
+			background: rgba(0, 0, 0, 0.55);
+		}
+		
+		.vid-info {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 33%;
+			background: rgba(0, 0, 0, 0.3);
+			color: #fff;
+			padding: 1rem;
+			font-family: Avenir, Helvetica, sans-serif;
+		}
+		
+		.vid-info h1 {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-top: 0;
+			line-height: 1.2;
+		}
+		
+		.vid-info a {
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			background: rgba(0, 0, 0, 0.5);
+			transition: .6s background;
+			border-bottom: none;
+			margin: 1rem auto;
+			text-align: center;
+		}
+		
+		.mobilewarning {
+			display: none;
+		}
+		
+		.mobile-only {
+			display: none;
+		}
+		
+		@media only screen and (max-device-width: 480px) {
+			.mobile-only {
+				display: block;
+			}
+			.mobilewarning {
+				display: block;
+			}
+			.ybile {
+				overflow: hidden;
+			}
+			body {
+				font-size: 10px;
+			}
+			#soundcloud_player_iframe {
+				max-width: 100%;
+			}
+			#vcontrols {
+				left: 0;
+				border-top-right-radius: 10px;
+			}
+			#vidtop-content {
+				padding-bottom: 100px;
+			}
+			.video-background {
+				background: url("mbg.jpg") black;
+			}
+			.video-foreground {
+				display: none;
+			}
+			.spacemode .video-foreground {
+				display: block;
+			}
+		}
+		
+		@media (min-aspect-ratio: 16/9) {
+			.video-foreground {
+				height: 300%;
+				top: -100%;
+			}
+		}
+		
+		@media (max-aspect-ratio: 16/9) {
+			.video-foreground {
+				width: 300%;
+				left: -100%;
+			}
+		}
+		
+		@media all and (max-width: 600px) {
+			.vid-info {
+				width: 50%;
+				padding: .5rem;
+			}
+			.vid-info h1 {
+				margin-bottom: .2rem;
+			}
+		}
+		
+		@media all and (max-width: 500px) {
+			.vid-info .acronym {
+				display: none;
+			}
+		}
+	</style>
+	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -177,17 +177,17 @@ window.setInterval(function(){
 </head>
 
 <body>
-    <div class="video-background">
-        <div class="video-foreground">
-            <iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
-                frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+	<div class="video-background">
+		<div class="video-foreground">
+			<iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
+				frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
 
-    <div id="vidtop-content">
-        <!-- Load Facebook SDK for JavaScript -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
+	<div id="vidtop-content">
+		<!-- Load Facebook SDK for JavaScript -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -195,9 +195,9 @@ window.setInterval(function(){
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-        <div id="vcontrols">
-            <div class="playpause">
-                <button class="button js-button">
+		<div id="vcontrols">
+			<div class="playpause">
+				<button class="button js-button">
                     <svg width="100%" height="100%" viewBox="0 0 36 36" >
                         <defs>
                             <path id="pause-icon" data-state="playing" d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" />
@@ -206,56 +206,59 @@ window.setInterval(function(){
                         <use xlink:href="#pause-icon" />
                     </svg>
                 </button>
-            </div>
-            <div class="clearfix"><span>
+
+			</div>
+			<button class="button nxt">&#10097;&#10097;</button>
+			<div class="clearfix"><span>
             Airport chatter: </span><input id="vc_radio" type="range" min=0 max=100 value="50" />
-            </div>
-            <div class="clearfix"><span>Ambient music:</span> <input id="vc_music" type="range" min=0 max=100 value="50" />
-            </div>
-        </div>
+			</div>
+			<div class="clearfix"><span>Ambient music:</span> <input id="vc_music" type="range" min=0 max=100 value="50" />
+			</div>
+		</div>
 
-        <div class="ybile">
-            <h1 class="ybile-r1">Listen</h1>
+		<div class="ybile">
+			<h1 class="ybile-r1">Listen</h1>
 
-            <h1 class="ybile-r2">To the clouds</h1>
-            <h1 class="ybile-r3">live, as the world flies</h1>
-            <p>Perfect background noise while you work or relax</p>
-            <p class="mobilewarning">(Works better if you are not on a mobile device... sorry)</p>
-            <!-- Your share button code -->
-            <div style="text-align:center">
-                <div class="fb-share-button" data-href="http://listentothe.cloud/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flistentothe.cloud%2F&amp;src=sdkpreparse">Share</a></div>
-            </div>
+			<h1 class="ybile-r2">To the clouds</h1>
+			<h1 class="ybile-r3">live, as the world flies</h1>
+			<p>Perfect background noise while you work or relax</p>
+			<p class="mobilewarning">(Works better if you are not on a mobile device... sorry)</p>
+			<!-- Your share button code -->
+			<div style="text-align:center">
+				<div class="fb-share-button" data-href="http://listentothe.cloud/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flistentothe.cloud%2F&amp;src=sdkpreparse">Share</a></div>
+			</div>
 
-            <div style="text-align:center" class="donate">
-                <p>Would you donate to support this?</p>
-                <div id="supportbtns"><button id="yesbtn">Yes</button><button id="nobtn">No</button></div>
-                <div id="support">
-                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
-                </div>
-            </div>
-            <style>
-                .donate button,
-                .btn {
-                    background: #4267b2;
-                    padding: 7px 15px;
-                    border:none;
-                    border-radius: 5px;
-                    color: #fffdd2;
-                    margin: 0 10px;
-                    font-weight: bold;
-                    text-transform:initial;
-                    text-decoration:none;
-                }
-
-                .donate button:hover, .btn:hover {
-background: #365899;
-                }
-                
-                #support {
-                    display: none;
-                }
-            </style>
-            <script>
+			<div style="text-align:center" class="donate">
+				<p>Would you donate to support this?</p>
+				<div id="supportbtns"><button id="yesbtn">Yes</button><button id="nobtn">No</button></div>
+				<div id="support">
+					<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
+				</div>
+			</div>
+			<style>
+				.donate button,
+				.btn {
+					background: #4267b2;
+					padding: 7px 15px;
+					border: none;
+					border-radius: 5px;
+					color: #fffdd2;
+					margin: 0 10px;
+					font-weight: bold;
+					text-transform: initial;
+					text-decoration: none;
+				}
+				
+				.donate button:hover,
+				.btn:hover {
+					background: #365899;
+				}
+				
+				#support {
+					display: none;
+				}
+			</style>
+			<script>
                 $("#yesbtn").on("click", function () {
                     $("#supportbtns").hide();
                     $("#support").show();
@@ -264,80 +267,75 @@ background: #365899;
                     $(this).text("Okey :(");
                 });
             </script>
-        </div>
+		</div>
 
 
 
 
-        <h1>Airports</h1>
-        <div style="text-align:center" class="mobile-only">
-            <p>Live: <span class="current">Chicago</span></p>
-        </div>
-        <ul id="picker">
-            <li data-code="iss">ISS Space station (beta)</li>
-            <li data-code="ktme">Houston</li>
-            <li data-code="eidw3">Dublin</li>
-            <li data-code="klga_twr">LaGuardia, NYC</li>
-            <li data-code="scel">Santiago, SCL</li>
-            <li data-code="katl_twr">Atlanta, ATL</li>
-            <li data-code="ebbr_arr">Brussels, BRU</li>
-            <li data-code="lfll">Lyon, LYS</li>
-            <li data-code="eham4">Amsterdam</li>
-            <li data-code="kdfw_twr_hp">Dallas, Fort Worth</li>
-            <li data-code="lfpo_dep">Paris, ORY</li>
-            <li data-code="kord7">Chicago</li>
-            <li data-code="esow">Stockholm</li>
-            <li data-code="engm2_app">Oslo, OSL</li>
-            <li data-code="esgg">Gothenburg</li>
-            <li data-code="espa">Luleå</li>
-            <li data-code="cyul_twr2">Montreal, YUL</li>
-            <li data-code="omdb_twr">Dubai, DXB</li>
-            <li data-code="rjtt_control">Tokyo, HND</li>
-            <li data-code="kmsp_twr">Minneapolis, MSP</li>
-            <li data-code="kcle1_2">Cleveland-Hopkins, CLE</li>
-            <li data-code="kphx_app_s">Phoenix, PHX</li>
-            <li data-code="kjfk_twr">JFK Tower, NYC</li>
-            <li data-code="ksfo_twr">San Fransisco Tower</li>
-            <li data-code="klax6">Los Angeles, KLAX</li>
-            <li data-code="lati">Tirana, TIA</li>
-            <li data-code="ktpa2">Tampa, TPA</li>
-            <li data-code="lgav">Athens, ATH</li>
-            <li data-code="ymml">Melbourne, MEL</li>
-            <li data-code="rpll">Manila, MNL</li>
-            <li data-code="yssy1">Sydney, SYD</li>
-            <li data-code="kmso">Missoula, KMSO</li>
-            <li data-code="kdtw2">Detroit, DTW</li>
-            <li data-code="ksea_twr">Seattle, SEA</li>
-            <li data-code="lszh_twr">Zurich, ZRH</li>
-            <li data-code="lfsb2">Basel, BSL</li>
-            <li data-code="uuee2">Moscow, SVO</li>
-            <li data-code="kbos_twr">Boston-Logan, BOS</li>
-            <li data-code="epwa2">Warsaw, WAW</li>
-            <li data-code="epmo">Warsaw, WMI</li>
-            <li data-code="cyow3">Ottawa, YOW</li>
-            <li data-code="cyul_twr2">Quebec, YUL</li>
-            <li data-code="cyyz7">Toronto, YYZ</li>
-            <li data-code="kiad1_3_4">Washington, IAD</li>
-            <li data-code="ekch_twr">Copenhagen, CPH</li>
-            <li data-code="kphl_final">Philadelphia, PHL</li>
-            <li data-code="krdu_app2">Durham, RDU</li>
-            <li data-code="kbuf_app">Buffalo, BUF</li>
-            <li data-code="kclt2">Charlotte, CLT</li>
-            <li data-code="kpit2">Pittsburgh, PIT</li>
-            <li data-code="kslc_app">Salt Lake City, SLC</li>
-            <li data-code="wmkk2">Kuala Lumpur, KUL</li>
-            <li data-code="kdca3">Washington, DCA</li>
-            <li data-code="kbwi_twr">Baltimore, BWI</li>
-            <li data-code="kmci1_local">Kansas City, MCI</li>
-            <li data-code="kric1">Richmond, RIC</li>
-            <li data-code="kmvy">Vineyard Haven, MVY</li>
-            <li data-code="einn2">Shannon, SNN</li>
-            <li data-code="kaus2">Austin, KAUS</li>
-
-
-
-
-
+		<h1>Airports</h1>
+		<div style="text-align:center" class="mobile-only">
+			<p>Live: <span class="current">Chicago</span></p>
+		</div>
+		<ul id="picker">
+			<li data-code="iss">ISS Space station (beta)</li>
+			<li data-code="ktme">Houston</li>
+			<li data-code="eidw3">Dublin</li>
+			<li data-code="klga_twr">LaGuardia, NYC</li>
+			<li data-code="scel">Santiago, SCL</li>
+			<li data-code="katl_twr">Atlanta, ATL</li>
+			<li data-code="ebbr_arr">Brussels, BRU</li>
+			<li data-code="lfll">Lyon, LYS</li>
+			<li data-code="eham4">Amsterdam</li>
+			<li data-code="kdfw_twr_hp">Dallas, Fort Worth</li>
+			<li data-code="lfpo_dep">Paris, ORY</li>
+			<li data-code="kord7">Chicago</li>
+			<li data-code="esow">Stockholm</li>
+			<li data-code="engm2_app">Oslo, OSL</li>
+			<li data-code="esgg">Gothenburg</li>
+			<li data-code="espa">Luleå</li>
+			<li data-code="cyul_twr2">Montreal, YUL</li>
+			<li data-code="omdb_twr">Dubai, DXB</li>
+			<li data-code="rjtt_control">Tokyo, HND</li>
+			<li data-code="kmsp_twr">Minneapolis, MSP</li>
+			<li data-code="kcle1_2">Cleveland-Hopkins, CLE</li>
+			<li data-code="kphx_app_s">Phoenix, PHX</li>
+			<li data-code="kjfk_twr">JFK Tower, NYC</li>
+			<li data-code="ksfo_twr">San Fransisco Tower</li>
+			<li data-code="klax6">Los Angeles, KLAX</li>
+			<li data-code="lati">Tirana, TIA</li>
+			<li data-code="ktpa2">Tampa, TPA</li>
+			<li data-code="lgav">Athens, ATH</li>
+			<li data-code="ymml">Melbourne, MEL</li>
+			<li data-code="rpll">Manila, MNL</li>
+			<li data-code="yssy1">Sydney, SYD</li>
+			<li data-code="kmso">Missoula, KMSO</li>
+			<li data-code="kdtw2">Detroit, DTW</li>
+			<li data-code="ksea_twr">Seattle, SEA</li>
+			<li data-code="lszh_twr">Zurich, ZRH</li>
+			<li data-code="lfsb2">Basel, BSL</li>
+			<li data-code="uuee2">Moscow, SVO</li>
+			<li data-code="kbos_twr">Boston-Logan, BOS</li>
+			<li data-code="epwa2">Warsaw, WAW</li>
+			<li data-code="epmo">Warsaw, WMI</li>
+			<li data-code="cyow3">Ottawa, YOW</li>
+			<li data-code="cyul_twr2">Quebec, YUL</li>
+			<li data-code="cyyz7">Toronto, YYZ</li>
+			<li data-code="kiad1_3_4">Washington, IAD</li>
+			<li data-code="ekch_twr">Copenhagen, CPH</li>
+			<li data-code="kphl_final">Philadelphia, PHL</li>
+			<li data-code="krdu_app2">Durham, RDU</li>
+			<li data-code="kbuf_app">Buffalo, BUF</li>
+			<li data-code="kclt2">Charlotte, CLT</li>
+			<li data-code="kpit2">Pittsburgh, PIT</li>
+			<li data-code="kslc_app">Salt Lake City, SLC</li>
+			<li data-code="wmkk2">Kuala Lumpur, KUL</li>
+			<li data-code="kdca3">Washington, DCA</li>
+			<li data-code="kbwi_twr">Baltimore, BWI</li>
+			<li data-code="kmci1_local">Kansas City, MCI</li>
+			<li data-code="kric1">Richmond, RIC</li>
+			<li data-code="kmvy">Vineyard Haven, MVY</li>
+			<li data-code="einn2">Shannon, SNN</li>
+			<li data-code="kaus2">Austin, KAUS</li>
 
 
 
@@ -346,37 +344,42 @@ background: #365899;
 
 
 
-            <li><a target="_blank" href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
-        </ul>
-        <div style="text-align:center">
-            <p>(Question: Do you want me to add a "sleep mode" button? <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdP99Nt0q8cxDThYm-vWe9NAC0R6S_oYntoVTCq9mZK-SAjqQ/viewform">Answer here</a>)</p>
-            <p>Live: <span class="current">Chicago</span></p>
-            <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4">
-                <p>Your browser does not support the <code>audio</code> element.</p>
-            </audio>
 
-            <p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
-        </div>
 
-        <h1 style="margin-top:3rem;">Ambient music</h1>
-        <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
-        <div style="text-align:center;">
-            <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
-        </div>
 
-        <div class="thankyou">
-            <h1 style="">Thank you</h1>
-            <p style="text-align:center"><script id='fbx9hgl'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//button.flattr.com/view/?fid=el6vxk&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbx9hgl');</script></p>
-            <p style="font-family:Lora;line-height: 1.4em;">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>).
-                If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br/><br />It
-                uses a bunch of open API's, all mentioned below. Inspired by <a href=" http://youarelistening.to/">You are listening to</a>.
-                Thank you <a href="http://www.liveatc.net/">Live ATC</a> for live feeds of flight radio and thank you
-                <a href="http://tobiasahlin.com/typesource/">Typesource by Tobias Ahlin</a> for the font inspiration. The
-                video background is from <a href="https://www.youtube.com/watch?v=YgmIibSnZs0">this youtube clip</a>. And
-                the ambient music playing from soundcloud is linked above. Built with love and whipped cream by Anders.
-        </div>
-        <script src="https://w.soundcloud.com/player/api.js"></script>
-        <script>
+
+
+			<li><a target="_blank" href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
+		</ul>
+		<div style="text-align:center">
+			<p>(Question: Do you want me to add a "sleep mode" button? <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdP99Nt0q8cxDThYm-vWe9NAC0R6S_oYntoVTCq9mZK-SAjqQ/viewform">Answer here</a>)</p>
+			<p>Live: <span class="current">Chicago</span></p>
+			<audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4">
+				<p>Your browser does not support the <code>audio</code> element.</p>
+			</audio>
+
+			<p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
+		</div>
+
+		<h1 style="margin-top:3rem;">Ambient music</h1>
+		<p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
+		<div style="text-align:center;">
+			<iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
+		</div>
+
+		<div class="thankyou">
+			<h1 style="">Thank you</h1>
+			<p style="text-align:center"><script id='fbx9hgl'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//button.flattr.com/view/?fid=el6vxk&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbx9hgl');</script></p>
+			<p style="font-family:Lora;line-height: 1.4em;">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>).
+				If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br/><br />It uses a bunch
+				of open API's, all mentioned below. Inspired by <a href=" http://youarelistening.to/">You are listening to</a>. Thank
+				you <a href="http://www.liveatc.net/">Live ATC</a> for live feeds of flight radio and thank you
+				<a href="http://tobiasahlin.com/typesource/">Typesource by Tobias Ahlin</a> for the font inspiration. The video background
+				is from <a href="https://www.youtube.com/watch?v=YgmIibSnZs0">this youtube clip</a>. And the ambient music playing from
+				soundcloud is linked above. Built with love and whipped cream by Anders.
+		</div>
+		<script src="https://w.soundcloud.com/player/api.js"></script>
+		<script>
 
             $(function() {
                 var links = $('#picker li');
@@ -483,215 +486,236 @@ function handleVisibilityChange() {
 document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
 </script>
-        <style type="text/css">
-            .thankyou {
-                max-width: 800px;
-                margin: 0 auto;
-                background: rgba(255, 255, 255, .55);
-                padding: 20px;
-                margin-top: 5rem;
-                color: black;
-            }
-            
-            .thankyou a,
-            .thankyou a:visited {
-                color: black;
-            }
-            
-            #vcontrols {
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                padding: 20px;
-                background: white;
-                border-top-left-radius: 10px;
-                min-width: 280px;
-                color: #333;
-                z-index: 2;
-                padding-top: 30px;
-            }
-            
-            .playpause {
-                position: absolute;
-                top: -25px;
-                width: 50px;
-                left: calc(50% - 25px);
-                background: white;
-                border-radius: 100%;
-                height: 50px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-                display: flex;
-                overflow: hidden;
-                border: 2px solid white;
-                outline: none;
-            }
-            
-            .playpause[data-state="paused"] {
-                border: 2px solid #ff6c6c;
-                box-shadow: 0 0 10px rgba(255, 22, 22, .5);
-            }
-            
-            .playpause button {
-                background: white;
-                border: 0;
-                margin: 0;
-                padding: 0;
-                fill: #333;
-                outline: none;
-            }
-            
-            #vcontrols div:nth-child(2) {
-                margin-bottom: 4px;
-            }
-            
-            #vcontrols span {
-                float: left;
-            }
-            
-            #vcontrols input {
-                width: 100px;
-                float: right;
-            }
-            
-            .current {
-                font-family: Lora, serif;
-            }
-            
-            a,
-            a:visited {
-                color: #fffdd2;
-            }
-            
-            .ybile {
-                color: #fffdd2;
-                font-family: Montserrat, sans-serif;
-                text-align: center;
-                line-height: 3em;
-                padding-top: 6em;
-                padding-bottom: 10em;
-                text-transform: uppercase;
-                text-shadow: 0 0 40px rgba(0, 0, 0, 0.3)
-            }
-            
-            .ybile h1 {
-                margin-bottom: 0;
-                margin-top: 0;
-            }
-            
-            .ybile-r1 {
-                font-size: 3.5em;
-                font-weight: 400;
-                line-height: 1.1em;
-                font-family: Lora;
-                font-style: italic;
-                display: inline-block;
-                position: relative;
-                text-transform: lowercase;
-            }
-            
-            .ybile-r2 {
-                font-weight: 200;
-                font-size: 7.8em;
-                line-height: 1em;
-            }
-            
-            .ybile-r3 {
-                font-weight: 200;
-                font-size: 4.8em;
-                line-height: 1.1em;
-            }
-            
-            .ybile-r1:before,
-            .ybile-r1:after {
-                background: url(http://tobiasahlin.com/images/typesource/arrow.svg) no-repeat center center/5em 0.5em;
-                content: "";
-                left: -5.8em;
-                position: absolute;
-                width: 5em;
-                height: 1.25em;
-            }
-            
-            .ybile-r1:after {
-                left: auto;
-                right: -5.8em;
-                -webkit-transform: scaleX(-1);
-                transform: scaleX(-1);
-            }
-            
-            #picker {
-                display: flex;
-                justify-content: center;
-                margin-top: 3rem;
-                flex-wrap: wrap;
-                padding: 0;
-            }
-            
-            ul#picker li {
-                width: 140px;
-                background: rgba(0, 0, 0, .5);
-                border-radius: 100px;
-                height: 140px;
-                display: flex;
-                align-content: center;
-                align-items: center;
-                justify-content: center;
-                margin: 10px;
-                text-align: center;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                padding: 10px;
-            }
-            
-            #picker li.active {
-                border: 3px solid rgb(214, 211, 163);
-            }
-            
-            #picker li a,
-            #picker li a:visited {
-                color: #fffbbd;
-            }
-            
-            #picker li:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 10px rgba(109, 151, 204, 0.71);
-            }
-            
-            h1 {
-                text-align: center;
-            }
-            
-            body {
-                font-family: Montserrat;
-                margin: 0;
-                padding: 0;
-            }
-            
-            .clearfix:after {
-                visibility: hidden;
-                display: block;
-                font-size: 0;
-                content: " ";
-                clear: both;
-                height: 0;
-            }
-            
-            .clearfix {
-                display: inline-block;
-            }
-            /* start commented backslash hack \*/
-            
-            * html .clearfix {
-                height: 1%;
-            }
-            
-            .clearfix {
-                display: block;
-            }
-            /* close commented backslash hack */
-        </style>
+		<style type="text/css">
+			.thankyou {
+				max-width: 800px;
+				margin: 0 auto;
+				background: rgba(255, 255, 255, .55);
+				padding: 20px;
+				margin-top: 5rem;
+				color: black;
+			}
+			
+			.thankyou a,
+			.thankyou a:visited {
+				color: black;
+			}
+			
+			#vcontrols {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				padding: 20px;
+				background: white;
+				border-top-left-radius: 10px;
+				min-width: 280px;
+				color: #333;
+				z-index: 2;
+				padding-top: 30px;
+			}
+			
+			.playpause {
+				position: absolute;
+				top: -25px;
+				width: 50px;
+				left: calc(50% - 25px);
+				background: white;
+				border-radius: 100%;
+				height: 50px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+				display: flex;
+				overflow: hidden;
+				border: 2px solid white;
+				outline: none;
+				cursor: pointer;
+			}
+			
+			.nxt {
+				position: absolute;
+				top: -15px;
+				width: 30px;
+				left: calc(50% + 27px);
+				background: white;
+				border-radius: 100%;
+				height: 30px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+				display: flex;
+				overflow: hidden;
+				border: 2px solid white;
+				outline: none;
+				padding: 0;
+				justify-content: center;
+				line-height: 100%;
+				cursor: pointer;
+			}
+			
+			.playpause[data-state="paused"] {
+				border: 2px solid #ff6c6c;
+				box-shadow: 0 0 10px rgba(255, 22, 22, .5);
+			}
+			
+			.playpause button {
+				background: white;
+				border: 0;
+				margin: 0;
+				padding: 0;
+				fill: #333;
+				outline: none;
+				cursor: pointer;
+			}
+			
+			#vcontrols div:nth-child(2) {
+				margin-bottom: 4px;
+			}
+			
+			#vcontrols span {
+				float: left;
+			}
+			
+			#vcontrols input {
+				width: 100px;
+				float: right;
+			}
+			
+			.current {
+				font-family: Lora, serif;
+			}
+			
+			a,
+			a:visited {
+				color: #fffdd2;
+			}
+			
+			.ybile {
+				color: #fffdd2;
+				font-family: Montserrat, sans-serif;
+				text-align: center;
+				line-height: 3em;
+				padding-top: 6em;
+				padding-bottom: 10em;
+				text-transform: uppercase;
+				text-shadow: 0 0 40px rgba(0, 0, 0, 0.3)
+			}
+			
+			.ybile h1 {
+				margin-bottom: 0;
+				margin-top: 0;
+			}
+			
+			.ybile-r1 {
+				font-size: 3.5em;
+				font-weight: 400;
+				line-height: 1.1em;
+				font-family: Lora;
+				font-style: italic;
+				display: inline-block;
+				position: relative;
+				text-transform: lowercase;
+			}
+			
+			.ybile-r2 {
+				font-weight: 200;
+				font-size: 7.8em;
+				line-height: 1em;
+			}
+			
+			.ybile-r3 {
+				font-weight: 200;
+				font-size: 4.8em;
+				line-height: 1.1em;
+			}
+			
+			.ybile-r1:before,
+			.ybile-r1:after {
+				background: url(http://tobiasahlin.com/images/typesource/arrow.svg) no-repeat center center/5em 0.5em;
+				content: "";
+				left: -5.8em;
+				position: absolute;
+				width: 5em;
+				height: 1.25em;
+			}
+			
+			.ybile-r1:after {
+				left: auto;
+				right: -5.8em;
+				-webkit-transform: scaleX(-1);
+				transform: scaleX(-1);
+			}
+			
+			#picker {
+				display: flex;
+				justify-content: center;
+				margin-top: 3rem;
+				flex-wrap: wrap;
+				padding: 0;
+			}
+			
+			ul#picker li {
+				width: 140px;
+				background: rgba(0, 0, 0, .5);
+				border-radius: 100px;
+				height: 140px;
+				display: flex;
+				align-content: center;
+				align-items: center;
+				justify-content: center;
+				margin: 10px;
+				text-align: center;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				padding: 10px;
+			}
+			
+			#picker li.active {
+				border: 3px solid rgb(214, 211, 163);
+			}
+			
+			#picker li a,
+			#picker li a:visited {
+				color: #fffbbd;
+			}
+			
+			#picker li:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 10px 10px rgba(109, 151, 204, 0.71);
+			}
+			
+			h1 {
+				text-align: center;
+			}
+			
+			body {
+				font-family: Montserrat;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.clearfix:after {
+				visibility: hidden;
+				display: block;
+				font-size: 0;
+				content: " ";
+				clear: both;
+				height: 0;
+			}
+			
+			.clearfix {
+				display: inline-block;
+			}
+			/* start commented backslash hack \*/
+			
+			* html .clearfix {
+				height: 1%;
+			}
+			
+			.clearfix {
+				display: block;
+			}
+			/* close commented backslash hack */
+		</style>
 
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-        <script type="text/javascript">
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript">
 "use strict";
 
 /* global d3, document */
@@ -755,6 +779,11 @@ if(isMobile) {
 }
 $('.js-button').on("click", function () {
     changestate();
+});
+
+$('.nxt').on('click', function () {
+    var player         = SC.Widget("soundcloud_player_iframe");
+    player.next();
 });
 
 function changestate() {
