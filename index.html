@@ -169,7 +169,7 @@ window.setInterval(function(){
     hitType: 'event',
     eventCategory: 'Timer',
     eventAction: theNow + ' seconds on page',
-    eventLabel: $(".current").text()
+    eventLabel: $(".current").first().text()
   });
 }, 60000); // Run every 30 seconds
 
