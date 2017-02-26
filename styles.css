@@ -11,7 +11,6 @@
 			left: 0;
 			z-index: -99;
 		}
-		
 
 		@font-face { 
 			font-family: "circular"; 
@@ -346,9 +345,6 @@
 
 			a.fb-xfbml-parse-ignore {
 				color: #fff;
-				background-color: rgb(3, 49, 163);
-				padding: 15px;
-				border-radius: 5px;
 				text-decoration:none;
 				letter-spacing:1px;
 			}
