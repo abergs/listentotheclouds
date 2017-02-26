@@ -305,7 +305,9 @@ window.setInterval(function(){
 
 </br></br></br>
 		<h1>Airports</h1>
-		
+
+<p class="airport-info">(This is a live radio transmission, if it's silent, the airports aren't very chatty at the moment)</p>		
+
 		<ul id="picker">
 			<li data-code="iss">ISS Space station (beta)</li>
 			<li data-code="ktme">Houston</li>
@@ -391,7 +393,6 @@ window.setInterval(function(){
 				<p>Your browser does not support the <code>audio</code> element.</p>
 			</audio>
 !---->
-			<p>(This is a live radio transmission, if it's silent, then the airplanes are not very chatty at the moment)</p>
 
 
 		<h1 style="margin-top:3rem;">Ambient music</h1>
@@ -555,6 +556,16 @@ document.addEventListener("visibilitychange", handleVisibilityChange, false);
 			.thankyou a:visited {
 				color: white;
 			}
+
+			.airport-info {
+				max-width:370px;
+				font-weight:100;
+				margin-left:auto;
+				margin-right:auto;
+				font-family:circular;
+				text-transform:none;
+				line-height:1.4em;
+			} 
 			
 			#live {
 				display: flex;
