@@ -579,6 +579,18 @@ document.addEventListener("visibilitychange", handleVisibilityChange, false);
 				text-transform: uppercase;
 				color: #fff;
 			}
+			.isMobile #live {
+				    justify-content: center;
+					width: 100%;
+					left: 0;
+					top: 0;
+					padding: 20px 0;
+					background: linear-gradient( to bottom, rgba(16, 51, 130, 0.75) 80%, rgba(255, 0, 0, 0));
+			}
+
+			.isMobile #noise {
+				display:none;
+			}
 
 			#noise {
 				display: flex;
@@ -906,6 +918,11 @@ var playButton = {
 
 playButton.init();
 var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+if(isMobile) {
+	jQuery("body").addClass("isMobile");
+}
+
 if(isMobile) {
    changestate();
    jQuery('.video-foreground').html("");
