@@ -39,7 +39,7 @@
 		#vidtop-content {
 			top: 0;
 			color: #fff;
-			background: rgba(30, 70, 200, 0.5);
+			background: rgba(30, 90, 200, 0.4);
 		}
 		
 		
@@ -185,6 +185,11 @@
 				color: white;
 				font-family: "circular";
 				font-weight: 100;
+				text-transform: none;
+			}
+
+			.thankyou h1 {
+				text-transform: uppercase;
 			}
 
 			
