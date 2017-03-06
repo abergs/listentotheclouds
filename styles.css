@@ -474,6 +474,72 @@
 				margin: 0;
 				padding: 0;
 			}
+
+			#airports {
+				/*display:flex;*/
+				margin-top:60px;
+			}
+
+			#airports ul {
+				list-style:none;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				
+				flex-wrap: wrap;
+				padding: 0;
+				font-weight: 100;
+				font-size: 0.8em;
+				line-height: 1.5em;
+				letter-spacing: 1.5px;
+				text-transform:uppercase;
+				font-family:"circular";
+			}
+
+			.airport {
+				    /*display: inline-block;
+					padding: 10px;
+					background: rgba(0,0,0,.4);
+					margin: 5px 10px;
+					border-radius:50px;*/
+
+					width: 140px;
+					background: rgba(0, 20, 50, .5);
+					border-radius: 100px;
+					height: 140px;
+					display: flex;
+					align-content: center;
+					align-items: center;
+					justify-content: center;
+					margin: 10px;
+					text-align: center;
+					cursor: pointer;
+					transition: all 0.2s ease;
+					padding: 10px;
+					flex-direction: column;
+			}
+
+			.airport span {
+				display: block;
+			}
+
+			.airport-name {
+
+			}
+
+			.airport-iata {
+				    color: #788aa5;
+					font-family: "TW Cen MT", "circular", sans-serif;
+			}
+
+			.airport.active {
+				border: 3px solid rgb(214, 211, 163);
+			}
+			
+			.airport:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 10px 10px rgba(109, 151, 204, 0.71);
+			}
 			
 			.clearfix:after {
 				visibility: hidden;

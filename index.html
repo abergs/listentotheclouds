@@ -2,83 +2,81 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<title>Listen To The Clouds</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="http://listentothe.cloud/share4.jpg" />
-	<meta property="og:type" content="website" />
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
-		crossorigin="anonymous"></script>
-	<!-- Include in <head> to load fonts from Google -->
-	<link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <title>Listen To The Clouds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="http://listentothe.cloud/share4.jpg" />
+    <meta property="og:type" content="website" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js"></script>
+    
+    <!-- Include in <head> to load fonts from Google -->
+    <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
 
-	
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-37656767-12', 'auto');
-  ga('send', 'pageview');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  // This will count the number of times the function runs.
-pageTimer = 0;
-// Periodically run the function
-window.setInterval(function(){
-  // Increment the counter
-  pageTimer = pageTimer + 1
-  // Assumes it runs every 30 seconds
-  theNow = pageTimer * 60
-  ga('send', {
-    hitType: 'event',
-    eventCategory: 'Timer',
-    eventAction: theNow + ' seconds on page',
-    eventLabel: $(".current").first().text()
-  });
-}, 60000); // Run every 30 seconds
+        ga('create', 'UA-37656767-12', 'auto');
+        ga('send', 'pageview');
 
-</script>
+        // This will count the number of times the function runs.
+        pageTimer = 0;
+        // Periodically run the function
+        window.setInterval(function () {
+            // Increment the counter
+            pageTimer = pageTimer + 1
+            // Assumes it runs every 30 seconds
+            theNow = pageTimer * 60
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'Timer',
+                eventAction: theNow + ' seconds on page',
+                eventLabel: $(".current").first().text()
+            });
+        }, 60000); // Run every 30 seconds
+    </script>
 </head>
-
-
-
 <body>
-	<div class="video-background">
-		<div class="video-foreground">
-			<iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
-				frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
+    <div class="video-background">
+        <div class="video-foreground">
+            <iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div id="live"><span class="dot"></span>Live: &nbsp <span class="current"> Chicago</span></div>
 
 
-<div id="live"><span class="dot"></span>Live: &nbsp <span class="current"> Chicago</span></div>
+    <div id="noise">Background noise while you work or relax</p>
+        <p class="mobilewarning">(Works better if you are not on a mobile device... sorry) </div>
 
 
-<div id="noise">Background noise while you work or relax</p>
-			<p class="mobilewarning">(Works better if you are not on a mobile device... sorry) </div>
+    <div id="vidtop-content">
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
 
 
-	<div id="vidtop-content">
-		<!-- Load Facebook SDK for JavaScript -->
-		<div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1284548061596480";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
-
-		<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1284548061596480";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-		<div id="vcontrols">
-			<div class="playpause">
-				<button class="button js-button">
+        <div id="vcontrols">
+            <div class="playpause">
+                <button class="button js-button">
                     <svg width="100%" height="100%" viewBox="0 0 36 36" >
                         <defs>
                             <path id="pause-icon" data-state="playing" d="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" />
@@ -88,388 +86,337 @@ window.setInterval(function(){
                     </svg>
                 </button>
 
-			</div>
-			<button class="button nxt">&#10097;&#10097;</button>
-			<div class="clearfix"><span>
+            </div>
+            <button class="button nxt">&#10097;&#10097;</button>
+            <div class="clearfix"><span>
             Airport chatter: </span><input id="vc_radio" type="range" min=0 max=100 value="50" /></div>
-			<div class="clearfix"><span>Ambient music:</span> <input id="vc_music" type="range" min=0 max=100 value="50" />
-			</div>
-		</div>
+            <div class="clearfix"><span>Ambient music:</span> <input id="vc_music" type="range" min=0 max=100 value="50" />
+            </div>
+        </div>
 
-		<div class="ybile">
+        <div class="ybile">
 
-			<h1 class="ybile-r2">Listen to the clouds</h1>
-			<h1 class="ybile-r3">live, as the world flies</h1>
+            <h1 class="ybile-r2">Listen to the clouds</h1>
+            <h1 class="ybile-r3">live, as the world flies</h1>
+            <div style="text-align:center; margin-top:60px">
+                <div class="fb-share-button" data-href="http://listentothe.cloud/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flistentothe.cloud%2F&amp;src=sdkpreparse">Share</a></div>
+            </div>
 
-<!---			<div style="text-align:center">
-						<p>Live: <span class="current">Chicago</span></p>
-					</div>
+            <h1 style="margin-top:60px">Airports</h1>
 
-!---->
+            <p class="airport-info">(This is a live radio transmission, if it's silent, the airports aren't very chatty at the moment)</p>
 
-			<!-- Your share button code -->
+            <div id="airports">
+                <div v-for="region in regions">
+                    <h3>{{region.name}}</h3>
+                    <ul>
+                        <li v-for="ap in region.airports" :data-code="ap[0]" class="airport" v-on:click="listenTo(ap)" v-bind:class="[activeCode === ap[0] ? 'active' : '']">
+                            <span class="airport-name">{{ ap[1] }}</span>
+                            <span class="airport-iata">{{ ap[2] }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul id="picker">
+                <li><a target="_blank" href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
+            </ul>
 
 
-			</br></br>
+            <!---		<p>Live: <span class="current">Chicago</span></p> -->
+            <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4" style="visibility: hidden">
+                <p>Your browser does not support the <code>audio</code> element.</p>
+            </audio>
 
-			
-			<script>
-                $("#yesbtn").on("click", function () {
-                    $("#supportbtns").hide();
-                    $("#support").show();
+
+            <h1 style="margin-top:3rem;">Ambient music</h1>
+            <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
+            <div style="text-align:center;">
+                <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
+            </div>
+
+            <br />
+            <br />
+
+            <div style="text-align:center">
+                <p>(Question: Do you want me to add a "sleep mode" button? <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdP99Nt0q8cxDThYm-vWe9NAC0R6S_oYntoVTCq9mZK-SAjqQ/viewform">Answer here</a>)</p>
+                <br />
+
+                <div class="thankyou">
+                    <h1 class="thankyou">Thank you</h1>
+
+                    <p style="text-align:center">
+                        <script id='fbx9hgl'>
+                            (function (i) { var f, s = document.getElementById(i); f = document.createElement('iframe'); f.src = '//button.flattr.com/view/?fid=el6vxk&button=compact&url=' + encodeURIComponent(document.URL); f.title = 'Flattr'; f.height = 20; f.width = 110; f.style.borderWidth = 0; s.parentNode.insertBefore(f, s); })('fbx9hgl');
+                        </script>
+                    </p>
+
+                    <p style="font-family:'circular';line-height: 1.4em; text-transform:none">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>).
+                        If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br
+                        /><br /> It uses a bunch of open API's, all mentioned below. Inspired by <a href=" http://youarelistening.to/">You are listening to</a>.
+                        Thank you <a href="http://www.liveatc.net/">Live ATC</a> for live feeds of flight radio. The video
+                        background is from <a href="https://www.youtube.com/watch?v=YgmIibSnZs0">this youtube clip</a>. And
+                        the ambient music playing from soundcloud is linked above. Built with love and whipped cream by Anders.
+                </div>
+            </div>
+
+            <div style="text-align:center" class="donate">
+                <p>Would you donate to support this?</p>
+                <div id="supportbtns"><button id="yesbtn">Yes</button><button id="nobtn">No</button></div>
+                <div id="support">
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script>
+        $("#yesbtn").on("click", function () {
+            $("#supportbtns").hide();
+            $("#support").show();
+        });
+        $("#nobtn").on("click", function () {
+            $(this).text("Okey :(");
+        });
+
+        $(function () {
+            var links = $('.airport');
+            var randomNum = Math.floor(Math.random() * (links.length - 2)) + 1; //don't want iss to be clicked  
+            links.get(randomNum).click();
+        });
+
+        var a = new Vue({
+            el: "#airports",
+            data: {
+                activeCode: "",
+                activeAP: {},
+                regions: []
+            },
+            mounted: function () {
+                var self = this;
+                var $ = jQuery;
+                $.get("airports.json", function (data) {
+                    self.regions = data;
                 });
-                $("#nobtn").on("click", function () {
-                    $(this).text("Okey :(");
-                });
-            </script>
+            },
+            methods: {
+                listenTo: function (airport) {
+                    //console.log("Wanted to listen to!", airport);
+                    var code = airport[0];
+                    if (!code) return;
+                    this.activeCode = code;
+                    this.activeAP = airport;
 
+                    if (code === "iss") {
+                        spaceModeOn();
+                    } else {
+                        spaceModeOff();
+                        var url = "http://mtl2.liveatc.net/" + code;
+                        $("#stream").attr("src", url);
+                    }
 
+                    $(".current").text(airport[1]);
+                }
+            }
 
-					<div style="text-align:center">
-				<div class="fb-share-button" data-href="http://listentothe.cloud/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flistentothe.cloud%2F&amp;src=sdkpreparse">Share</a></div>
-			</div>
+        });
 
-
-</br></br></br> <!-- Förlåt för de här -->
-		
-		<h1>Airports</h1>
-
-<p class="airport-info">(This is a live radio transmission, if it's silent, the airports aren't very chatty at the moment)</p>		
-
-		<ul id="picker">
-			<li data-code="iss">ISS Space station (beta)</li>
-			<li data-code="ktme">Houston</li>
-			<li data-code="eidw3">Dublin</li>
-			<li data-code="klga_twr">LaGuardia, NYC</li>
-			<li data-code="scel">Santiago, SCL</li>
-			<li data-code="katl_twr">Atlanta, ATL</li>
-			<li data-code="ebbr_arr">Brussels, BRU</li>
-			<li data-code="lfll">Lyon, LYS</li>
-			<li data-code="eham4">Amsterdam</li>
-			<li data-code="kdfw_twr_hp">Dallas, Fort Worth</li>
-			<li data-code="lfpo_dep">Paris, ORY</li>
-			<li data-code="kord7">Chicago</li>
-			<li data-code="esow">Stockholm</li>
-			<li data-code="engm2_app">Oslo, OSL</li>
-			<li data-code="esgg">Gothenburg</li>
-			<li data-code="espa">Luleå</li>
-			<li data-code="cyul_twr2">Montreal, YUL</li>
-			<li data-code="omdb_twr">Dubai, DXB</li>
-			<li data-code="rjtt_control">Tokyo, HND</li>
-			<li data-code="kmsp_twr">Minneapolis, MSP</li>
-			<li data-code="kcle1_2">Cleveland-Hopkins, CLE</li>
-			<li data-code="kphx_app_s">Phoenix, PHX</li>
-			<li data-code="kjfk_twr">JFK Tower, NYC</li>
-			<li data-code="ksfo_twr">San Fransisco Tower</li>
-			<li data-code="klax6">Los Angeles, KLAX</li>
-			<li data-code="lati">Tirana, TIA</li>
-			<li data-code="ktpa2">Tampa, TPA</li>
-			<li data-code="lgav">Athens, ATH</li>
-			<li data-code="ymml">Melbourne, MEL</li>
-			<li data-code="rpll">Manila, MNL</li>
-			<li data-code="yssy1">Sydney, SYD</li>
-			<li data-code="kmso">Missoula, KMSO</li>
-			<li data-code="kdtw2">Detroit, DTW</li>
-			<li data-code="ksea_twr">Seattle, SEA</li>
-			<li data-code="lszh_twr">Zurich, ZRH</li>
-			<li data-code="lfsb2">Basel, BSL</li>
-			<li data-code="uuee2">Moscow, SVO</li>
-			<li data-code="kbos_twr">Boston-Logan, BOS</li>
-			<li data-code="epwa2">Warsaw, WAW</li>
-			<li data-code="epmo">Warsaw, WMI</li>
-			<li data-code="cyow3">Ottawa, YOW</li>
-			<li data-code="cyul_twr2">Quebec, YUL</li>
-			<li data-code="cyyz7">Toronto, YYZ</li>
-			<li data-code="kiad1_3_4">Washington, IAD</li>
-			<li data-code="ekch_twr">Copenhagen, CPH</li>
-			<li data-code="kphl_final">Philadelphia, PHL</li>
-			<li data-code="krdu_app2">Durham, RDU</li>
-			<li data-code="kbuf_app">Buffalo, BUF</li>
-			<li data-code="kclt2">Charlotte, CLT</li>
-			<li data-code="kpit2">Pittsburgh, PIT</li>
-			<li data-code="kslc_app">Salt Lake City, SLC</li>
-			<li data-code="wmkk2">Kuala Lumpur, KUL</li>
-			<li data-code="kdca3">Washington, DCA</li>
-			<li data-code="kbwi_twr">Baltimore, BWI</li>
-			<li data-code="kmci1_local">Kansas City, MCI</li>
-			<li data-code="kric1">Richmond, RIC</li>
-			<li data-code="kmvy">Vineyard Haven, MVY</li>
-			<li data-code="einn2">Shannon, SNN</li>
-			<li data-code="kaus2">Austin, KAUS</li>
-			<li data-code="enbo_twr">Bodo Norway, ENBO</li>
-			<li data-code="vhhh_app_1191_2">Hong Kong, HKG</li>
-			<li data-code="ksan2">San Diego, SAN</li>
-			<li data-code="kmia_twr">Miami, KMIA</li>
-            <li data-code="uaaa">Almaty, ALA</li>
-            
-			
-			
-			
-
-
-
-			<li><a target="_blank" href="https://twitter.com/home?status=Hey%20%40andersaberg,%20I%20would%20like%20you%20to%20add%20*your%20missing%20airport*%20%23listentotheclouds">Missing your airport?</a></li>
-		</ul>
-		
-
-
-	<!---		<p>Live: <span class="current">Chicago</span></p> -->
-			<audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4" style="visibility: hidden">
-				<p>Your browser does not support the <code>audio</code> element.</p>
-			</audio>
-
-
-		<h1 style="margin-top:3rem;">Ambient music</h1>
-		<p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
-		<div style="text-align:center;">
-			<iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
-		</div>
-
-
-
-</br></br>
-
-<div style="text-align:center">
-			<p>(Question: Do you want me to add a "sleep mode" button? <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdP99Nt0q8cxDThYm-vWe9NAC0R6S_oYntoVTCq9mZK-SAjqQ/viewform">Answer here</a>)</p>
-</br>
-
-
-		<div class="thankyou">
-			<h1 style="thankyou">Thank you</h1>
-			
-			<p style="text-align:center"><script id='fbx9hgl'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//button.flattr.com/view/?fid=el6vxk&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbx9hgl');</script></p>
-
-			<p style="font-family:"circular";line-height: 1.4em; text-transform:none">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>).
-
-				If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br/><br />It uses a bunch
-				of open API's, all mentioned below. Inspired by <a href=" http://youarelistening.to/">You are listening to</a>. Thank
-				you <a href="http://www.liveatc.net/">Live ATC</a> for live feeds of flight radio and thank you
-				<a href="http://tobiasahlin.com/typesource/">Typesource by Tobias Ahlin</a> for the font inspiration. The video background
-				is from <a href="https://www.youtube.com/watch?v=YgmIibSnZs0">this youtube clip</a>. And the ambient music playing from
-				soundcloud is linked above. Built with love and whipped cream by Anders.
-		</div>
-
-
-<div style="text-align:center" class="donate">
-				<p>Would you donate to support this?</p>
-				<div id="supportbtns"><button id="yesbtn">Yes</button><button id="nobtn">No</button></div>
-				<div id="support">
-					<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
-				</div>
-
-
-
-		<script src="https://w.soundcloud.com/player/api.js"></script>
-		<script>
-
-            $(function() {
-                var links = $('#picker li');
-                var randomNum = Math.floor(Math.random()*(links.length -2)) +1; //don't want iss to be clicked  
-                links.get(randomNum).click();
-            }); 
-
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-$('#vc_music, #vc_control').on('change input', function () {
-    setMusic($(this).val());
-});
-$('#vc_radio').on('change input', function () {
-    setRadio($(this).val());
-});
-
-function setRadio(v) {
-    var stream=document.getElementById("stream");
-    stream.volume= v / 100;
-    $('#vc_radio').val(v);
-    localStorage.setItem("vc_radio", v);
-}
-function setMusic(v) {
-    var player         = SC.Widget("soundcloud_player_iframe");
-    player.setVolume(v / 100);
-    $('#vc_music, #vc_control').val(v);
-    localStorage.setItem("vc_music", v);
-}
-
-var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0,152);
-$("#soundcloud_player_iframe").attr("src", scsrc);
-
-// default volumes
-$(function () {
-    setRadio(localStorage.getItem("vc_radio") || 50);
-    setMusic(localStorage.getItem("vc_music") || 50);
-    setTimeout(function () {
-        setRadio(localStorage.getItem("vc_radio") || 50);
-        setMusic(localStorage.getItem("vc_music") || 50);
-    },3000);
-});
-
-$("#picker li").on("click", function () {
-    var code = $(this).data("code");
-    if(!code) return;
-
-    if(code ==="iss") {
-        spaceModeOn();
-    }else {
-        spaceModeOff();
-        var url = "http://mtl2.liveatc.net/" + code;
-    $("#stream").attr("src", url);
-    }
-
-    
-    $(".current").text($(this).text());
-    $("#picker li").removeClass("active");
-    $(this).addClass("active");
-});
-
-var spacestream = "http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true";
-var origbg = null;
-var isInspace = false;
-function spaceModeOn(){
-    $('body').addClass("spacemode");
-    isInspace = true;
-    var stream = document.getElementById("stream");
-    stream.pause();
-    var $v = $('.video-foreground');
-    if(origbg == null) {
-        origbg = $v.html();
-    }
-    $v.html('<iframe width="720" height="437" src="http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe>');
-}
-
-function spaceModeOff() {
-    if(isInspace) {
-        $('body').removeClass("spacemode");
-        $('.video-foreground').html(origbg);
-    }
-    isInspace = false;
-
-}
-
-function handleVisibilityChange() {
-    var video = document.getElementById("video");
-    if(!video) return;
-    
-    var iframe = video.contentWindow;
-  
-    var func;
-    if (document.hidden) {
-        func = 'pauseVideo';
-    } else  {
-        func = 'playVideo';
-    }
-    iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
-}
-
-document.addEventListener("visibilitychange", handleVisibilityChange, false);
-
-</script>
-		
-
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-		<script type="text/javascript">
-"use strict";
-
-/* global d3, document */
-var playButton = {
-    el: document.querySelector(".js-button"),
-
-    states: {
-        playing: {
-            nextState: "paused",
-            iconEl: document.querySelector("#pause-icon")
-        },
-        paused:  {
-            nextState: "playing",
-            iconEl: document.querySelector("#play-icon")
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
         }
-    },
 
-    animationDuration: 350,
+        $('#vc_music, #vc_control').on('change input', function () {
+            setMusic($(this).val());
+        });
+        $('#vc_radio').on('change input', function () {
+            setRadio($(this).val());
+        });
 
-    init: function () {
-        this.setInitialState();
-        this.replaceUseEl();
-        //this.el.addEventListener("click", this.goToNextState.bind(this));
-    },
+        function setRadio(v) {
+            var stream = document.getElementById("stream");
+            stream.volume = v / 100;
+            $('#vc_radio').val(v);
+            localStorage.setItem("vc_radio", v);
+        }
+        function setMusic(v) {
+            var player = SC.Widget("soundcloud_player_iframe");
+            player.setVolume(v / 100);
+            $('#vc_music, #vc_control').val(v);
+            localStorage.setItem("vc_music", v);
+        }
 
-    setInitialState: function () {
-      var initialIconRef = this.el.querySelector("use").getAttribute("xlink:href");
-      var stateName = this.el.querySelector(initialIconRef).getAttribute("data-state");
-      this.setState(stateName);
-    },
+        var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0, 152);
+        $("#soundcloud_player_iframe").attr("src", scsrc);
 
-    replaceUseEl: function () {
-        d3.select(this.el.querySelector("use")).remove();
-        d3.select(this.el.querySelector("svg")).append("path")
-            .attr("class", "js-icon")
-            .attr("d", this.stateIconPath());
-    },
+        // default volumes
+        $(function () {
+            setRadio(localStorage.getItem("vc_radio") || 50);
+            setMusic(localStorage.getItem("vc_music") || 50);
+            setTimeout(function () {
+                setRadio(localStorage.getItem("vc_radio") || 50);
+                setMusic(localStorage.getItem("vc_music") || 50);
+            }, 3000);
+        });
 
-    goToNextState: function () {
-        this.setState(this.state.nextState);
+        $(".airport").on("click", function () {
+            
+            var code = $(this).data("code");
+            if (!code) return;
 
-        d3.select(this.el.querySelector(".js-icon")).transition()
-            .duration(this.animationDuration)
-            .attr("d", this.stateIconPath());
-    },
-
-    setState: function (stateName) {
-        this.state = this.states[stateName];
-    },
-
-    stateIconPath: function () {
-        return this.state.iconEl.getAttribute("d");
-    }
-};
-
-playButton.init();
-var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
-if(isMobile) {
-	jQuery("body").addClass("isMobile");
-}
-
-if(isMobile) {
-   changestate();
-   jQuery('.video-foreground').html("");
-}
-$('.js-button').on("click", function () {
-    changestate();
-});
-
-$('.nxt').on('click', function () {
-    var player         = SC.Widget("soundcloud_player_iframe");
-    player.next();
-});
-
-function changestate() {
-    playButton.goToNextState();
-    var state = playButton.state;
-    var play = state.nextState !== "playing";
-    
-    var stream = document.getElementById("stream");
-    var player         = SC.Widget("soundcloud_player_iframe");
-    
-    if(play){
-        $('.playpause').attr("data-state","playing");
-        stream.play();
-        player.play();
-    }else {
-        $('.playpause').attr("data-state","paused");
-        stream.pause();
-        player.pause();
-    }
-}
+            if (code === "iss") {
+                spaceModeOn();
+            } else {
+                spaceModeOff();
+                var url = "http://mtl2.liveatc.net/" + code;
+                $("#stream").attr("src", url);
+            }
 
 
-</script>
+            $(".current").text($(this).text());
+            $(".airport").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        var spacestream = "http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true";
+        var origbg = null;
+        var isInspace = false;
+        function spaceModeOn() {
+            $('body').addClass("spacemode");
+            isInspace = true;
+            var stream = document.getElementById("stream");
+            stream.pause();
+            var $v = $('.video-foreground');
+            if (origbg == null) {
+                origbg = $v.html();
+            }
+            $v.html('<iframe width="720" height="437" src="http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe>');
+        }
+
+        function spaceModeOff() {
+            if (isInspace) {
+                $('body').removeClass("spacemode");
+                $('.video-foreground').html(origbg);
+            }
+            isInspace = false;
+
+        }
+
+        function handleVisibilityChange() {
+            var video = document.getElementById("video");
+            if (!video) return;
+
+            var iframe = video.contentWindow;
+
+            var func;
+            if (document.hidden) {
+                func = 'pauseVideo';
+            } else {
+                func = 'playVideo';
+            }
+            iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+        }
+
+        document.addEventListener("visibilitychange", handleVisibilityChange, false);
+    </script>
 
 
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript">
+        /* global d3, document */
+        var playButton = {
+            el: document.querySelector(".js-button"),
+
+            states: {
+                playing: {
+                    nextState: "paused",
+                    iconEl: document.querySelector("#pause-icon")
+                },
+                paused: {
+                    nextState: "playing",
+                    iconEl: document.querySelector("#play-icon")
+                }
+            },
+
+            animationDuration: 350,
+
+            init: function () {
+                this.setInitialState();
+                this.replaceUseEl();
+                //this.el.addEventListener("click", this.goToNextState.bind(this));
+            },
+
+            setInitialState: function () {
+                var initialIconRef = this.el.querySelector("use").getAttribute("xlink:href");
+                var stateName = this.el.querySelector(initialIconRef).getAttribute("data-state");
+                this.setState(stateName);
+            },
+
+            replaceUseEl: function () {
+                d3.select(this.el.querySelector("use")).remove();
+                d3.select(this.el.querySelector("svg")).append("path")
+                    .attr("class", "js-icon")
+                    .attr("d", this.stateIconPath());
+            },
+
+            goToNextState: function () {
+                this.setState(this.state.nextState);
+
+                d3.select(this.el.querySelector(".js-icon")).transition()
+                    .duration(this.animationDuration)
+                    .attr("d", this.stateIconPath());
+            },
+
+            setState: function (stateName) {
+                this.state = this.states[stateName];
+            },
+
+            stateIconPath: function () {
+                return this.state.iconEl.getAttribute("d");
+            }
+        };
+
+        playButton.init();
+        var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+        if (isMobile) {
+            jQuery("body").addClass("isMobile");
+        }
+
+        if (isMobile) {
+            changestate();
+            jQuery('.video-foreground').html("");
+        }
+        $('.js-button').on("click", function () {
+            changestate();
+        });
+
+        $('.nxt').on('click', function () {
+            var player = SC.Widget("soundcloud_player_iframe");
+            player.next();
+        });
+
+        function changestate() {
+            playButton.goToNextState();
+            var state = playButton.state;
+            var play = state.nextState !== "playing";
+
+            var stream = document.getElementById("stream");
+            var player = SC.Widget("soundcloud_player_iframe");
+
+            if (play) {
+                $('.playpause').attr("data-state", "playing");
+                stream.play();
+                player.play();
+            } else {
+                $('.playpause').attr("data-state", "paused");
+                stream.pause();
+                player.pause();
+            }
+        }
+    </script>
 </body>
-
 </html>
