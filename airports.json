@@ -320,33 +320,25 @@
         ]
     },
     {
-        "name": "South America",
+        "name": "South America / Oceania / Space",
         "airports": [
             [
                 "scel",
                 "Santiago",
                 "SCL"
-            ]
-        ]
-    },
-    {
-        "name": "Oceania",
-        "airports": [
+            ],
             [
                 "yssy1",
                 "Sydney",
                 "SYD"
-            ]
-        ]
-    },
-    {
-        "name": "Space",
-        "airports": [
-            [
+            ],
+             [
                 "iss",
                 "ISS Space Station (beta)",
-                ""
+                "ISS"
             ]
+
         ]
     }
+    
 ]
