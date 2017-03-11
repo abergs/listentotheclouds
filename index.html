@@ -9,7 +9,7 @@
     <meta property="og:type" content="website" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js"></script>
-    
+
     <!-- Include in <head> to load fonts from Google -->
     <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
@@ -44,6 +44,7 @@
         }, 60000); // Run every 30 seconds
     </script>
 </head>
+
 <body>
     <div class="video-background">
         <div class="video-foreground">
@@ -173,154 +174,155 @@
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script>
-        $("#yesbtn").on("click", function () {
-            $("#supportbtns").hide();
-            $("#support").show();
-        });
-        $("#nobtn").on("click", function () {
-            $(this).text("Okey :(");
-        });
+                            $("#yesbtn").on("click", function () {
+                                $("#supportbtns").hide();
+                                $("#support").show();
+                            });
+                            $("#nobtn").on("click", function () {
+                                $(this).text("Okey :(");
+                            });
 
-        $(function () {
-            var links = $('.airport');
-            var randomNum = Math.floor(Math.random() * (links.length - 2)) + 1; //don't want iss to be clicked  
-            links.get(randomNum).click();
-        });
+                            var a = new Vue({
+                                el: "#airports",
+                                data: {
+                                    activeCode: "",
+                                    activeAP: {},
+                                    regions: []
+                                },
+                                mounted: function () {
+                                    var self = this;
+                                    var $ = jQuery;
 
-        var a = new Vue({
-            el: "#airports",
-            data: {
-                activeCode: "",
-                activeAP: {},
-                regions: []
-            },
-            mounted: function () {
-                var self = this;
-                var $ = jQuery;
-                $.get("airports.json", function (data) {
-                    self.regions = data;
-                });
-            },
-            methods: {
-                listenTo: function (airport) {
-                    //console.log("Wanted to listen to!", airport);
-                    var code = airport[0];
-                    if (!code) return;
-                    this.activeCode = code;
-                    this.activeAP = airport;
+                                    $("#stream").on("error", function (e) {
+                                        console.error("Error found: ", e);
+                                    });
 
-                    if (code === "iss") {
-                        spaceModeOn();
-                    } else {
-                        spaceModeOff();
-                        var url = "http://mtl2.liveatc.net/" + code;
-                        $("#stream").attr("src", url);
-                    }
+                                    $.get("airports.json", function (data) {
+                                        self.regions = data;
 
-                    $(".current").text(airport[1]);
-                }
-            }
+                                        window.XX = data;
 
-        });
+                                        var airports = data.reduce(function (acc, val) {
+                                            return acc.concat(val.airports);
+                                        }, []);
 
-        function getRandomInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
+                                        var fil = airports.filter(function (cv) { return cv.code !== "iss" });
 
-        $('#vc_music, #vc_control').on('change input', function () {
-            setMusic($(this).val());
-        });
-        $('#vc_radio').on('change input', function () {
-            setRadio($(this).val());
-        });
+                                        if (document.location.hash !== "#debug") {
+                                            var randomNum = Math.floor(Math.random() * (fil.length)); //don't want iss to be clicked  
+                                            var x = fil[randomNum];
+                                            self.listenTo(x)
 
-        function setRadio(v) {
-            var stream = document.getElementById("stream");
-            stream.volume = v / 100;
-            $('#vc_radio').val(v);
-            localStorage.setItem("vc_radio", v);
-        }
-        function setMusic(v) {
-            var player = SC.Widget("soundcloud_player_iframe");
-            player.setVolume(v / 100);
-            $('#vc_music, #vc_control').val(v);
-            localStorage.setItem("vc_music", v);
-        }
+                                        } else {                                            
+                                            fil.forEach(function(element, index) {
+                                                setTimeout(function () {
+                                                    self.listenTo(element);
+                                                }, 1000 * (index+1));
+                                            }, this);
+                                        }
+                                    });
+                                },
+                                methods: {
+                                    listenTo: function (airport) {
+                                        //console.log("Wanted to listen to!", airport);
+                                        var code = airport[0];
+                                        if (!code) return;
+                                        this.activeCode = code;
+                                        this.activeAP = airport;
 
-        var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0, 152);
-        $("#soundcloud_player_iframe").attr("src", scsrc);
+                                        if (code === "iss") {
+                                            spaceModeOn();
+                                        } else {
+                                            spaceModeOff();
+                                            var url = "http://mtl2.liveatc.net/" + code;
+                                            $("#stream").attr("src", url);
+                                        }
 
-        // default volumes
-        $(function () {
-            setRadio(localStorage.getItem("vc_radio") || 50);
-            setMusic(localStorage.getItem("vc_music") || 50);
-            setTimeout(function () {
-                setRadio(localStorage.getItem("vc_radio") || 50);
-                setMusic(localStorage.getItem("vc_music") || 50);
-            }, 3000);
-        });
+                                        $(".current").text(airport[1]);
+                                    }
+                                }
 
-        $(".airport").on("click", function () {
-            
-            var code = $(this).data("code");
-            if (!code) return;
+                            });
 
-            if (code === "iss") {
-                spaceModeOn();
-            } else {
-                spaceModeOff();
-                var url = "http://mtl2.liveatc.net/" + code;
-                $("#stream").attr("src", url);
-            }
+                            function getRandomInt(min, max) {
+                                min = Math.ceil(min);
+                                max = Math.floor(max);
+                                return Math.floor(Math.random() * (max - min)) + min;
+                            }
 
+                            $('#vc_music, #vc_control').on('change input', function () {
+                                setMusic($(this).val());
+                            });
+                            $('#vc_radio').on('change input', function () {
+                                setRadio($(this).val());
+                            });
 
-            $(".current").text($(this).text());
-            $(".airport").removeClass("active");
-            $(this).addClass("active");
-        });
+                            function setRadio(v) {
+                                var stream = document.getElementById("stream");
+                                stream.volume = v / 100;
+                                $('#vc_radio').val(v);
+                                localStorage.setItem("vc_radio", v);
+                            }
+                            function setMusic(v) {
+                                var player = SC.Widget("soundcloud_player_iframe");
+                                player.setVolume(v / 100);
+                                $('#vc_music, #vc_control').val(v);
+                                localStorage.setItem("vc_music", v);
+                            }
 
-        var spacestream = "http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true";
-        var origbg = null;
-        var isInspace = false;
-        function spaceModeOn() {
-            $('body').addClass("spacemode");
-            isInspace = true;
-            var stream = document.getElementById("stream");
-            stream.pause();
-            var $v = $('.video-foreground');
-            if (origbg == null) {
-                origbg = $v.html();
-            }
-            $v.html('<iframe width="720" height="437" src="http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe>');
-        }
+                            var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0, 152);
+                            $("#soundcloud_player_iframe").attr("src", scsrc);
 
-        function spaceModeOff() {
-            if (isInspace) {
-                $('body').removeClass("spacemode");
-                $('.video-foreground').html(origbg);
-            }
-            isInspace = false;
+                            // default volumes
+                            $(function () {
+                                setRadio(localStorage.getItem("vc_radio") || 50);
+                                setMusic(localStorage.getItem("vc_music") || 50);
+                                setTimeout(function () {
+                                    setRadio(localStorage.getItem("vc_radio") || 50);
+                                    setMusic(localStorage.getItem("vc_music") || 50);
+                                }, 3000);
+                            });
 
-        }
+                            var spacestream = "http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true";
+                            var origbg = null;
+                            var isInspace = false;
+                            function spaceModeOn() {
+                                $('body').addClass("spacemode");
+                                isInspace = true;
+                                var stream = document.getElementById("stream");
+                                stream.pause();
+                                var $v = $('.video-foreground');
+                                if (origbg == null) {
+                                    origbg = $v.html();
+                                }
+                                $v.html('<iframe width="720" height="437" src="http://www.ustream.tv/embed/17074538?v=3&wmode=direct&autoplay=true" scrolling="no" frameborder="0" style="border: 0px none transparent;"></iframe>');
+                            }
 
-        function handleVisibilityChange() {
-            var video = document.getElementById("video");
-            if (!video) return;
+                            function spaceModeOff() {
+                                if (isInspace) {
+                                    $('body').removeClass("spacemode");
+                                    $('.video-foreground').html(origbg);
+                                }
+                                isInspace = false;
 
-            var iframe = video.contentWindow;
+                            }
 
-            var func;
-            if (document.hidden) {
-                func = 'pauseVideo';
-            } else {
-                func = 'playVideo';
-            }
-            iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
-        }
+                            function handleVisibilityChange() {
+                                var video = document.getElementById("video");
+                                if (!video) return;
 
-        document.addEventListener("visibilitychange", handleVisibilityChange, false);
+                                var iframe = video.contentWindow;
+
+                                var func;
+                                if (document.hidden) {
+                                    func = 'pauseVideo';
+                                } else {
+                                    func = 'playVideo';
+                                }
+                                iframe.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+                            }
+
+                            document.addEventListener("visibilitychange", handleVisibilityChange, false);
     </script>
 
 
@@ -419,4 +421,5 @@
         }
     </script>
 </body>
+
 </html>
