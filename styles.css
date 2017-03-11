@@ -39,7 +39,7 @@
 		#vidtop-content {
 			top: 0;
 			color: #fff;
-			background: rgba(30, 90, 200, 0.4);
+			background: rgba(97, 169, 245, 0.38);
 		}
 		
 		
@@ -100,6 +100,7 @@
 			body {
 				font-size: 10px;
 			}
+
 			#soundcloud_player_iframe {
 				max-width: 100%;
 			}
@@ -160,7 +161,7 @@
 					padding: 7px 15px;
 					border: none;
 					border-radius: 5px;
-					color: #fffdd2;
+					color: #ffffff;
 					margin: 0 10px;
 					font-weight: bold;
 					text-transform: initial;
