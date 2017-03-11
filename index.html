@@ -194,7 +194,7 @@
                                     var $ = jQuery;
 
                                     $("#stream").on("error", function (e) {
-                                        console.error("Error found: ", e);
+                                        self.error(e);
                                     });
 
                                     $.get("airports.json", function (data) {
@@ -223,6 +223,11 @@
                                     });
                                 },
                                 methods: {
+                                    error: function (e) {
+                                        //console.log("Error detected");
+                                        this.activeAP.error = true;
+                                        //console.log("Error detected", this.activeAP);
+                                    },
                                     listenTo: function (airport) {
                                         //console.log("Wanted to listen to!", airport);
                                         var code = airport[0];
@@ -239,6 +244,9 @@
                                         }
 
                                         $(".current").text(airport[1]);
+                                    },
+                                    getData: function () {
+                                        return this.regions;
                                     }
                                 }
 
