@@ -520,6 +520,10 @@
 					flex-direction: column;
 			}
 
+			.airport.error {
+				text-decoration: line-through;
+			}
+
 			.airport span {
 				display: block;
 			}
