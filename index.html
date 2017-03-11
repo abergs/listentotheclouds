@@ -111,7 +111,7 @@
                 <div v-for="region in regions">
                     <h3>{{region.name}}</h3>
                     <ul>
-                        <li v-for="ap in region.airports" :data-code="ap[0]" class="airport" v-on:click="listenTo(ap)" v-bind:class="[activeCode === ap[0] ? 'active' : '']">
+                        <li v-for="ap in region.airports" :data-code="ap[0]" class="airport" v-on:click="listenTo(ap)" v-bind:class="[{'error':ap[3]}, activeCode === ap[0] ? 'active' : '']">
                             <span class="airport-name">{{ ap[1] }}</span>
                             <span class="airport-iata">{{ ap[2] }}</span>
                         </li>
@@ -226,7 +226,7 @@
                                 methods: {
                                     error: function (e) {
                                         //console.log("Error detected");
-                                        this.activeAP.error = true;
+                                        this.activeAP[3] = true;
                                         //console.log("Error detected", this.activeAP);
                                     },
                                     listenTo: function (airport) {
