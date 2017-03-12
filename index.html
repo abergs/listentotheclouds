@@ -184,12 +184,12 @@
 
         function isLocalStorageNameSupported() 
         {
-            var testKey = 'test', storage = window.sessionStorage;
+            var testKey = 'test', storage = window.localStorage;
             try 
             {
                 storage.setItem(testKey, '1');
                 storage.removeItem(testKey);
-                return localStorageName in win && win[localStorageName];
+                return true
             } 
             catch (error) 
             {
@@ -261,11 +261,7 @@
 
                                         //window.XX = data;
 
-                                        var airports = x.reduce(function (acc, val) {
-                                            return acc.concat(val.airports);
-                                        }, []);
-
-                                        var fil = airports.filter(function (cv) { return cv.code !== "iss" });
+                                        var fil = self.getAirports();
 
                                         if (document.location.hash === "#debug") {
                                             fil.forEach(function (element, index) {
@@ -274,20 +270,21 @@
                                                 }, 1000 * (index + 1));
                                             }, this);
                                         } else if (!isMobile) {
-                                            var randomNum = Math.floor(Math.random() * (fil.length)); //don't want iss to be clicked  
-                                            var lp = localStorage.getItem("lastPlayed");
-                                            var x = fil[randomNum];
-                                            var x2;
-                                            if(lp != null){
-                                                x2 = fil.find(function (ap) { return ap.code  === lp });
-                                            }
-                                            self.listenTo(x2 || x)
+                                            self.listenTo(null)
                                         } else {
                                             self.pause();
                                         }
                                     });
                                 },
                                 methods: {
+                                    getAirports: function () {
+                                        var airports = this.regions.reduce(function (acc, val) {
+                                            return acc.concat(val.airports);
+                                        }, []);
+
+                                        var fil = airports.filter(function (cv) { return cv.code !== "iss" });
+                                        return fil;
+                                    },
                                     error: function (e) {
                                         //console.log("Error detected");
                                         this.activeAP.error = true;
@@ -296,6 +293,10 @@
                                         //console.log("Error detected", this.activeAP);
                                     },
                                     play: function () {
+                                        if(!this.activeAP.code){
+                                            this.listenTo(null);
+                                            return;
+                                        }
                                         this.isPlaying = true;
                                         //$('.playpause').attr("data-state", "playing");
                                         var player = SC.Widget("soundcloud_player_iframe");
@@ -314,16 +315,23 @@
                                         player.pause();
                                     },
                                     changeState: function () {
-                                        if(this.isPlaying) {
-                                            
-                                            this.pause();
-                                            
-                                        }else {
-                                            
+                                        if(this.isPlaying) {                                            
+                                            this.pause();                                            
+                                        }else {                                            
                                             this.play();                                            
                                         }
                                     },
-                                    listenTo: function (airport) {                                        
+                                    listenTo: function (airport) { 
+                                        if(airport === null) {
+                                            var aps = this.getAirports();
+                                            var randomNum = Math.floor(Math.random() * (aps.length));
+                                            var lp = localStorage.getItem("lastPlayed");
+                                            if(lp != null){
+                                                airport = aps.find(function (ap) { return ap.code  === lp });
+                                            } else {
+                                                airport = aps[randomNum];
+                                            }
+                                        }
                                         var code = airport.code;
                                         if (!code) return;
                                         this.activeCode = code;
