@@ -224,6 +224,7 @@
 			}
 			.isMobile #live {
 				    justify-content: center;
+					font-size:15px;
 					width: 100%;
 					left: 0;
 					top: 0;
