@@ -153,12 +153,6 @@
                 <div class="thankyou">
                     <h1>Thank you</h1>
 
-                    <p style="text-align:center">
-                        <script id='fbx9hgl'>
-                            (function (i) { var f, s = document.getElementById(i); f = document.createElement('iframe'); f.src = '//button.flattr.com/view/?fid=el6vxk&button=compact&url=' + encodeURIComponent(document.URL); f.title = 'Flattr'; f.height = 20; f.width = 110; f.style.borderWidth = 0; s.parentNode.insertBefore(f, s); })('fbx9hgl');
-                        </script>
-                    </p>
-
                     <p style="font-family:'circular';line-height: 1.4em; text-transform:none">This project was built by <a href="http://andersaberg.com">Anders Åberg</a> (<a href="http://twitter.com/andersaberg">@andersaberg</a>).
                         If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br
                         /><br /> It uses a bunch of open API's, all mentioned below. Inspired by <a href=" http://youarelistening.to/">You are listening to</a>.
@@ -169,7 +163,8 @@
 
                 <div style="text-align:center" class="donate">
                     <p>Would you donate to support this?</p>
-                    <div id="supportbtns"><button id="yesbtn">Yes</button><button id="nobtn">No</button></div>
+                    <div id="supportbtns">
+                        <button id="yesbtn" @click="donateYes">Yes</button><button id="nobtn" @click="donateNo">No</button></div>
                     <div id="support">
                         <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
                     </div>
@@ -181,32 +176,20 @@
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script>
+                            function isLocalStorageNameSupported() {
+                                var testKey = 'test', storage = window.localStorage;
+                                try {
+                                    storage.setItem(testKey, '1');
+                                    storage.removeItem(testKey);
+                                    return true
+                                }
+                                catch (error) {
+                                    return false;
+                                }
+                            }
+                            var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
-        function isLocalStorageNameSupported() 
-        {
-            var testKey = 'test', storage = window.localStorage;
-            try 
-            {
-                storage.setItem(testKey, '1');
-                storage.removeItem(testKey);
-                return true
-            } 
-            catch (error) 
-            {
-                return false;
-            }
-        }
-        var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
-                            $("#yesbtn").on("click", function () {
-                                $("#supportbtns").hide();
-                                $("#support").show();
-                            });
-                            $("#nobtn").on("click", function () {
-                                $(this).text("Okey :(");
-                            });
-
-                            var a = new Vue({
+                          var a = new Vue({
                                 el: "#app",
                                 data: {
                                     activeCode: "",
@@ -285,6 +268,13 @@
                                         var fil = airports.filter(function (cv) { return cv.code !== "iss" });
                                         return fil;
                                     },
+                                    donateYes: function (e) {
+                                        $("#supportbtns").hide();
+                                        $("#support").show();
+                                    },
+                                    donateNo: function (e) {
+                                        $("#nobtn").text("Okey :(");
+                                    },
                                     error: function (e) {
                                         //console.log("Error detected");
                                         this.activeAP.error = true;
@@ -293,7 +283,7 @@
                                         //console.log("Error detected", this.activeAP);
                                     },
                                     play: function () {
-                                        if(!this.activeAP.code){
+                                        if (!this.activeAP.code) {
                                             this.listenTo(null);
                                             return;
                                         }
@@ -308,26 +298,26 @@
                                     pause: function () {
                                         this.isPlaying = false;
                                         playButton.goToState("paused");
-                                         //$('.playpause').attr("data-state", "paused");
-                                         var player = SC.Widget("soundcloud_player_iframe");
-                                         var stream = document.getElementById("stream");
+                                        //$('.playpause').attr("data-state", "paused");
+                                        var player = SC.Widget("soundcloud_player_iframe");
+                                        var stream = document.getElementById("stream");
                                         stream.pause();
                                         player.pause();
                                     },
                                     changeState: function () {
-                                        if(this.isPlaying) {                                            
-                                            this.pause();                                            
-                                        }else {                                            
-                                            this.play();                                            
+                                        if (this.isPlaying) {
+                                            this.pause();
+                                        } else {
+                                            this.play();
                                         }
                                     },
-                                    listenTo: function (airport) { 
-                                        if(airport === null) {
+                                    listenTo: function (airport) {
+                                        if (airport === null) {
                                             var aps = this.getAirports();
                                             var randomNum = Math.floor(Math.random() * (aps.length));
                                             var lp = localStorage.getItem("lastPlayed");
-                                            if(lp != null){
-                                                airport = aps.find(function (ap) { return ap.code  === lp });
+                                            if (lp != null) {
+                                                airport = aps.find(function (ap) { return ap.code === lp });
                                             } else {
                                                 airport = aps[randomNum];
                                             }
@@ -336,8 +326,8 @@
                                         if (!code) return;
                                         this.activeCode = code;
                                         this.activeAP = airport;
-                                        if(isLocalStorageNameSupported()){
-                                            localStorage.setItem("lastPlayed",code);
+                                        if (isLocalStorageNameSupported()) {
+                                            localStorage.setItem("lastPlayed", code);
                                         }
 
                                         if (code === "iss") {
@@ -442,84 +432,84 @@
 
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript">
-                        /* global d3, document */
-                        var playButton = {
-                            el: document.querySelector(".js-button"),
+                            /* global d3, document */
+                            var playButton = {
+                                el: document.querySelector(".js-button"),
 
-                            states: {
-                                playing: {
-                                    nextState: "paused",
-                                    iconEl: document.querySelector("#pause-icon")
+                                states: {
+                                    playing: {
+                                        nextState: "paused",
+                                        iconEl: document.querySelector("#pause-icon")
+                                    },
+                                    paused: {
+                                        nextState: "playing",
+                                        iconEl: document.querySelector("#play-icon")
+                                    }
                                 },
-                                paused: {
-                                    nextState: "playing",
-                                    iconEl: document.querySelector("#play-icon")
+
+                                animationDuration: 350,
+
+                                init: function () {
+                                    this.setInitialState();
+                                    this.replaceUseEl();
+                                    //this.el.addEventListener("click", this.goToNextState.bind(this));
+                                },
+
+                                setInitialState: function () {
+                                    var initialIconRef = this.el.querySelector("use").getAttribute("xlink:href");
+                                    var stateName = this.el.querySelector(initialIconRef).getAttribute("data-state");
+                                    this.setState(stateName);
+                                },
+
+                                replaceUseEl: function () {
+                                    d3.select(this.el.querySelector("use")).remove();
+                                    d3.select(this.el.querySelector("svg")).append("path")
+                                        .attr("class", "js-icon")
+                                        .attr("d", this.stateIconPath());
+                                },
+
+                                goToState: function (stateName) {
+                                    if (this.state.nextState == stateName) {
+                                        this.goToNextState();
+                                    }
+                                },
+
+                                goToNextState: function () {
+                                    this.setState(this.state.nextState);
+
+                                    d3.select(this.el.querySelector(".js-icon")).transition()
+                                        .duration(this.animationDuration)
+                                        .attr("d", this.stateIconPath());
+                                },
+
+                                setState: function (stateName) {
+                                    this.state = this.states[stateName];
+                                },
+
+                                stateIconPath: function () {
+                                    return this.state.iconEl.getAttribute("d");
                                 }
-                            },
+                            };
 
-                            animationDuration: 350,
+                            playButton.init();
 
-                            init: function () {
-                                this.setInitialState();
-                                this.replaceUseEl();
-                                //this.el.addEventListener("click", this.goToNextState.bind(this));
-                            },
 
-                            setInitialState: function () {
-                                var initialIconRef = this.el.querySelector("use").getAttribute("xlink:href");
-                                var stateName = this.el.querySelector(initialIconRef).getAttribute("data-state");
-                                this.setState(stateName);
-                            },
-
-                            replaceUseEl: function () {
-                                d3.select(this.el.querySelector("use")).remove();
-                                d3.select(this.el.querySelector("svg")).append("path")
-                                    .attr("class", "js-icon")
-                                    .attr("d", this.stateIconPath());
-                            },
-
-                            goToState: function(stateName) {
-                                if(this.state.nextState == stateName){
-                                    this.goToNextState();
-                                }
-                            },
-
-                            goToNextState: function () {
-                                this.setState(this.state.nextState);
-
-                                d3.select(this.el.querySelector(".js-icon")).transition()
-                                    .duration(this.animationDuration)
-                                    .attr("d", this.stateIconPath());
-                            },
-
-                            setState: function (stateName) {
-                                this.state = this.states[stateName];
-                            },
-
-                            stateIconPath: function () {
-                                return this.state.iconEl.getAttribute("d");
+                            if (isMobile) {
+                                jQuery("body").addClass("isMobile");
                             }
-                        };
 
-                        playButton.init();
-                        
+                            if (isMobile) {
 
-                        if (isMobile) {
-                            jQuery("body").addClass("isMobile");
-                        }
+                                jQuery('.video-foreground').html("");
+                            }
+                            $('.js-button').on("click", function () {
+                                a.changeState();
+                            });
 
-                        if (isMobile) {
-                            
-                            jQuery('.video-foreground').html("");
-                        }
-                        $('.js-button').on("click", function () {
-                            a.changeState();
-                        });
-
-                        $('.nxt').on('click', function () {
-                            var player = SC.Widget("soundcloud_player_iframe");
-                            player.next();
-                        });
+                            $('.nxt').on('click', function () {
+                                var player = SC.Widget("soundcloud_player_iframe");
+                                player.next();
+                            });
     </script>
 </body>
 
