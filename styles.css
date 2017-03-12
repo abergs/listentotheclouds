@@ -82,7 +82,116 @@
 			display: none;
 		}
 		
-	
+		@media only screen and (max-device-width: 480px) {
+			.mobile-only {
+				display: block;
+			}
+			.mobilewarning {
+				display: block;
+			}
+			.ybile {
+				overflow: hidden;
+			}
+			body {
+				font-size: 10px;
+			}
+
+			#soundcloud_player_iframe {
+				max-width: 100%;
+			}
+			#vcontrols {
+				left: 0;
+				border-top-right-radius: 10px;
+			}
+			#vidtop-content {
+				padding-bottom: 100px;
+			}
+			.video-background {
+				background: url("mbg.jpg") white;
+			}
+			.video-foreground {
+				display: none;
+			}
+			.spacemode .video-foreground {
+				display: block;
+			}
+
+			.ybile-r2 {
+    			max-width: 300px;
+			}
+
+			.ybile-r3 {
+    			letter-spacing: 5.8px;
+			}
+
+			.airport-info {
+				max-width: 300px;
+				
+			}
+
+
+
+
+		}
+		
+		@media (min-aspect-ratio: 16/9) {
+			.video-foreground {
+				height: 300%;
+				top: -100%;
+			}
+		}
+		
+		@media (max-aspect-ratio: 16/9) {
+			.video-foreground {
+				width: 300%;
+				left: -100%;
+			}
+		}
+		
+		@media all and (max-width: 600px) {
+			.vid-info {
+				width: 50%;
+				padding: .5rem;
+			}
+			.vid-info h1 {
+				margin-bottom: .2rem;
+			}
+
+    		.ybile-r2 {
+    			max-width: 300px;
+			}
+
+			.ybile-r3 {
+    			letter-spacing: 5.8px;
+			}
+
+			.airport-info {
+				max-width: 300px;
+
+			}
+
+		}
+		
+		@media all and (max-width: 500px) {
+			.vid-info .acronym {
+				display: none;
+			}
+
+			.ybile-r2 {
+    			max-width: 300px;
+			}
+
+			.ybile-r3 {
+    			letter-spacing: 5.8px;
+			}
+
+			.airport-info {
+				max-width: 300px;
+				
+			}
+
+		}
+
 
 				.donate button,
 				.btn {
@@ -157,8 +266,8 @@
 					width: 100%;
 					left: 0;
 					top: 0;
-					padding: 12px 0;
-					background: linear-gradient( to bottom, rgba(16, 70, 130, 0.75) 50%, rgba(0, 0, 0, 0));
+					padding: 20px 0;
+					background: linear-gradient( to bottom, rgba(16, 51, 130, 0.75) 80%, rgba(0, 0, 0, 0));
 					
 			}
 
@@ -511,119 +620,6 @@
 				display: block;
 			}
 			/* close commented backslash hack */
-
-
-			@media only screen and (max-device-width: 480px) {
-			.mobile-only {
-				display: block;
-			}
-			.mobilewarning {
-				display: block;
-			}
-			.ybile {
-				overflow: hidden;
-			}
-			body {
-				font-size: 10px;
-			}
-
-			#soundcloud_player_iframe {
-				max-width: 100%;
-			}
-			#vcontrols {
-				left: 0;
-				border-top-right-radius: 10px;
-			}
-			#vidtop-content {
-				padding-bottom: 100px;
-			}
-			.video-background {
-				background: url("mbg.jpg") white;
-			}
-			.video-foreground {
-				display: none;
-			}
-			.spacemode .video-foreground {
-				display: block;
-			}
-
-			.ybile-r2 {
-    			max-width: 300px;
-			}
-
-			.ybile-r3 {
-    			letter-spacing: 5.8px;
-			}
-
-			.airport-info {
-				max-width: 300px;
-				
-			}
-
-
-
-
-		}
-		
-		@media (min-aspect-ratio: 16/9) {
-			.video-foreground {
-				height: 300%;
-				top: -100%;
-			}
-		}
-		
-		@media (max-aspect-ratio: 16/9) {
-			.video-foreground {
-				width: 300%;
-				left: -100%;
-			}
-		}
-		
-		@media all and (max-width: 600px) {
-			.vid-info {
-				width: 50%;
-				padding: .5rem;
-			}
-			.vid-info h1 {
-				margin-bottom: .2rem;
-			}
-
-    		.ybile-r2 {
-    			max-width: 300px;
-			}
-
-			.ybile-r3 {
-    			letter-spacing: 5.8px;
-			}
-
-			.airport-info {
-				max-width: 300px;
-			}
-
-		}
-		
-		@media all and (max-width: 500px) {
-			.vid-info .acronym {
-				display: none;
-			}
-
-			.ybile-r2 {
-    			max-width: 300px;
-			}
-
-			.ybile-r3 {
-    			letter-spacing: 5.8px;
-			}
-
-			.airport-info {
-				max-width: 300px;
-				
-			}
-
-		}
-
-
-
 
 @keyframes pulse {
 	from {
