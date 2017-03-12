@@ -181,6 +181,21 @@
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
     <script>
+
+        function isLocalStorageNameSupported() 
+        {
+            var testKey = 'test', storage = window.sessionStorage;
+            try 
+            {
+                storage.setItem(testKey, '1');
+                storage.removeItem(testKey);
+                return localStorageName in win && win[localStorageName];
+            } 
+            catch (error) 
+            {
+                return false;
+            }
+        }
         var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
                             $("#yesbtn").on("click", function () {
@@ -313,8 +328,9 @@
                                         if (!code) return;
                                         this.activeCode = code;
                                         this.activeAP = airport;
-
-                                        localStorage.setItem("lastPlayed",code);
+                                        if(isLocalStorageNameSupported()){
+                                            localStorage.setItem("lastPlayed",code);
+                                        }
 
                                         if (code === "iss") {
                                             spaceModeOn();
