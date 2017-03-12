@@ -591,6 +591,7 @@
   width: 140px;
   height: 140px;
   background-color: rgb(214, 211, 163);
+  top:0;
   position: absolute;
   border-radius: 100%;  
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
