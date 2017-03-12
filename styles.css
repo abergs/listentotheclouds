@@ -115,6 +115,23 @@
 			.spacemode .video-foreground {
 				display: block;
 			}
+
+			.ybile-r2 {
+    			max-width: 300px;
+			}
+
+			.ybile-r3 {
+    			letter-spacing: 5.8px;
+			}
+
+			.airport-info {
+				max-width: 300px;
+				
+			}
+
+
+
+
 		}
 		
 		@media (min-aspect-ratio: 16/9) {
@@ -140,11 +157,37 @@
 				margin-bottom: .2rem;
 			}
 
+    		.ybile-r2 {
+    			max-width: 300px;
+			}
+
+			.ybile-r3 {
+    			letter-spacing: 5.8px;
+			}
+
+			.airport-info {
+				max-width: 300px;
+
+			}
+
 		}
 		
 		@media all and (max-width: 500px) {
 			.vid-info .acronym {
 				display: none;
+			}
+
+			.ybile-r2 {
+    			max-width: 300px;
+			}
+
+			.ybile-r3 {
+    			letter-spacing: 5.8px;
+			}
+
+			.airport-info {
+				max-width: 300px;
+				
 			}
 
 		}
