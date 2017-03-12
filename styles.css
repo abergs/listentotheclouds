@@ -158,10 +158,14 @@
 					left: 0;
 					top: 0;
 					padding: 12px 0;
-					background: linear-gradient( to bottom, rgba(16, 70, 130, 0.75) 50%, rgba(0, 0, 0, 0));
-					
-			}
+					background: rgba(6, 70, 130, 1);
+				}
 
+				/*
+				linear-gradient( to bottom, rgba(16, 70, 130, 0.75) 50%, rgba(0, 0, 0, 0));
+				*/
+					
+			
 			.isMobile #noise {
 				display:none;
 			}
@@ -199,7 +203,6 @@
 				right: 0;
 				padding: 20px;
 				background: white;
-				border-top-left-radius: 10px;
 				min-width: 280px;
 				color: #333;
 				z-index: 2;
@@ -349,6 +352,15 @@
 				transform: scaleX(-1);
 			}
 			
+
+			.thankyoutext {
+				font-family:'circular';
+				line-height: 1.4em; 
+				text-transform:none;
+			}
+
+
+
 			#picker {
 				display: flex;
 				justify-content: center;
@@ -476,12 +488,12 @@
 			}
 
 			.airport.active {
-				border: 2px solid rgb(214, 211, 163);
+				border: 2px solid rgb(255, 255, 255);
 				border-style: solid dotted solid;
 			}
 
 			.airport.loading.active {
-				border: 2px dotted rgb(214, 211, 163);			
+				border: 2px dotted rgb(255, 255, 255);			
 			}
 			
 			.airport:hover {
@@ -532,7 +544,6 @@
 			}
 			#vcontrols {
 				left: 0;
-				border-top-right-radius: 10px;
 			}
 			#vidtop-content {
 				padding-bottom: 100px;
@@ -560,7 +571,9 @@
 				
 			}
 
-
+			.thankyoutext {
+				font-size:12px;
+			}
 
 
 		}
@@ -598,6 +611,11 @@
 
 			.airport-info {
 				max-width: 300px;
+				font-size: 12px;
+			}
+
+			.thankyoutext {
+				font-size:12px;
 			}
 
 		}
@@ -617,6 +635,7 @@
 
 			.airport-info {
 				max-width: 300px;
+				font-size: 12px;
 				
 			}
 
