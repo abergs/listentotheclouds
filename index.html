@@ -111,10 +111,12 @@
                 <div v-for="region in regions">
                     <h3>{{region.name}}</h3>
                     <ul>
-                        <li v-for="ap in region.airports" :data-code="ap.code" class="airport" v-on:click="listenTo(ap)" v-bind:class="[{'error':ap.error}, activeCode === ap.code ? 'active' : '']">
+                        <li v-for="ap in region.airports" :data-code="ap.code" class="airport" v-on:click="listenTo(ap)" v-bind:class="[{'error':ap.error}, (loading && activeCode === ap.code) ? 'loading' :'', activeCode === ap.code ? 'active' : '']">
                             <span class="airport-name">{{ ap.text }}</span>
                             <span v-if="ap.error" class="airport-error">(Offline)</span>
                             <span class="airport-iata">{{ ap.iata }}</span>
+                            <div v-if="loading && activeCode === ap.code" class="spinner"></div>
+                            
                         </li>
                     </ul>
                 </div>
@@ -189,7 +191,8 @@
                                 data: {
                                     activeCode: "",
                                     activeAP: {},
-                                    regions: []
+                                    regions: [],
+                                    loading: false
                                 },
                                 mounted: function () {
                                     var self = this;
@@ -197,6 +200,15 @@
 
                                     $("#stream").on("error", function (e) {
                                         self.error(e);
+                                        self.loading = false;
+                                    });
+
+                                    $("#stream").on("loadstart", function (e) {
+                                        self.loading = true;
+                                    });
+
+                                    $("#stream").on("canplay", function (e) {
+                                        self.loading = false;
                                     });
 
                                     $.get("airports.json", function (data) {
