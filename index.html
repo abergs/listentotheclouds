@@ -111,9 +111,10 @@
                 <div v-for="region in regions">
                     <h3>{{region.name}}</h3>
                     <ul>
-                        <li v-for="ap in region.airports" :data-code="ap[0]" class="airport" v-on:click="listenTo(ap)" v-bind:class="[{'error':ap[3]}, activeCode === ap[0] ? 'active' : '']">
-                            <span class="airport-name">{{ ap[1] }}</span>
-                            <span class="airport-iata">{{ ap[2] }}</span>
+                        <li v-for="ap in region.airports" :data-code="ap.code" class="airport" v-on:click="listenTo(ap)" v-bind:class="[{'error':ap.error}, activeCode === ap.code ? 'active' : '']">
+                            <span class="airport-name">{{ ap.text }}</span>
+                            <span v-if="ap.error" class="airport-error">(Offline)</span>
+                            <span class="airport-iata">{{ ap.iata }}</span>
                         </li>
                     </ul>
                 </div>
@@ -199,11 +200,29 @@
                                     });
 
                                     $.get("airports.json", function (data) {
-                                        self.regions = data;
+                                        //self.regions = data;
+                                        
+                                        var x = data.map(function (region) {
+                                            
+                                            var aps = region.airports.map(function (cv) {
+                                                return {
+                                                    code: cv[0],
+                                                    text: cv[1],
+                                                    iata: cv[2],
+                                                    error: !!cv[3]
+                                                }
+                                            });
 
-                                        window.XX = data;
+                                            region.airports = aps;
+                                            
+                                            return region;
+                                        });
 
-                                        var airports = data.reduce(function (acc, val) {
+                                        self.regions = x;
+
+                                        //window.XX = data;
+
+                                        var airports = x.reduce(function (acc, val) {
                                             return acc.concat(val.airports);
                                         }, []);
 
@@ -226,12 +245,14 @@
                                 methods: {
                                     error: function (e) {
                                         //console.log("Error detected");
-                                        this.activeAP[3] = true;
+                                        this.activeAP.error = true;
+                                        //var txt = this.activeAP.text;
+                                        //this.activeAP.text = txt += " (Offline)"
                                         //console.log("Error detected", this.activeAP);
                                     },
                                     listenTo: function (airport) {
                                         //console.log("Wanted to listen to!", airport);
-                                        var code = airport[0];
+                                        var code = airport.code;
                                         if (!code) return;
                                         this.activeCode = code;
                                         this.activeAP = airport;
@@ -244,7 +265,7 @@
                                             $("#stream").attr("src", url);
                                         }
 
-                                        $(".current").text(airport[1]);
+                                        $(".current").text(airport.text);
                                     },
                                     getData: function () {
                                         return this.regions;
