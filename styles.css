@@ -228,7 +228,7 @@
 					left: 0;
 					top: 0;
 					padding: 20px 0;
-					background: linear-gradient( to bottom, rgba(16, 51, 130, 0.75) 80%, rgba(255, 0, 0, 0));
+					background: linear-gradient( to bottom, rgba(16, 51, 130, 0.75) 80%, rgba(0, 0, 0, 0));
 					
 			}
 
@@ -581,6 +581,15 @@
 				display: block;
 			}
 			/* close commented backslash hack */
+
+@keyframes pulse {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 
 .spinner {
   width: 140px;
