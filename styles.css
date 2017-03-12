@@ -90,7 +90,7 @@
 					padding: 7px 15px;
 					border: none;
 					border-radius: 5px;
-					color: #ffffff;
+					color: #fffff3;
 					margin: 0 10px;
 					font-weight: bold;
 					text-transform: initial;
@@ -112,7 +112,7 @@
 				margin: 0 auto;
 				padding: 20px;
 				margin-top: 5rem;
-				color: white;
+				color: #fffff3;
 				font-family: "circular";
 				font-weight: 100;
 				text-transform: none;
@@ -125,7 +125,7 @@
 			
 			.thankyou a,
 			.thankyou a:visited {
-				color: white;
+				color: #fffff3;
 			}
 
 			.airport-info {
@@ -148,7 +148,7 @@
 				letter-spacing:2px;
 				font-weight:700;
 				text-transform: uppercase;
-				color: #fff;
+				color: #fffff3;
 				z-index: 101;
 			}
 			.isMobile #live {
@@ -179,7 +179,7 @@
 				letter-spacing:2px;
 				font-weight:100;
 				text-transform: uppercase;
-				color: #fff;
+				color: #fffff3;
 			}
 
 			#live .dot {
@@ -202,7 +202,7 @@
 				bottom: 0;
 				right: 0;
 				padding: 20px;
-				background: white;
+				background: #fffff3;
 				min-width: 280px;
 				color: #333;
 				z-index: 2;
@@ -214,13 +214,13 @@
 				top: -25px;
 				width: 50px;
 				left: calc(50% - 25px);
-				background: white;
+				background: #fffff3;
 				border-radius: 100%;
 				height: 50px;
 				box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 				display: flex;
 				overflow: hidden;
-				border: 2px solid white;
+				border: 2px solid #fffff3;
 				outline: none;
 				cursor: pointer;
 			}
@@ -230,13 +230,13 @@
 				top: -15px;
 				width: 30px;
 				left: calc(50% + 27px);
-				background: white;
+				background: #fffff3;
 				border-radius: 100%;
 				height: 30px;
 				box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 				display: flex;
 				overflow: hidden;
-				border: 2px solid white;
+				border: 2px solid #fffff3;
 				outline: none;
 				padding: 0;
 				justify-content: center;
@@ -250,7 +250,7 @@
 			}
 			
 			.playpause button {
-				background: white;
+				background: #fffff3;
 				border: 0;
 				margin: 0;
 				padding: 0;
@@ -277,19 +277,19 @@
 			
 			a,
 			a:visited {
-				color: #fff;
+				color: #fffff3;
 				
 			}
 
 
 			a.fb-xfbml-parse-ignore {
-				color: #fff;
+				color: #fffff3;
 				text-decoration:none;
 				letter-spacing:1px;
 			}
 			
 			.ybile {
-				color: #fff;
+				color: #fffff3;
 				font-family: "TW Cen MT", "circular", sans-serif;
 				text-align: center;
 				line-height: 1.5em;
@@ -392,7 +392,7 @@
 			}
 			
 			#picker li.active {
-				border: 3px solid rgb(214, 211, 163);
+				border: 3px solid #fffff3;
 			}
 			
 			#picker li a,
@@ -486,7 +486,7 @@
 			}
 
 			.airport.active {
-				border: 2px solid rgb(255, 255, 255);
+				border: 2px solid #fffff3;
 				border-style: solid dotted solid;
 			}
 
@@ -501,7 +501,7 @@
 				top: 0;
 				left: 0;
 				position: absolute;
-				border: 2px dotted rgb(255,255,255);
+				border: 2px dotted #fffff3;
 				border-style: solid dotted solid;		
 				-webkit-animation: spin 2s infinite linear;
 			}
@@ -673,7 +673,7 @@
   width: 140px;
   height: 140px;
   opacity: 0.7;
-  background-color: rgb(255,255,255);
+  background-color: #fffff3;
   top:0;
   left:0;
   position: absolute;
