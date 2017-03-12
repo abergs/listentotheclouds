@@ -166,7 +166,17 @@
                 "kdfw_twr_hp",
                 "Dallas, Fort Worth",
                 "DFW"
-            ]
+            ],
+             [
+                "kmsp_twr",
+                "Minneapolis",
+                "MSP"
+            ],
+            [
+                "kcle1_2",
+                "Cleveland-Hopkins",
+                "CLE"
+            ],
         ]
     },
     {
@@ -276,16 +286,6 @@
                 "rjtt_control",
                 "Tokyo",
                 "HND"
-            ],
-            [
-                "kmsp_twr",
-                "Minneapolis",
-                "MSP"
-            ],
-            [
-                "kcle1_2",
-                "Cleveland-Hopkins",
-                "CLE"
             ],
             [
                 "vhhh_app_1191_2",
