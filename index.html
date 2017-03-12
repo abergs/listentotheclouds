@@ -113,6 +113,7 @@
                                 <span class="airport-name">{{ ap.text }}</span>
                                 <span v-if="ap.error" class="airport-error">(Offline)</span>
                                 <span class="airport-iata">{{ ap.iata }}</span>
+                                <div v-if="loading && activeCode === ap.code" class="borderspin" ></div>
                                 <div v-if="loading && activeCode === ap.code" class="spinner"></div>
 
                             </li>

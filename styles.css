@@ -451,7 +451,17 @@
 					position:relative;
 			}
 
-			
+			.airport .borderspin {
+				height: 140px;
+				width: 140px;
+				border-radius: 100%;
+				top: 0;
+				left: 0;
+				position: absolute;
+				border: 2px dotted rgb(214, 211, 163);
+				border-style: solid dotted solid;		
+				-webkit-animation: spin 2s infinite linear;
+			}
 
 			.airport span {
 				display: block;
@@ -481,7 +491,7 @@
 			}
 
 			.airport.loading.active {
-				border: 2px dotted rgb(214, 211, 163);			
+				border:none;
 			}
 			
 			.airport:hover {
@@ -634,9 +644,16 @@
 	}
 }
 
+
+@keyframes spin {
+    from {transform:rotate(0deg); }
+    to {transform:rotate(360deg);}
+}
+
 .spinner {
   width: 140px;
   height: 140px;
+  opacity: 0.7;
   background-color: rgb(214, 211, 163);
   top:0;
   left:0;
