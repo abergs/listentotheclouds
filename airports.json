@@ -156,18 +156,18 @@
                 "kmia_twr",
                 "Miami",
                 "KMIA"
-            ],            
+            ],
             [
                 "kord7",
                 "Chicago",
                 "ORD"
             ],
-             [
+            [
                 "kdfw_twr_hp",
                 "Dallas, Fort Worth",
                 "DFW"
             ],
-             [
+            [
                 "kmsp_twr",
                 "Minneapolis",
                 "MSP"
@@ -177,7 +177,11 @@
                 "Cleveland-Hopkins",
                 "CLE"
             ],
-            ["cyhz_2","Halifax", "YHZ"]
+            [
+                "cyhz_2",
+                "Halifax",
+                "YHZ"
+            ]
         ]
     },
     {
@@ -333,11 +337,16 @@
                 "Sydney",
                 "SYD"
             ],
-             [
+            [
+                "ybbn6",
+                "Brisbane",
+                "BNE"
+            ],
+            [
                 "iss",
                 "ISS Space Station (beta)",
                 "ISS"
             ]
         ]
-    }    
+    }
 ]
