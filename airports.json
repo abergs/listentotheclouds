@@ -308,11 +308,6 @@
                 "SVO"
             ],
             [
-                "ymml",
-                "Melbourne",
-                "MEL"
-            ],
-            [
                 "rpll",
                 "Manila",
                 "MNL"
@@ -341,6 +336,11 @@
                 "ybbn6",
                 "Brisbane",
                 "BNE"
+            ],
+            [
+                "ymml",
+                "Melbourne",
+                "MEL"
             ],
             [
                 "iss",
