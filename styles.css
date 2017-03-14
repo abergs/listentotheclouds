@@ -469,6 +469,12 @@ body {
 }
 /* close commented backslash hack */
 
+.me-img {
+    width: 90px;
+    border-radius: 90px;
+}
+
+
 @media only screen and (max-device-width: 480px) {
     .mobile-only {
         display: block;
@@ -512,7 +518,6 @@ body {
         max-width: 300px;
         font-size: 3.5em;
     }
-
     .ybile-r3 {
         letter-spacing: 4.5px;
         font-weight:400;
