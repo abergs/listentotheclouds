@@ -198,7 +198,8 @@
             ["kmke", "Milwaukee", "MKE"],
             ["kcrq2", "Carlsbad", "CLD"],
             ["kfll", "Fort Lauderdale", "FLL"],
-            ["kgrr2", "Grand Rapids", "GRR"]
+            ["kgrr2", "Grand Rapids", "GRR"],
+            ["cyeg_app", "Edmonton", "YEG"]
         ]
     },
     {
@@ -303,8 +304,8 @@
             ["ltba",
             "Isanbul",
             "IST"],
-            ["ukbb2", "Kyiv", "KBP"],
-            ["ulli", "Saint Petersburg", "LED"]
+            ["ukbb2", "Kyiv", "KBP"]
+            
         ]
     },
     {
@@ -335,6 +336,7 @@
                 "Moscow",
                 "SVO"
             ],
+            ["ulli", "Saint Petersburg", "LED"],
             ["unoo", "Omsk", "OMS"],
             [
                 "rpll",
