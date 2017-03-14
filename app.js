@@ -149,7 +149,7 @@ var a = new Vue({
             }
         },
         listenTo: function (airport) {
-            if (airport === null) {
+            if (!airport) {
                 var aps = this.getAirports();
                 var randomNum = Math.floor(Math.random() * (aps.length));
                 var lp = localStorage.getItem("lastPlayed");
