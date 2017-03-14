@@ -57,6 +57,7 @@
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
      js.src = "//connect.facebook.net/en_US/sdk.js";
+     js.async = true;
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
@@ -126,7 +127,7 @@
 
 
                 <!---		<p>Live: <span class="current">Chicago</span></p> -->
-                <audio id="stream" src="http://mtl2.liveatc.net/kord7" autoplay controls volume="0.4" style="visibility: hidden">
+                <audio id="stream" src="" autoplay controls volume="0.4" style="visibility: hidden">
                     <p>Your browser does not support the <code>audio</code> element.</p>
                 </audio>
 
