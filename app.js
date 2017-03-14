@@ -153,7 +153,7 @@ var a = new Vue({
                 var aps = this.getAirports();
                 var randomNum = Math.floor(Math.random() * (aps.length));
                 var lp = localStorage.getItem("lastPlayed");
-                if (lp != null) {
+                if (lp) {
                     airport = aps.find(function (ap) { return ap.code === lp });
                 }
                 
