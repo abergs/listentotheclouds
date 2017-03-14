@@ -1,4 +1,5 @@
 /* global d3, document */
+
 var playButton = {
     el: document.querySelector(".js-button"),
 
@@ -29,12 +30,14 @@ var playButton = {
 
     replaceUseEl: function () {
         d3.select(this.el.querySelector("use")).remove();
-        d3.select(this.el.querySelector("svg")).append("path")
+        var x = d3.select(this.el.querySelector("svg"));
+        x.append("path")
             .attr("class", "js-icon")
             .attr("d", this.stateIconPath());
     },
 
     goToState: function (stateName) {
+        console.log("called", stateName, this.state.nextState);
         if (this.state.nextState == stateName) {
             this.goToNextState();
         }
@@ -56,23 +59,3 @@ var playButton = {
         return this.state.iconEl.getAttribute("d");
     }
 };
-
-playButton.init();
-
-
-if (isMobile) {
-    jQuery("body").addClass("isMobile");
-}
-
-if (isMobile) {
-
-    jQuery('.video-foreground').html("");
-}
-$('.js-button').on("click", function () {
-    a.changeState();
-});
-
-$('.nxt').on('click', function () {
-    var player = SC.Widget("soundcloud_player_iframe");
-    player.next();
-});

@@ -194,6 +194,11 @@
     border: 2px solid #fffff3;
     outline: none;
     cursor: pointer;
+
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    
 }
 .nxt {
     position: absolute;
@@ -212,22 +217,27 @@
     justify-content: center;
     line-height: 100%;
     cursor: pointer;
+    align-items: center;
 }
+
+.nxt fa {
+    margin-left:3px;
+}
+
 .playpause[data-state="paused"] {
     border: 2px solid #ff6c6c;
     box-shadow: 0 0 10px rgba(255, 22, 22, .5);
 }
-.playpause button {
-    background: #fffff3;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    fill: #333;
-    outline: none;
-    cursor: pointer;
+
+.playpause[data-state="paused"] div {
+margin-left:3px;
 }
+.playpause div {
+
+}
+
 #vcontrols div:nth-child(2) {
-    margin-bottom: 4px;
+    /*margin-bottom: 4px;*/
 }
 #vcontrols span {
     float: left;

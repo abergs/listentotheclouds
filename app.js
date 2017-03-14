@@ -29,6 +29,21 @@ var a = new Vue({
     mounted: function () {
         var self = this;
         var $ = jQuery;
+        //playButton.init();
+
+        if (isMobile) {
+            jQuery("body").addClass("isMobile");
+        }
+
+        if (isMobile) {
+
+            jQuery('.video-foreground').html("");
+        }
+
+        $('.nxt').on('click', function () {
+            var player = SC.Widget("soundcloud_player_iframe");
+            player.next();
+        });
 
         $("#stream").on("error", function (e) {
             self.error(e);
@@ -113,13 +128,13 @@ var a = new Vue({
             //$('.playpause').attr("data-state", "playing");
             var player = SC.Widget("soundcloud_player_iframe");
             var stream = document.getElementById("stream");
-            playButton.goToState("playing");
+            //playButton.goToState("playing");
             stream.play();
             player.play();
         },
         pause: function () {
             this.isPlaying = false;
-            playButton.goToState("paused");
+            //playButton.goToState("paused");
             //$('.playpause').attr("data-state", "paused");
             var player = SC.Widget("soundcloud_player_iframe");
             var stream = document.getElementById("stream");
