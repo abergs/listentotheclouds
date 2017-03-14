@@ -317,6 +317,7 @@
                 "Dubai",
                 "DXB"
             ],
+            ["zbaa", "Beijing", "PEK"],
             [
                 "rjtt_control",
                 "Tokyo",
@@ -360,6 +361,7 @@
                 "Santiago",
                 "SCL"
             ],
+            ["sbbr_acc", "Brasilia", "BSB"],
             [
                 "yssy1",
                 "Sydney",
@@ -370,6 +372,7 @@
                 "Brisbane",
                 "BNE"
             ],
+            ["ypad", "Adelaide", "ADL"],
             [
                 "ymml",
                 "Melbourne",
