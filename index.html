@@ -42,6 +42,24 @@
 </head>
 
 <body>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1284548061596480',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     <div class="video-background">
         <div class="video-foreground">
             <iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
@@ -59,17 +77,6 @@
     </div>
 
     <div id="vidtop-content">
-        <!-- Load Facebook SDK for JavaScript -->
-        <div id="fb-root"></div>
-        <script>
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1284548061596480";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
         <div id="app">
             <div id="vcontrols">
                 <div class="playpause" :data-state="isPlayingState" @click="changeState">
