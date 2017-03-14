@@ -155,7 +155,9 @@ var a = new Vue({
                 var lp = localStorage.getItem("lastPlayed");
                 if (lp != null) {
                     airport = aps.find(function (ap) { return ap.code === lp });
-                } else {
+                }
+                
+                if(!airport) {
                     airport = aps[randomNum];
                 }
             }
