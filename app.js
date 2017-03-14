@@ -249,3 +249,165 @@ function handleVisibilityChange() {
 }
 
 document.addEventListener("visibilitychange", handleVisibilityChange, false);
+
+
+var layers = [],
+		objects = [],
+		
+		world = document.getElementById( 'world' ),
+		viewport = document.getElementById( 'viewport' ),
+		
+		d = 0,
+		p = 1000,
+		worldXAngle = 0,
+		worldYAngle = 0;
+	
+	viewport.style.webkitPerspective = p;
+	viewport.style.MozPerspective = p;
+	viewport.style.oPerspective = p;
+	
+	generate();
+	
+	function createCloud(data) {
+	
+		var div = document.createElement( 'div'  );
+		div.className = 'cloudBase';
+		var x = 256 - ( Math.random() * 512 );
+		var y = 256 - ( Math.random() * 512 );
+		var z = 256 - ( Math.random() * 512 );
+		var t = 'translateX( ' + x + 'px ) translateY( ' + y + 'px ) translateZ( ' + z + 'px )';
+		div.style.webkitTransform = t;
+		div.style.MozTransform = t;
+		div.style.oTransform = t;
+		world.appendChild( div );
+		
+		for( var j = 0; j < 5; j++ ) {
+			var cloud = document.createElement( 'img' );
+			cloud.style.opacity = 0;
+			var r = Math.random();
+			var src = 'cloud.png';
+			( function( img ) { img.addEventListener( 'load', function() {
+				img.style.opacity = .8;
+			} ) } )( cloud );
+			cloud.setAttribute( 'src', src );
+			cloud.className = 'cloudLayer';
+			
+            if(!data){
+                var x = 256 - ( Math.random() * 512 );
+                var y = 256 - ( Math.random() * 512 );
+                var z = 100 - ( Math.random() * 200 );
+                var a = Math.random() * 360;
+                var s = 0.25 + Math.random();
+                x *= .2; y *= .2;
+                cloud.data = { 
+                    x: x,
+                    y: y,
+                    z: z,
+                    a: a,
+                    s: s,
+                    speed: .001 * Math.random()
+                };
+                console.log(cloud.data);
+            }else {
+                cloud.data = data;
+            }
+			var t = 'translateX( ' + x + 'px ) translateY( ' + y + 'px ) translateZ( ' + z + 'px ) rotateZ( ' + a + 'deg ) scale( ' + s + ' )';
+			cloud.style.webkitTransform = t;
+			cloud.style.MozTransform = t;
+			cloud.style.oTransform = t;
+		
+			div.appendChild( cloud );
+			layers.push( cloud );
+		}
+		
+		return div;
+	}
+	
+	/*window.addEventListener( 'mousewheel', onContainerMouseWheel );
+	window.addEventListener( 'DOMMouseScroll', onContainerMouseWheel ); */
+
+	window.addEventListener( 'mousemove', function( e ) {
+		mpx = e.clientX;
+        mpy = e.clientY;
+        //wx+= mpx;
+        //wy+= mpy;
+	} );
+
+    var wy = 0;
+    var wx = 0;
+    var mpx = 0;
+    var mpy = 0;
+    var anim = function () {
+        requestAnimationFrame(function () {
+
+            //console.log(mpx);
+            //console.log(mpy);
+
+            //console.log("wy",wy);
+            //console.log("xy", wx);
+
+            wy += 1/10;
+            wx += 1/10;
+
+            worldYAngle = -( 0.5 - ( wy  / window.innerWidth ) ) * 180;
+            worldXAngle = ( 0.5 - ( wx / window.innerHeight ) ) * 180;
+            updateView();
+            update();
+            anim();
+        });
+    };
+    anim();
+	
+	function generate() {
+		objects = [];
+		if ( world.hasChildNodes() ) {
+			while ( world.childNodes.length >= 1 ) {
+				world.removeChild( world.firstChild );       
+			} 
+		}
+
+        /*objects.push(createCloud({ 
+				x: x,
+				y: y,
+				z: z,
+				a: a,
+				s: s,
+				speed: .001 * Math.random()
+			}));*/
+        objects.push(createCloud());
+        objects.push(createCloud());
+        objects.push(createCloud());
+        objects.push(createCloud());
+	}
+	
+	function updateView() {
+		var t = 'translateZ( ' + d + 'px ) rotateX( ' + worldXAngle + 'deg) rotateY( ' + worldYAngle + 'deg)';
+		world.style.webkitTransform = t;
+		world.style.MozTransform = t;
+		world.style.oTransform = t;
+	}
+	
+	function onContainerMouseWheel( event ) {
+			
+		event = event ? event : window.event;
+		d = d - ( event.detail ? event.detail * -5 : event.wheelDelta / 8 );
+		updateView();
+		
+	}
+	
+	function update (){
+		
+		for( var j = 0; j < layers.length; j++ ) {
+			var layer = layers[ j ];
+			//layer.data.a += layer.data.speed;
+			var t = 'translateX( ' + layer.data.x + 'px ) translateY( ' + layer.data.y + 'px ) translateZ( ' + layer.data.z + 'px ) rotateY( ' + ( - worldYAngle ) + 'deg ) rotateX( ' + ( - worldXAngle ) + 'deg ) scale( ' + layer.data.s + ')';
+			layer.style.webkitTransform = t;
+			layer.style.MozTransform = t;
+			layer.style.oTransform = t;
+		}
+		
+		//requestAnimationFrame( update );
+		
+	}
+	
+	//update();

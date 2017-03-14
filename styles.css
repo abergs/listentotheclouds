@@ -600,3 +600,63 @@ body {
         opacity: 0;
     }
 }
+
+#viewport {
+		-webkit-perspective: 1000; 
+		-moz-perspective: 1000; 
+		-o-perspective: 1000; 
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+        background: url("clouds.jpg");
+        background-size: cover;
+        z-index: -99;
+	}
+
+	#world {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -256px;
+		margin-top: -256px;
+		height: 512px;
+		width: 512px;
+		/*background-color: rgba( 255, 0, 0, .2 );*/
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+	}
+	
+	#world div {
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;	
+		-o-transform-style: preserve-3d;	
+	}
+	
+	.cloudBase {
+		/*background-color: rgba( 255, 0, 255, .5 );*/
+		position: absolute;
+		left: 256px;
+		top: 256px;
+		width: 20px;
+		height: 20px;
+		margin-left: -10px;
+		margin-top: -10px;
+	}
+	
+	.cloudLayer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 256px;
+		height: 256px;
+		margin-left: -128px;
+		margin-top: -128px;
+		/*background-color: rgba( 0, 255, 255, .1 );*/
+		-webkit-transition: opacity .5s ease-out;
+		-moz-transition: opacity .5s ease-out;
+		-o-transition: opacity .5s ease-out;
+	}
