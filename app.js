@@ -249,3 +249,14 @@ function handleVisibilityChange() {
 }
 
 document.addEventListener("visibilitychange", handleVisibilityChange, false);
+
+if(isLocalStorageNameSupported()) {
+    var views = localStorage.getItem("views");
+    views = parseInt(views || 0, 10);
+    views +=1
+    localStorage.setItem("views",views);
+
+    if(views >= 3) {
+        $('.donate').insertAfter($(".airport-info"));
+    }
+}
