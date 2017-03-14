@@ -191,7 +191,14 @@
                 "kpdx2",
                 "Portland",
                 "PDX"
-            ]
+            ],
+            ["kind5", "Indianapolis", "IND"],
+            ["ksjc_del_gnd", "San Jose", "SJC"],
+            ["cywg", "Winnipeg", "YWG"],
+            ["kmke", "Milwaukee", "MKE"],
+            ["kcrq2", "Carlsbad", "CLD"],
+            ["kfll", "Fort Lauderdale", "FLL"],
+            ["kgrr2", "Grand Rapids", "GRR"]
         ]
     },
     {
@@ -207,6 +214,7 @@
                 "Brussels",
                 "BRU"
             ],
+            ["lhbp_app", "Budapest", "BUD"],
             [
                 "lfll",
                 "Lyon",
@@ -294,7 +302,9 @@
             ],
             ["ltba",
             "Isanbul",
-            "IST"]
+            "IST"],
+            ["ukbb2", "Kyiv", "KBP"],
+            ["ulli", "Saint Petersburg", "LED"]
         ]
     },
     {
@@ -325,6 +335,7 @@
                 "Moscow",
                 "SVO"
             ],
+            ["unoo", "Omsk", "OMS"],
             [
                 "rpll",
                 "Manila",
