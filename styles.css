@@ -486,12 +486,16 @@ body {
 
    .airports {
         font-size:12px;
-
     }
 
     #picker {
         font-size:1em;
     }
+
+    #airports ul {
+        font-size:1em;
+    }
+
     #soundcloud_player_iframe {
         max-width: 100%;
     }
@@ -561,9 +565,11 @@ body {
     .thankyoutext {
         font-size: 12px;
     }
-       .airports {
+    .airports {
         font-size:12px;
-
+    }
+    #airports ul {
+        font-size:1em;
     }
 }
 @media all and (max-width: 500px) {
@@ -583,9 +589,12 @@ body {
         max-width: 300px;
         font-size: 12px;
     }
-       .airports {
+    
+    .airports {
         font-size:12px;
-
+    }
+    #airports ul {
+        font-size:1em;
     }
 }
 @keyframes pulse {
