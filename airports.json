@@ -304,7 +304,8 @@
             ["ltba",
             "Isanbul",
             "IST"],
-            ["ukbb2", "Kyiv", "KBP"]
+            ["ukbb2", "Kyiv", "KBP"],
+            ["evra2", "Riga", "RIX"]
             
         ]
     },
@@ -337,6 +338,7 @@
                 "SVO"
             ],
             ["ulli", "Saint Petersburg", "LED"],
+            ["unnt", "Novosibirsk", "OVB"],
             ["unoo", "Omsk", "OMS"],
             [
                 "rpll",
