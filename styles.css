@@ -493,6 +493,25 @@ body {
    .airports {
         font-size:12px;
     }
+
+    .airport {
+    width: 110px;
+    border-radius: 100px;
+    height: 110px;
+    margin: 6px;
+    padding: 8px;
+    }
+
+    .airport.loading .borderspin {
+    height: 110px;
+    width: 110px;
+    }
+
+    .airport:hover {
+        transform: translateY(-50px);
+        box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
+    }
+
     #picker {
         font-size:1em;
     }
@@ -573,6 +592,24 @@ body {
     #airports ul {
         font-size:1em;
     }
+
+    .airport {
+    width: 110px;
+    border-radius: 100px;
+    height: 110px;
+    margin: 6px;
+    padding: 8px;
+    }    
+    .airport.loading .borderspin {
+    height: 110px;
+    width: 110px;
+    }
+
+    .airport:hover {
+        transform: translateY(-50px);
+        box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
+    }
+
 }
 @media all and (max-width: 500px) {
     .vid-info .acronym {
@@ -598,6 +635,25 @@ body {
     #airports ul {
         font-size:1em;
     }
+
+    .airport {
+    width: 110px;
+    border-radius: 100px;
+    height: 110px;
+    margin: 6px;
+    padding: 8px;
+    }
+
+    .airport.loading .borderspin {
+    height: 110px;
+    width: 110px;
+    }
+
+    .airport:hover {
+        transform: translateY(-50px);
+        box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
+    }
+
 }
 @keyframes pulse {
     from {
