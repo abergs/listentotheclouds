@@ -508,7 +508,7 @@ body {
     }
 
     .airport:hover {
-        transform: translateY(-50px);
+        transform: translateY(-5px);
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
     }
 
@@ -606,7 +606,7 @@ body {
     }
 
     .airport:hover {
-        transform: translateY(-50px);
+        transform: translateY(-5px);
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
     }
 
@@ -650,7 +650,7 @@ body {
     }
 
     .airport:hover {
-        transform: translateY(-50px);
+        transform: translateY(-5px);
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
     }
 
