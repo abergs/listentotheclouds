@@ -194,11 +194,9 @@
     border: 2px solid #fffff3;
     outline: none;
     cursor: pointer;
-
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    
 }
 .nxt {
     position: absolute;
@@ -219,24 +217,17 @@
     cursor: pointer;
     align-items: center;
 }
-
 .nxt fa {
-    margin-left:3px;
+    margin-left: 3px;
 }
-
 .playpause[data-state="paused"] {
     border: 2px solid #ff6c6c;
     box-shadow: 0 0 10px rgba(255, 22, 22, .5);
 }
-
 .playpause[data-state="paused"] div {
-margin-left:3px;
+    margin-left: 3px;
 }
-.playpause div {
-
-}
-
-#vcontrols div:nth-child(2) {
+.playpause div {} #vcontrols div:nth-child(2) {
     /*margin-bottom: 4px;*/
 }
 #vcontrols span {
@@ -473,11 +464,6 @@ body {
     width: 90px;
     border-radius: 90px;
 }
-
-
-
-
-
 @keyframes pulse {
     from {
         opacity: 0;
@@ -494,7 +480,6 @@ body {
         transform: rotate(360deg);
     }
 }
-
 .spinner {
     width: 140px;
     height: 140px;
@@ -527,10 +512,6 @@ body {
         opacity: 0;
     }
 }
-
-
-
-
 @media only screen and (max-device-width: 480px) {
     .mobile-only {
         display: block;
@@ -541,39 +522,33 @@ body {
     .ybile {
         overflow: hidden;
     }
-
     body {
         font-size: 12px;
     }
-
-   .airports {
-        font-size:12px;
+    .airports {
+        font-size: 12px;
     }
-
     .airport {
-    width: 110px;
-    border-radius: 100px;
-    height: 110px;
-    margin: 6px;
-    padding: 8px;
+        width: 110px;
+        border-radius: 100px;
+        height: 110px;
+        margin: 6px;
+        padding: 8px;
     }
-
     .airport.loading .borderspin {
-    height: 110px;
-    width: 110px;
+        height: 110px;
+        width: 110px;
     }
-
     .airport:hover {
         transform: translateY(-5px);
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
     }
-
     .spinner {
-    width: 110px;
-    height: 110px;
-
+        width: 110px;
+        height: 110px;
+    }
     #picker {
-        font-size:1em;
+        font-size: 1em;
     }
     #soundcloud_player_iframe {
         max-width: 100%;
@@ -599,8 +574,8 @@ body {
     }
     .ybile-r3 {
         letter-spacing: 4.5px;
-        font-weight:400;
-        font-size:13px;
+        font-weight: 400;
+        font-size: 13px;
     }
     .airport-info {
         max-width: 300px;
@@ -609,7 +584,7 @@ body {
         font-size: 12px;
     }
     #airports ul {
-        font-size:1em;
+        font-size: 1em;
     }
 }
 @media (min-aspect-ratio: 16/9) {
@@ -647,32 +622,30 @@ body {
         font-size: 12px;
     }
     .airports {
-        font-size:12px;
+        font-size: 12px;
     }
     #airports ul {
-        font-size:1em;
+        font-size: 1em;
     }
-
     .airport {
-    width: 110px;
-    border-radius: 100px;
-    height: 110px;
-    margin: 6px;
-    padding: 8px;
-    }    
-    .airport.loading .borderspin {
-    height: 110px;
-    width: 110px;
+        width: 110px;
+        border-radius: 100px;
+        height: 110px;
+        margin: 6px;
+        padding: 8px;
     }
-
+    .airport.loading .borderspin {
+        height: 110px;
+        width: 110px;
+    }
     .airport:hover {
         transform: translateY(-5px);
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
     }
     .spinner {
-    width: 110px;
-    height: 110px;
-
+        width: 110px;
+        height: 110px;
+    }
 }
 @media all and (max-width: 500px) {
     .vid-info .acronym {
@@ -684,38 +657,34 @@ body {
     }
     .ybile-r3 {
         letter-spacing: 4.5px;
-        font-weight:400;
-        font-size:13px;
+        font-weight: 400;
+        font-size: 13px;
     }
     .airport-info {
         max-width: 300px;
         font-size: 12px;
     }
-    
     .airports {
-        font-size:12px;
+        font-size: 12px;
     }
     #airports ul {
-        font-size:1em;
+        font-size: 1em;
     }
-
     .airport {
-    width: 110px;
-    border-radius: 100px;
-    height: 110px;
-    margin: 6px;
-    padding: 8px;
+        width: 110px;
+        border-radius: 100px;
+        height: 110px;
+        margin: 6px;
+        padding: 8px;
     }
-
     .airport.loading .borderspin {
-    height: 110px;
-    width: 110px;
+        height: 110px;
+        width: 110px;
     }
-
     .spinner {
-    width: 110px;
-    height: 110px;
-
+        width: 110px;
+        height: 110px;
+    }
     .airport:hover {
         transform: translateY(-5px);
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
