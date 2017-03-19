@@ -302,12 +302,41 @@
                 "Eindhoven",
                 "EIN"
             ],
-            ["ltba",
-            "Istanbul",
-            "IST"],
-            ["ukbb2", "Kyiv", "KBP"],
-            ["evra2", "Riga", "RIX"]
-
+            [
+                "ltba",
+                "Istanbul",
+                "IST"
+            ],
+            [
+                "ukbb2",
+                "Kyiv",
+                "KBP"
+            ],
+            [
+                "ulli",
+                "Saint Petersburg",
+                "LED"
+            ],
+            [
+                "unnt",
+                "Novosibirsk",
+                "OVB"
+            ],
+            [
+                "unoo",
+                "Omsk",
+                "OMS"
+            ],
+            [
+                "uuee2",
+                "Moscow",
+                "SVO"
+            ],
+            [
+                "evra2",
+                "Riga",
+                "RIX"
+            ]
         ]
     },
     {
@@ -318,7 +347,10 @@
                 "Dubai",
                 "DXB"
             ],
-            ["zbaa", "Beijing", "PEK"],
+            [
+                "zbaa",
+                "Beijing",
+                "PEK"],
             [
                 "rjtt_control",
                 "Tokyo",
@@ -334,14 +366,6 @@
                 "Kuala Lumpur",
                 "KUL"
             ],
-            [
-                "uuee2",
-                "Moscow",
-                "SVO"
-            ],
-            ["ulli", "Saint Petersburg", "LED"],
-            ["unnt", "Novosibirsk", "OVB"],
-            ["unoo", "Omsk", "OMS"],
             [
                 "rpll",
                 "Manila",
