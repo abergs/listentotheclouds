@@ -5,202 +5,285 @@
             [
                 "ktme",
                 "Houston",
-                "IAH"
+                "IAH",
+                "-5"
             ],
             [
                 "klga_twr",
                 "LaGuardia",
-                "NYC"
+                "NYC",
+                "-4"
             ],
             [
                 "katl_twr",
                 "Atlanta",
-                "ATL"
+                "ATL",
+                "-4"
             ],
             [
                 "cyul_twr2",
                 "Montreal",
-                "YUL"
+                "YUL",
+                "-4"
             ],
             [
                 "kphx_app_s",
                 "Phoenix",
-                "PHX"
+                "PHX",
+                "-7"
             ],
             [
                 "kjfk_twr",
                 "JFK Tower",
-                "NYC"
+                "NYC",
+                "-4"
             ],
             [
                 "ksfo_twr",
                 "San Fransisco Tower",
-                "SFO"
+                "SFO",
+                "-7"
             ],
             [
                 "klax6",
                 "Los Angeles",
-                "KLAX"
+                "KLAX",
+                "-7"
             ],
             [
                 "ktpa2",
                 "Tampa",
-                "TPA"
+                "TPA",
+                "-4"
             ],
             [
                 "kmso",
                 "Missoula",
-                "KMSO"
+                "KMSO",
+                "-6"
             ],
             [
                 "kdtw2",
                 "Detroit",
-                "DTW"
+                "DTW",
+                "-4"
             ],
             [
                 "ksea_twr",
                 "Seattle",
-                "SEA"
+                "SEA",
+                "-7"
             ],
             [
                 "kbos_twr",
                 "Boston-Logan",
-                "BOS"
+                "BOS",
+                "-4"
             ],
             [
                 "cyow3",
                 "Ottawa",
-                "YOW"
+                "YOW",
+                "-4"
             ],
             [
                 "cyqb2",
                 "Quebec",
-                "YQB"
+                "YQB",
+                "-4"
             ],
             [
                 "cyyz7",
                 "Toronto",
-                "YYZ"
+                "YYZ",
+                "-4"
             ],
             [
                 "kiad1_3_4",
                 "Washington",
-                "IAD"
+                "IAD",
+                "-4"
             ],
             [
                 "kphl_final",
                 "Philadelphia",
-                "PHL"
+                "PHL",
+                "-4"
             ],
             [
                 "krdu_app2",
                 "Durham",
-                "RDU"
+                "RDU",
+                "-4"
             ],
             [
                 "kbuf_app",
                 "Buffalo",
-                "BUF"
+                "BUF",
+                "-4"
             ],
             [
                 "kclt2",
                 "Charlotte",
-                "CLT"
+                "CLT",
+                "-4"
             ],
             [
                 "kpit2",
                 "Pittsburgh",
-                "PIT"
+                "PIT",
+                "-4"
             ],
             [
                 "kslc_app",
                 "Salt Lake City",
-                "SLC"
+                "SLC",
+                "-6"
             ],
             [
                 "kdca3",
                 "Washington",
-                "DCA"
+                "DCA",
+                "-4"
             ],
             [
                 "kbwi_twr",
                 "Baltimore",
-                "BWI"
+                "BWI",
+                "-4"
             ],
             [
                 "kmci1_local",
                 "Kansas City",
-                "MCI"
+                "MCI",
+                "-4"
             ],
             [
                 "kric1",
                 "Richmond",
-                "RIC"
+                "RIC",
+                "-4"
             ],
             [
                 "kmvy",
                 "Vineyard Haven",
-                "MVY"
+                "MVY",
+                "-4"
             ],
             [
                 "kaus2",
                 "Austin",
-                "KAUS"
+                "KAUS",
+                "-5"
             ],
             [
                 "ksan2",
                 "San Diego",
-                "SAN"
+                "SAN",
+                "-6"
             ],
             [
                 "kmia_twr",
                 "Miami",
-                "KMIA"
+                "KMIA",
+                "-4"
             ],
             [
                 "kord7",
                 "Chicago",
-                "ORD"
+                "ORD",
+                "-5"
             ],
             [
                 "kdfw_twr_hp",
                 "Dallas, Fort Worth",
-                "DFW"
+                "DFW",
+                "-5"
             ],
             [
                 "kmsp_twr",
                 "Minneapolis",
-                "MSP"
+                "MSP",
+                "-5"
             ],
             [
                 "kcle1_2",
                 "Cleveland-Hopkins",
-                "CLE"
+                "CLE",
+                "-4"
             ],
             [
                 "cyhz_2",
                 "Halifax",
-                "YHZ"
+                "YHZ",
+                "-3"
             ],
             [
                 "cyvr2",
                 "Vancouver",
-                "YVR"
+                "YVR",
+                "-7"
             ],
             [
                 "kpdx2",
                 "Portland",
-                "PDX"
+                "PDX",
+                "-7"
             ],
-            ["kind5", "Indianapolis", "IND"],
-            ["ksjc_del_gnd", "San Jose", "SJC"],
-            ["cywg", "Winnipeg", "YWG"],
-            ["kmke", "Milwaukee", "MKE"],
-            ["kcrq2", "Carlsbad", "CLD"],
-            ["kfll", "Fort Lauderdale", "FLL"],
-            ["kgrr2", "Grand Rapids", "GRR"],
-            ["cyeg_app", "Edmonton", "YEG"],
-            ["kapa", "Denver", "APA"]
+            [
+                "kind5",
+                "Indianapolis",
+                "IND",
+                "-4"
+            ],
+            [
+                "ksjc_del_gnd",
+                "San Jose",
+                "SJC",
+                "-7"
+            ],
+            [
+                "cywg",
+                "Winnipeg",
+                "YWG",
+                "-5"
+            ],
+            [
+                "kmke",
+                "Milwaukee",
+                "MKE",
+                "-5"
+            ],
+            [
+                "kcrq2",
+                "Carlsbad",
+                "CLD",
+                "-7"
+            ],
+            [
+                "kfll",
+                "Fort Lauderdale",
+                "FLL",
+                "-4"
+            ],
+            [
+                "kgrr2",
+                "Grand Rapids",
+                "GRR",
+                "-4"
+            ],
+            [
+                "cyeg_app",
+                "Edmonton",
+                "YEG",
+                "-6"
+            ],
+            [
+                "kapa",
+                "Denver",
+                "APA",
+                "-6"
+            ]
         ]
     },
     {
@@ -209,110 +292,153 @@
             [
                 "eidw3",
                 "Dublin",
-                "DUB"
+                "DUB",
+                "0"
             ],
             [
                 "ebbr_arr",
                 "Brussels",
-                "BRU"
+                "BRU",
+                "1"
             ],
-            ["lhbp_app", "Budapest", "BUD"],
+            [
+                "lhbp_app",
+                "Budapest",
+                "BUD",
+                "1"
+            ],
             [
                 "lfll",
                 "Lyon",
-                "LYS"
+                "LYS",
+                "1"
             ],
             [
                 "eham4",
                 "Amsterdam",
-                "AMS"
+                "AMS",
+                "1"
             ],
             [
                 "lfp_dep",
                 "Paris",
-                "ORY"
+                "ORY",
+                "1"
             ],
             [
                 "esow",
                 "Stockholm / Västerås",
-                "VST"
+                "VST",
+                "1"
             ],
             [
                 "engm2_app",
                 "Oslo",
-                "OSL"
+                "OSL",
+                "1"
             ],
             [
                 "esgg",
                 "Gothenburg",
-                "GOT"
+                "GOT",
+                "1"
             ],
             [
                 "espa",
                 "Luleå",
-                "LLA"
+                "LLA",
+                "1"
             ],
             [
                 "enbo_twr",
                 "Bodo Norway",
-                "ENBO"
+                "ENBO",
+                "1"
             ],
             [
                 "einn2",
                 "Shannon",
-                "SNN"
+                "SNN",
+                "0"
             ],
             [
                 "ekch_twr",
                 "Copenhagen",
-                "CPH"
+                "CPH",
+                "1"
             ],
             [
                 "epwa2",
                 "Warsaw",
-                "WAW"
+                "WAW",
+                "1"
             ],
             [
                 "epmo",
                 "Warsaw",
-                "WMI"
+                "WMI",
+                "1"
             ],
             [
                 "lszh_twr",
                 "Zurich",
-                "ZRH"
+                "ZRH",
+                "1"
             ],
             [
                 "lfsb2",
                 "Basel",
-                "BSL"
+                "BSL",
+                "1"
             ],
             [
                 "lgav",
                 "Athens",
-                "ATH"
+                "ATH",
+                "2"
             ],
             [
                 "lati",
                 "Tirana",
-                "TIA"
+                "TIA",
+                "1"
             ],
             [
                 "eheh",
                 "Eindhoven",
-                "EIN"
+                "EIN",
+                "1"
             ],
-            ["ltba",
-            "Istanbul",
-            "IST"],
-            ["ukbb2", "Kyiv", "KBP"],
-            ["evra2", "Riga", "RIX"],
+            [
+                "ltba",
+                "Istanbul",
+                "IST",
+                "3"
+            ],
+            [
+                "ukbb2",
+                "Kyiv",
+                "KBP",
+                "2"
+            ],
+            [
+                "evra2",
+                "Riga",
+                "RIX",
+                "2"
+            ],
             [
                 "uuee2",
                 "Moscow",
-                "SVO"
+                "SVO",
+                "3"
             ],
-            ["ulli", "Saint Petersburg", "LED"]
+            [
+                "ulli",
+                "Saint Petersburg",
+                "LED",
+                "3"
+            ]
         ]
     },
     {
@@ -321,68 +447,108 @@
             [
                 "omdb_twr",
                 "Dubai",
-                "DXB"
+                "DXB",
+                "4"
             ],
-            ["zbaa", "Beijing", "PEK"],
+            [
+                "zbaa",
+                "Beijing",
+                "PEK",
+                "8"
+            ],
             [
                 "rjtt_control",
                 "Tokyo",
-                "HND"
+                "HND",
+                "9"
             ],
             [
                 "vhhh_app_1191_2",
                 "Hong Kong",
-                "HKG"
+                "HKG",
+                "8"
             ],
             [
                 "wmkk2",
                 "Kuala Lumpur",
-                "KUL"
+                "KUL",
+                "8"
             ],
-            ["unnt", "Novosibirsk", "OVB"],
-            ["unoo", "Omsk", "OMS"],
+            [
+                "unnt",
+                "Novosibirsk",
+                "OVB",
+                "7"
+            ],
+            [
+                "unoo",
+                "Omsk",
+                "OMS",
+                "6"
+            ],
             [
                 "rpll",
                 "Manila",
-                "MNL"
+                "MNL",
+                "8"
             ],
             [
                 "uaaa",
                 "Almaty",
-                "ALA"
+                "ALA",
+                "6"
             ]
         ]
     },
     {
         "name": "South America / Oceania / Space",
         "airports": [
-            ["mmmx1", "Mexico City", "MEX"],
+            [
+                "mmmx1",
+                "Mexico City",
+                "MEX",
+                "-6"
+            ],
             [
                 "scel",
                 "Santiago",
-                "SCL"
+                "SCL",
+                "-3"
             ],
-            ["sbbr_acc", "Brasilia", "BSB"],
+            [
+                "sbbr_acc",
+                "Brasilia",
+                "BSB"
+            ],
             [
                 "yssy1",
                 "Sydney",
-                "SYD"
+                "SYD",
+                "11"
             ],
             [
                 "ybbn6",
                 "Brisbane",
-                "BNE"
+                "BNE",
+                "10"
             ],
-            ["ypad", "Adelaide", "ADL"],
+            [
+                "ypad",
+                "Adelaide",
+                "ADL",
+                "10.5"
+            ],
             [
                 "ymml",
                 "Melbourne",
-                "MEL"
+                "MEL",
+                "11"
             ],
             [
                 "iss",
                 "ISS Space Station (beta)",
-                "ISS"
+                "ISS",
+                "0"
             ]
         ]
     }
