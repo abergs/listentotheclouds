@@ -306,8 +306,13 @@
             "Istanbul",
             "IST"],
             ["ukbb2", "Kyiv", "KBP"],
-            ["evra2", "Riga", "RIX"]
-
+            ["evra2", "Riga", "RIX"],
+            [
+                "uuee2",
+                "Moscow",
+                "SVO"
+            ],
+            ["ulli", "Saint Petersburg", "LED"]
         ]
     },
     {
@@ -334,12 +339,6 @@
                 "Kuala Lumpur",
                 "KUL"
             ],
-            [
-                "uuee2",
-                "Moscow",
-                "SVO"
-            ],
-            ["ulli", "Saint Petersburg", "LED"],
             ["unnt", "Novosibirsk", "OVB"],
             ["unoo", "Omsk", "OMS"],
             [
