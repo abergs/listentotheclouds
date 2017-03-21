@@ -198,7 +198,9 @@
             ["kmke", "Milwaukee", "MKE"],
             ["kcrq2", "Carlsbad", "CLD"],
             ["kfll", "Fort Lauderdale", "FLL"],
-            ["kgrr2", "Grand Rapids", "GRR"]
+            ["kgrr2", "Grand Rapids", "GRR"],
+            ["cyeg_app", "Edmonton", "YEG"],
+            ["kapa", "Denver", "APA"]
         ]
     },
     {
@@ -301,9 +303,15 @@
                 "EIN"
             ],
             ["ltba",
-            "Isanbul",
+            "Istanbul",
             "IST"],
             ["ukbb2", "Kyiv", "KBP"],
+            ["evra2", "Riga", "RIX"],
+            [
+                "uuee2",
+                "Moscow",
+                "SVO"
+            ],
             ["ulli", "Saint Petersburg", "LED"]
         ]
     },
@@ -315,6 +323,7 @@
                 "Dubai",
                 "DXB"
             ],
+            ["zbaa", "Beijing", "PEK"],
             [
                 "rjtt_control",
                 "Tokyo",
@@ -330,11 +339,7 @@
                 "Kuala Lumpur",
                 "KUL"
             ],
-            [
-                "uuee2",
-                "Moscow",
-                "SVO"
-            ],
+            ["unnt", "Novosibirsk", "OVB"],
             ["unoo", "Omsk", "OMS"],
             [
                 "rpll",
@@ -351,11 +356,13 @@
     {
         "name": "South America / Oceania / Space",
         "airports": [
+            ["mmmx1", "Mexico City", "MEX"],
             [
                 "scel",
                 "Santiago",
                 "SCL"
             ],
+            ["sbbr_acc", "Brasilia", "BSB"],
             [
                 "yssy1",
                 "Sydney",
@@ -366,6 +373,7 @@
                 "Brisbane",
                 "BNE"
             ],
+            ["ypad", "Adelaide", "ADL"],
             [
                 "ymml",
                 "Melbourne",
