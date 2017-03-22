@@ -71,14 +71,14 @@ var a = new Vue({
                         text: cv[1],
                         iata: cv[2],
                         time: cv[3],
-                        error: !!cv[4]
+                        error: cv[4] === true
                     }
                 });
 
-                aps.sort((a,b)=> {
-                    if(a.error && b.error) return 0;
-                    if(a.error) return 1;
-                    return -1;
+                aps.sort(function(a,b) {
+                    var xx = a.error-b.error;
+                    //console.log(xx);
+                    return xx;
                 });
 
                 region.airports = aps;

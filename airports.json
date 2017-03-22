@@ -392,16 +392,17 @@
                 "WMI",
                 "1"
             ],
-            [
-                "lszh_twr",
-                "Zurich",
-                "ZRH",
-                "1"
-            ],
+            
             [
                 "lfsb2",
                 "Basel",
                 "BSL",
+                "1"
+            ],
+            [
+                "lszh_twr",
+                "Zurich",
+                "ZRH",
                 "1"
             ],
             [
