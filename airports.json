@@ -433,13 +433,13 @@
                 "SVO",
                 "3"
             ],
+            ["uuww", "Moscow", "VKO", "3" ],
             [
                 "ulli",
                 "Saint Petersburg",
                 "LED",
                 "3"
-            ],
-            
+            ],            
             ["",
             "Odessa",
             "ODS",
@@ -462,7 +462,7 @@
             ["", "Minsk", "MSQ", "", true],
             ["", "Domodedovo", "DME", "", true],
             ["lrop","Bucharest","OTP",""],
-            ["lukk_control", "Chisinau", "KIV", ""]
+            ["lukk_control", "Chisinau", "KIV", ""]          
             
             
             
