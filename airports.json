@@ -307,6 +307,19 @@
                 "BUD",
                 "1"
             ],
+             [
+                "uuee2",
+                "Moscow",
+                "SVO",
+                "3"
+            ],
+            ["uuww", "Moscow", "VKO", "3" ],
+            [
+                "ulli",
+                "Saint Petersburg",
+                "LED",
+                "3"
+            ],            
             [
                 "lfll",
                 "Lyon",
@@ -427,19 +440,6 @@
                 "RIX",
                 "2"
             ],
-            [
-                "uuee2",
-                "Moscow",
-                "SVO",
-                "3"
-            ],
-            ["uuww", "Moscow", "VKO", "3" ],
-            [
-                "ulli",
-                "Saint Petersburg",
-                "LED",
-                "3"
-            ],            
             ["",
             "Odessa",
             "ODS",
