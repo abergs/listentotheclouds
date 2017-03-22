@@ -11,6 +11,8 @@ function isLocalStorageNameSupported() {
 }
 var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
+var VISIBLE_DEFAULT = 15;
+
 var a = new Vue({
     el: "#app",
     data: {
@@ -73,7 +75,14 @@ var a = new Vue({
                     }
                 });
 
+                aps.sort((a,b)=> {
+                    if(a.error && b.error) return 0;
+                    if(a.error) return 1;
+                    return -1;
+                });
+
                 region.airports = aps;
+                region.showAll = false;
 
                 return region;
             });
@@ -98,13 +107,30 @@ var a = new Vue({
         });
     },
     methods: {
+        getHiddenCount: function(region) {
+            return region.airports.length - VISIBLE_DEFAULT;
+        },
         getAirports: function () {
             var airports = this.regions.reduce(function (acc, val) {
                 return acc.concat(val.airports);
             }, []);
 
-            var fil = airports.filter(function (cv) { return cv.code !== "iss" });
+            var fil = airports.filter(function (cv) { return cv.code !== "iss" && !cv.error && cv.code !== "" });
             return fil;
+        },
+        airportsBucket: function(region) {
+            
+            if(region.showAll){
+                return region.airports;
+            }else {
+                return region.airports.slice(0,VISIBLE_DEFAULT);
+            }
+            return region.airports;
+        },
+        showMore: function (region) {
+            
+            region.showAll = true;
+            
         },
         donateYes: function (e) {
             $("#supportbtns").hide();
