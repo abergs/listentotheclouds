@@ -438,7 +438,34 @@
                 "Saint Petersburg",
                 "LED",
                 "3"
-            ]
+            ],
+            
+            ["",
+            "Odessa",
+            "ODS",
+            "",
+            true],
+            ["",
+            "Thessaloniki",
+            "SKG",
+            "",
+            true],
+            ["",
+            "Moscow Oblast",
+            "DME",
+            "",
+            true],
+            ["", "Berlin", "TXL", "", true],
+            ["", "Berlin", "SXF", "", true],
+            ["", "Berlin", "BER", "", true],
+            ["", "Frankfurt", "FRA", "", true],
+            ["", "Minsk", "MSQ", "", true],
+            ["", "Domodedovo", "DME", "", true],
+            ["lrop","Bucharest","OTP",""],
+            ["lukk_control", "Chisinau", "KIV", ""]
+            
+            
+            
         ]
     },
     {
@@ -497,7 +524,17 @@
                 "Almaty",
                 "ALA",
                 "6"
-            ]
+            ],
+            [
+                "",
+                "Perm",
+                "PEE",
+                "",
+                true
+            ],
+            ["", "Astana Kazakhstan", "TSE", "", true],
+            ["", "Aktobe Kazakhstan", "AKX", "", true],
+            ["", "Denpasar", "DPS", "", true]
         ]
     },
     {
@@ -544,6 +581,7 @@
                 "MEL",
                 "11"
             ],
+            ["", "Ministro Pistarini", "EZE", "", true],
             [
                 "iss",
                 "ISS Space Station (beta)",
