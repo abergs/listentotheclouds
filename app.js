@@ -68,7 +68,8 @@ var a = new Vue({
                         code: cv[0],
                         text: cv[1],
                         iata: cv[2],
-                        error: !!cv[3]
+                        time: cv[3],
+                        error: !!cv[4]
                     }
                 });
 
