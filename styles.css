@@ -28,6 +28,20 @@
     color: #fff;
     background: rgba(45, 132, 222, 0.4);
 }
+
+.skyloader {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position: absolute;
+    background-image: url("mbg.jpg");
+    animation: pulse 5s 4s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;  
+
+}
+
 .spacemode #vidtop-content {
     background: rgba(0, 0, 0, 0.55);
 }

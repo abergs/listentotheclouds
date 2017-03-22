@@ -62,10 +62,12 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     <div class="video-background">
+        
         <div class="video-foreground">
             <iframe id="video" src="https://www.youtube.com/embed/YgmIibSnZs0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=YgmIibSnZs0&enablejsapi=1"
                 frameborder="0" allowfullscreen></iframe>
         </div>
+        <div class="skyloader"></div>
     </div>
 
     <div id="live">
@@ -78,6 +80,7 @@
     </div>
 
     <div id="vidtop-content">
+        
         <div id="app">
             <div id="vcontrols">
                 <div class="playpause" :data-state="isPlayingState" @click="changeState">
