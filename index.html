@@ -111,8 +111,12 @@
                 <div id="airports">
                     <div v-for="region in regions">
                         <h3>{{region.name}}</h3>
-                        <ul>
-                            <li v-for="ap in airportsBucket(region)" :data-code="ap.code" class="airport" v-on:click="listenTo(ap)" v-bind:class="[{'error':ap.error}, (loading && activeCode === ap.code) ? 'loading' :'', activeCode === ap.code ? 'active' : '']">
+                          <transition-group name="list-complete" tag="ul">
+
+                            
+                            <li v-for="ap in airportsBucket(region)" :data-code="ap.code" v-bind:key="ap.iata"
+      class="list-complete-item airport"
+       v-on:click="listenTo(ap)" v-bind:class="[{'error':ap.error}, (loading && activeCode === ap.code) ? 'loading' :'', activeCode === ap.code ? 'active' : '']">
                                 <span class="airport-name">{{ ap.text }}</span>
                                 <span v-if="ap.error" class="airport-error">(Offline)</span>
                                 <span class="airport-iata">{{ ap.iata }}</span>
@@ -120,10 +124,11 @@
                                 <div v-if="loading && activeCode === ap.code" class="spinner"></div>
 
                             </li>
-                        </ul>
+                          </transition-group>
 
                         <a href="#" v-if="getHiddenCount(region) > 0 && !region.showAll" v-on:click.prevent="showMore(region)" class="btn">Show {{getHiddenCount(region)}} more airports in {{region.name}}</a>
                     </div>
+
                 </div>
 
                 <ul id="picker">
@@ -184,6 +189,7 @@
 
 <script src="https://use.fontawesome.com/2d8e1bc7c7.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
+    
     <script src="app.js?v3"></script>
     
     

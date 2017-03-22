@@ -347,7 +347,7 @@ ul#picker li {
     margin: 10px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s ease;
+    
     padding: 10px;
 }
 #picker li.active {
@@ -390,7 +390,26 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-family: "circular";
+    
 }
+
+#airport:hover {
+  transition: all 0.2s ease; 
+}
+
+.list-complete-item {
+  transition: all 1s;
+  
+}
+.list-complete-enter, .list-complete-leave-to
+/* .list-complete-leave-active for <2.1.8 */ {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+
 .airport {
     /*display: inline-block;
             padding: 10px;
@@ -409,7 +428,7 @@ body {
     margin: 10px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s ease;
+    
     padding: 10px;
     flex-direction: column;
     position: relative;
@@ -452,6 +471,7 @@ body {
 .airport:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 10px rgba(109, 151, 204, 0.71);
+    transition: all 0.2s ease;
 }
 .clearfix:after {
     visibility: hidden;
