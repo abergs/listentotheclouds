@@ -39,7 +39,7 @@
     animation: pulse 5s 5s;
     animation-direction: reverse;
     animation-fill-mode: forwards;  
-
+    background-size:cover;
 }
 
 .spacemode #vidtop-content {
