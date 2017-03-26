@@ -85,12 +85,12 @@
     border-radius: 5px;
     color: #fffff3;
     font-weight: 100;
+    margin: 0 10px;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 12px;
     letter-spacing: 2px;
     font-family: "circular";
-    line-height:9em;
 }
 .donate button:hover,
 .btn:hover {
@@ -267,7 +267,7 @@ a.fb-xfbml-parse-ignore {
     color: #fffff3;
     font-family: "TW Cen MT", "circular", sans-serif;
     text-align: center;
-    line-height: 1.5em;
+    line-height: 4em;
     padding-top: 6em;
     font-weight: 700;
     padding-bottom: 10em;
