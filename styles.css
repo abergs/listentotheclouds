@@ -125,6 +125,15 @@
     text-transform: none;
     line-height: 1.4em;
 }
+.legal {
+    max-width: 300px;
+    font-weight: 100;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "circular";
+    text-transform: none;
+    line-height: 1.4em;
+}
 #live {
     display: flex;
     align-items: center;
@@ -636,6 +645,10 @@ body {
     }
     .airport-info {
         max-width: 300px;
+        font-size: 12px;
+    }
+    .legal {
+        max-width: 280px;
         font-size: 12px;
     }
     .thankyoutext {
