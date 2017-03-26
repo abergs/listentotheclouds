@@ -80,14 +80,18 @@
 .donate button,
 .btn {
     background: #4267b2;
-    padding: 7px 15px;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     color: #fffff3;
     margin: 0 10px;
-    font-weight: bold;
-    text-transform: initial;
+    margin-top:10px;
+    font-weight: 100;
+    text-transform: uppercase;
     text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: "circular";
 }
 .donate button:hover,
 .btn:hover {
@@ -322,6 +326,9 @@ a.fb-xfbml-parse-ignore {
     line-height: 1.4em;
     text-transform: none;
 }
+
+
+
 #picker {
     display: flex;
     justify-content: center;

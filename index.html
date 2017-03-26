@@ -122,7 +122,7 @@
                             </li>
                         </ul>
 
-                        <a href="#" v-if="getHiddenCount(region) > 0 && !region.showAll" v-on:click.prevent="showMore(region)" class="btn">Show {{getHiddenCount(region)}} more airports in {{region.name}}</a>
+                        <a href="#" v-if="getHiddenCount(region) > 0 && !region.showAll" v-on:click.prevent="showMore(region)" class="btn">Show {{getHiddenCount(region)}} more in {{region.name}}</a>
                     </div>
                 </div>
 
@@ -169,11 +169,7 @@
 
 
                 <div style="text-align:center" class="donate">
-                    <p>Would you donate to support this?</p>
-                    <div id="supportbtns">
-                        <button id="yesbtn" @click="donateYes">Yes</button><button id="nobtn" @click="donateNo">No</button></div>
-                    <div id="support">
-                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn">Thank you - Click here to donate any amount you want</a>
+                        <button id="yesbtn"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" class="btn"> Donate to support this </a></button>
                     </div>
                 </div>
             </div>
