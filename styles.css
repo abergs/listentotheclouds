@@ -90,7 +90,7 @@
     text-decoration: none;
     font-size: 12px;
     letter-spacing: 2px;
-    font-family: "circular";
+    font-family: "circular",sans-serif;
 }
 .donate button:hover,
 .btn:hover {

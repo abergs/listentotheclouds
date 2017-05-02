@@ -36,7 +36,11 @@ var a = new Vue({
         var lang = window.navigator.language;
         
         if(lang && lang.indexOf("ru") > -1) {
-            $("#donatebtn").text(" Поддержать этот сайт ");
+            //$("#donatebtn").text(" Поддержать этот сайт ");
+            $("#donateq").text("Поддержите проект?");
+            $("#yesbtn").text("да");
+            $("#donatepp").text("Спасибо - Нажмите здесь, чтобы пожертвовать любую сумму, которую вы хотите");
+
         }
 
         if (isMobile) {
@@ -307,6 +311,6 @@ if(isLocalStorageNameSupported()) {
     localStorage.setItem("views",views);
 
     if(views >= 3) {
-        $('.donate').insertAfter($(".airport-info"));
+        //$('.donate').insertAfter($(".airport-info"));
     }
 }

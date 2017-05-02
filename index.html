@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js"></script>
     <link rel="stylesheet" href="fonts/stylesheet.css">
-    <link rel="stylesheet" href="styles.css?v1">
+    <link rel="stylesheet" href="styles.css?v2">
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -107,7 +107,15 @@
                 <h1 style="margin-top:60px">Airports</h1>
 
                 <p class="airport-info">(This is a live radio transmission, if it's silent, the airports aren't very chatty at the moment)</p>
-
+                <div style="text-align:center; margin-top: 24px; line-height: normal" class="donate">
+                    <p id="donateq">Would you donate to support this?</p>
+                    <div id="supportbtns">
+                        <button id="yesbtn" @click="donateYes">Yes</button><button id="nobtn" @click="donateNo">No</button></div>
+                    <div id="support">
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatepp" class="btn">Thank you - Click here to donate any amount you want</a>
+                        <!--<button id="yesbtn"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatebtn" class="btn"> Donate to support this </a></button>-->
+                    </div>
+                </div>
                 <div id="airports">
                     <div v-for="region in regions">
                         <h3>{{region.name}}</h3>
@@ -165,12 +173,6 @@
                                  </br> </br>
                                  <a href="http://twitter.com/andersaberg"><img src="andersaberg.jpg" class="me-img"></a>
 
-                </div>
-
-
-                <div style="text-align:center" class="donate">
-                        <button id="yesbtn"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatebtn" class="btn"> Donate to support this </a></button>
-                    </div>
                 </div>
             </div>
 
