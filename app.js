@@ -33,6 +33,12 @@ var a = new Vue({
         var $ = jQuery;
         //playButton.init();
 
+        var lang = window.navigator.language;
+        
+        if(lang && lang.indexOf("ru") > -1) {
+            $("#donatebtn").text(" Поддержать этот сайт ");
+        }
+
         if (isMobile) {
             jQuery("body").addClass("isMobile");
         }
