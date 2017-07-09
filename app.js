@@ -245,12 +245,12 @@ function setRadio(v) {
 }
 function setMusic(v) {
     var player = SC.Widget("soundcloud_player_iframe");
-    player.setVolume(v / 100);
+    player.setVolume(v);
     $('#vc_music, #vc_control').val(v);
     localStorage.setItem("vc_music", v);
 }
 
-var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&auto_play=true&start_track=" + getRandomInt(0, 152);
+var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&amp;color=00aabb&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&start_track=" + getRandomInt(0, 152);
 $("#soundcloud_player_iframe").attr("src", scsrc);
 
 // default volumes
