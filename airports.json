@@ -550,6 +550,7 @@
     {
         "name": "South America / Oceania / Space",
         "airports": [
+            ["spjc2", "Lima, Peru", "LIM", ""],
             ["sgas", "Asuncion, Paraguay", "ASU",""],
             [
                 "mmmx1",
