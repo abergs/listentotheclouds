@@ -242,6 +242,7 @@
                 "SJC",
                 "-7"
             ],
+            ["mroc2","San Jose", "SJO", ""],
             [
                 "cywg",
                 "Winnipeg",
@@ -549,6 +550,7 @@
     {
         "name": "South America / Oceania / Space",
         "airports": [
+            ["sgas", "Asuncion, Paraguay", "ASU",""],
             [
                 "mmmx1",
                 "Mexico City",
