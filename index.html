@@ -107,12 +107,48 @@
                 <h1 style="margin-top:60px">Airports</h1>
 
                 <p class="airport-info">(This is a live radio transmission, if it's silent, the airports aren't very chatty at the moment)</p>
-                <div style="text-align:center; margin-top: 24px; line-height: normal" class="donate">
-                    <p id="donateq">Would you donate to support this?</p>
+                <div style="text-align:center; margin-top: 24px; " class="donate">
+                    <p id="donateq" style="line-height: normal">Would you donate to support this?</p>
                     <div id="supportbtns">
                         <button id="yesbtn" @click="donateYes">Yes</button><button id="nobtn" @click="donateNo">No</button></div>
                     <div id="support">
-                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatepp" class="btn">Thank you - Click here to donate any amount you want</a>
+                        <h1>Thank you for supporting me!</h1>
+                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatepp" class="btn">PayPal</a>
+                        <a href="bitcoin:147mn3ptsdGGDvV15p4TSzauHd9xaKFogm" class="btn btcbtn">Bitcoin BTC, click for QR</a>
+                        <a href="eth:0x2083fEB3d13aEd25D59c9Dc46A0505D6F64398B8" class="btn ethbtn">ETH, click for QR</a>
+                        
+                        <div class="wallet btc" style="display:none" >
+                            <img src="btc.png" alt="BTC wallet code"/>
+                            <br />
+                            <span>BTC: 147mn3ptsdGGDvV15p4TSzauHd9xaKFogm</span>
+                        </div>
+                        <div class="wallet eth" style="display:none" >
+                            <img src="eth.png" alt="ETH wallet code" />
+                            <br />
+                            <span>ETH: 0x2083fEB3d13aEd25D59c9Dc46A0505D6F64398B8</span>
+                        </div>
+
+                        <script>
+                            $(document).ready(function () {
+                                $(".btcbtn").on("click", function (e){
+                                    e.preventDefault();
+                                    $(".wallet.eth").fadeOut("slow",function () {
+                                        $(".btc").fadeIn();
+                                    });
+                                    
+                                    return false;
+                                });
+
+                                $(".ethbtn").on("click", function (e){
+                                    e.preventDefault();
+                                    $(".wallet.btc").fadeOut(function () {
+                                        $(".eth").fadeIn();
+                                    });
+                                    return false;
+                                });
+                            });
+                        </script>
+                        
                         <!--<button id="yesbtn"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatebtn" class="btn"> Donate to support this </a></button>-->
                     </div>
                 </div>
