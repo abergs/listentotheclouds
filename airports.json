@@ -473,7 +473,9 @@
             ["", "Minsk", "MSQ", "", true],
             ["", "Domodedovo", "DME", "", true],
             ["lrop","Bucharest","OTP",""],
-            ["lukk_control", "Chisinau", "KIV", ""]          
+            ["lukk_control", "Chisinau", "KIV", ""],
+            ["lkpr_twr", "Prague", "PRG", ""],
+            ["lktb", "Brno", "BRQ", ""]
             
             
             
