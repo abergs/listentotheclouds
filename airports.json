@@ -2,6 +2,7 @@
     {
         "name": "North America",
         "airports": [
+            ["phnl_2", "Honolulu", "HNL", ""],
             [
                 "ktme",
                 "Houston",
@@ -552,6 +553,8 @@
         "airports": [
             ["spjc2", "Lima, Peru", "LIM", ""],
             ["sgas", "Asuncion, Paraguay", "ASU",""],
+            ["skbo3","Bogota, El Nuevo Dorado", "BOG",""],
+            ["svva"," Valencia", "VLN",""],
             [
                 "mmmx1",
                 "Mexico City",
