@@ -583,6 +583,9 @@
                 "SYD",
                 "11"
             ],
+            ["ypph_twr", "Perth (Tower)","PER",""],
+            ["ypph_app", "Perth (Approach)","PER",""],
+            ["ypjt", "Perth", "JAD", ""],
             [
                 "ybbn6",
                 "Brisbane",
