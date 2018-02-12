@@ -451,6 +451,7 @@
                 "RIX",
                 "2"
             ],
+            ["epgd","Gdansk", "GDN",""],
             ["",
             "Odessa",
             "ODS",
@@ -466,6 +467,8 @@
             "DME",
             "",
             true],
+
+            
             ["", "Berlin", "TXL", "", true],
             ["", "Berlin", "SXF", "", true],
             ["", "Berlin", "BER", "", true],
