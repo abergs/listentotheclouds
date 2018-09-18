@@ -2,6 +2,7 @@
     {
         "name": "North America",
         "airports": [
+            ["lppt_app_1191_2", "Lisbon, Portugal", "LIS", ""],
             ["mslp", "Monsenor Oscar Arnulfo, San Salvador", "SAL", ""],
             ["mggt_gnd_twr", "La Aurora, Guatemala", "GUA", ""],
             ["cymx", "Montreal-Mirabel", "YMX", ""],
