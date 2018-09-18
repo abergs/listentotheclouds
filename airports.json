@@ -2,6 +2,7 @@
     {
         "name": "North America",
         "airports": [
+            ["cymx", "Montreal-Mirabel", "YMX", ""],
             ["phnl_2", "Honolulu", "HNL", ""],
             [
                 "ktme",
