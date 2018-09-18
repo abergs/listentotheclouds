@@ -299,6 +299,7 @@
     {
         "name": "Europe",
         "airports": [
+            ["eyvi", "Vilnius, Lithuania", "VNO", ""],
             [
                 "eidw3",
                 "Dublin",
