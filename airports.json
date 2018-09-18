@@ -2,10 +2,6 @@
     {
         "name": "North America",
         "airports": [
-            ["kokc_app_1242", "Oklahoma City", "OKC", ""],
-            ["mslp", "Monsenor Oscar Arnulfo, San Salvador", "SAL", ""],
-            ["mggt_gnd_twr", "La Aurora, Guatemala", "GUA", ""],
-            ["cymx", "Montreal-Mirabel", "YMX", ""],
             ["phnl_2", "Honolulu", "HNL", ""],
             [
                 "ktme",
@@ -79,6 +75,10 @@
                 "SEA",
                 "-7"
             ],
+            ["kokc_app_1242", "Oklahoma City", "OKC", ""],
+            ["mslp", "Monsenor Oscar, San Salvador", "SAL", ""],
+            ["mggt_gnd_twr", "La Aurora, Guatemala", "GUA", ""],
+            ["cymx", "Montreal-Mirabel", "YMX", ""],
             [
                 "kbos_twr",
                 "Boston-Logan",
