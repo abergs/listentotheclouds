@@ -558,7 +558,7 @@
     {
         "name": "South America / Oceania / Space",
         "airports": [
-            
+            ["sbfi", "Foz do Iguacu, Paraguay", "IGU", ""],
             ["fmmi", "Antananarivo,  Madagascar", "TNR",""],
             ["segu", "Jose Joaquin de Olmedo,  Ecuador", "GYE",""],
             ["spjc2", "Lima, Peru", "LIM", ""],
