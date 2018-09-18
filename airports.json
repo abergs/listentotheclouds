@@ -556,6 +556,7 @@
     {
         "name": "South America / Oceania / Space",
         "airports": [
+            ["fmmi", "Antananarivo,  Madagascar", "TNR",""],
             ["segu", "Jose Joaquin de Olmedo,  Ecuador", "GYE",""],
             ["spjc2", "Lima, Peru", "LIM", ""],
             ["sgas", "Asuncion, Paraguay", "ASU",""],
