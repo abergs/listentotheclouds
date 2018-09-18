@@ -2,6 +2,7 @@
     {
         "name": "North America",
         "airports": [
+            ["mslp", "Monsenor Oscar Arnulfo, San Salvador", "SAL", ""],
             ["mggt_gnd_twr", "La Aurora, Guatemala", "GUA", ""],
             ["cymx", "Montreal-Mirabel", "YMX", ""],
             ["phnl_2", "Honolulu", "HNL", ""],
