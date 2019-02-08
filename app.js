@@ -73,7 +73,7 @@ var a = new Vue({
         $.get("airports.json", function (data) {
             //self.regions = data;
 
-            var x = data.map(function (region) {
+            var x = JSON.parse(data).map(function (region) {
 
                 var aps = region.airports.map(function (cv) {
                     return {
