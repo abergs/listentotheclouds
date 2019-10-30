@@ -249,7 +249,54 @@
 .playpause[data-state="paused"] {
     border: 2px solid #ff6c6c;
     box-shadow: 0 0 10px rgba(255, 22, 22, .5);
+    -webkit-animation: breathing 7s ease-out infinite normal;
+    animation: breathing 7s ease-out infinite normal;
+    z-index: 1;
 }
+.playpause:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:3;
+}
+
+.playpause[data-state="paused"]:before {
+    background: radial-gradient(at 50% 0, #ff2222, transparent 20%), radial-gradient(at 50% 100%, #ff2222, transparent 20%) bottom;
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-attachment: local;    
+    animation: spin 7s linear infinite;
+}
+
+.playpause[data-state="loading"] {
+    border: 2px solid #5d77d8;
+    box-shadow: 0 0 10px rgba(22, 83, 255, 0.5);
+}
+
+.playpause[data-state="loading"]:before {
+    background: radial-gradient(at 50% 0, #5d77d8, transparent 20%), radial-gradient(at 50% 100%, #5d77d8, transparent 20%) bottom;
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-attachment: local;    
+    animation: spin 1s linear infinite;
+}
+
+.playpause[data-state="paused"]:hover {
+    border: 2px solid #5d77d8;
+    box-shadow: 0 0 10px rgba(22, 83, 255, 0.5);
+}
+
+.playpause[data-state="paused"]:hover::before {
+    background: radial-gradient(at 50% 0, #5d77d8, transparent 20%), radial-gradient(at 50% 100%, #5d77d8, transparent 20%) bottom;
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-attachment: local;
+
+}
+
 .playpause[data-state="paused"] div {
     margin-left: 3px;
 }
@@ -723,3 +770,46 @@ body {
         box-shadow: 0 5px 5px rgba(109, 151, 204, 0.71);
     }
 }
+
+/* @-webkit-keyframes breathing {
+    0% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    25% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  
+    60% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  } */
+  
+  @keyframes breathing {
+    0% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  
+    25% {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  
+    100% {
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  

@@ -178,7 +178,7 @@
 
 
                 <!---		<p>Live: <span class="current">Chicago</span></p> -->
-                <audio id="stream" src="" autoplay controls volume="0.4" style="visibility: hidden">
+                <audio id="stream" src="" autoplay controls volume="0.4" style="visibility: hidden" crossOrigin="anonymous">
                     <p>Your browser does not support the <code>audio</code> element.</p>
                 </audio>
 
@@ -186,7 +186,7 @@
                 <h1 style="margin-top:3rem;">Ambient music</h1>
                 <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
                 <div style="text-align:center;">
-                    <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src=""></iframe>
+                    <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&amp;color=00aabb&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                 </div>
 
                 <br />
@@ -218,8 +218,8 @@
 
 
 <script src="https://use.fontawesome.com/2d8e1bc7c7.js"></script>
-    <script src="https://w.soundcloud.com/player/api.js"></script>
     <script src="app.js?v5"></script>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
     
     
 </body>

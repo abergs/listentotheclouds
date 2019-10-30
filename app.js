@@ -25,7 +25,7 @@ var a = new Vue({
     computed: {
         // a computed getter
         isPlayingState: function () {
-            return this.isPlaying ? "playing" : "paused";
+            return this.loading ? "loading" : this.isPlaying ? "playing" : "paused";
         }
     },
     mounted: function () {
@@ -110,7 +110,7 @@ var a = new Vue({
                     }, 1000 * (index + 1));
                 }, this);
             } else if (!isMobile) {
-                self.listenTo(null)
+                //self.listenTo(null)
             } else {
                 self.pause();
             }
@@ -251,7 +251,7 @@ function setMusic(v) {
 }
 
 var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&amp;color=00aabb&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&start_track=" + getRandomInt(0, 152);
-$("#soundcloud_player_iframe").attr("src", scsrc);
+//$("#soundcloud_player_iframe").attr("src", scsrc);
 
 // default volumes
 $(function () {
