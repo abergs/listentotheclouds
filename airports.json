@@ -3,6 +3,7 @@
         "name": "North America",
         "airports": [
             ["phnl_2", "Honolulu", "HNL", ""],
+            ["kmem2_app", "Memphis", "MEM", ""],
             [
                 "ktme",
                 "Houston",
