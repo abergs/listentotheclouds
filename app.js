@@ -210,7 +210,7 @@ var a = new Vue({
                 spaceModeOn();
             } else {
                 spaceModeOff();
-                var url = "http://s1.sjc.liveatc.net/" + code;
+                var url = "https://s1-sjc.liveatc.net/" + code;
                 $("#stream").attr("src", url);
             }
 
