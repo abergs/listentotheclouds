@@ -342,7 +342,7 @@
                 "Saint Petersburg",
                 "LED",
                 "3"
-            ],            
+            ],
             [
                 "lfll",
                 "Lyon",
@@ -351,7 +351,7 @@
             ],
             [
                 "eham01_twr_main1",
-                "Schipol, Amsterdam",
+                "Schiphol, Amsterdam",
                 "AMS",
                 "1"
             ],
@@ -415,7 +415,6 @@
                 "WMI",
                 "1"
             ],
-            
             [
                 "lfsb2",
                 "Basel",
@@ -480,8 +479,6 @@
             "DME",
             "",
             true],
-
-            
             ["", "Berlin", "TXL", "", true],
             ["", "Berlin", "SXF", "", true],
             ["", "Berlin", "BER", "", true],
@@ -492,9 +489,6 @@
             ["lukk_control", "Chisinau", "KIV", ""],
             ["lkpr_twr", "Prague", "PRG", ""],
             ["lktb", "Brno", "BRQ", ""]
-            
-            
-            
         ]
     },
     {
@@ -585,7 +579,6 @@
             ],
             ["sabe2", "Buenos Aires", "AEP", ""],
             ["sant", "Tucuman", "TUC", ""],
-            
             [
                 "scel",
                 "Santiago",
