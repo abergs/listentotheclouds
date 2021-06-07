@@ -36,9 +36,9 @@
     bottom:0;
     position: absolute;
     background-image: url("mbg.jpg");
-    animation: pulse 5s 5s;
+    /* animation: pulse 5s 5s;
     animation-direction: reverse;
-    animation-fill-mode: forwards;  
+    animation-fill-mode: forwards;   */
     background-size:cover;
 }
 
