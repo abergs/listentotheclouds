@@ -114,6 +114,7 @@ var a = new Vue({
             } else {
                 self.pause();
             }
+
         });
     },
     methods: {
@@ -224,12 +225,6 @@ var a = new Vue({
 
 });
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 $('#vc_music, #vc_control').on('change input', function () {
     setMusic($(this).val());
 });
@@ -249,9 +244,6 @@ function setMusic(v) {
     $('#vc_music, #vc_control').val(v);
     localStorage.setItem("vc_music", v);
 }
-
-var scsrc = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&amp;color=00aabb&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&start_track=" + getRandomInt(0, 152);
-//$("#soundcloud_player_iframe").attr("src", scsrc);
 
 // default volumes
 $(function () {
