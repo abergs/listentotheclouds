@@ -12,32 +12,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min.js"></script>
     <link rel="stylesheet" href="fonts/stylesheet.css">
     <link rel="stylesheet" href="styles.css?v2">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
     <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        ga('create', 'UA-37656767-12', 'auto');
-        ga('send', 'pageview');
-
-        // This will count the number of times the function runs.
-        pageTimer = 0;
-        // Periodically run the function
-        window.setInterval(function () {
-            // Increment the counter
-            pageTimer = pageTimer + 1
-            // Assumes it runs every 30 seconds
-            theNow = pageTimer * 60
-            ga('send', {
-                hitType: 'event',
-                eventCategory: 'Timer',
-                eventAction: theNow + ' seconds on page',
-                eventLabel: $(".current").first().text()
-            });
-        }, 60000); // Run every 30 seconds
+        gtag('config', 'TAG_ID');
     </script>
 </head>
 
@@ -185,8 +167,7 @@
 
                 <h1 style="margin-top:3rem;">Ambient music</h1>
                 <p style="text-align:center">Volume: <input id="vc_control" type="range" min="0" max="100" value="100" /></p>
-                <div style="text-align:center;">
-                    <iframe id="soundcloud_player_iframe" width="480" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/5281179&amp;color=00aabb&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                <div style="text-align:center;" id="soundcloud_player_iframe_container">
                 </div>
 
                 <br />
@@ -215,11 +196,26 @@
         </div>
     </div>
 
+    <script>
+        var playersList = [
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716683991&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient0" title="Ambient0" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient0</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716684336&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient1" title="Ambient1" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient1</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716684702&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient2" title="Ambient2" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient2</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716684909&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient3" title="Ambient3" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient3</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716685170&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient4" title="Ambient4" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient4</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716685551&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient5" title="Ambient5" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient5</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716685884&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient6" title="Ambient6" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient6</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716686211&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient7" title="Ambient7" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient7</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716686469&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient8" title="Ambient8" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient8</a></div>',
+            '<iframe id="soundcloud_player_iframe" width="300" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1716686817&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/duckhawk-520842306" title="duckhawk" target="_blank" style="color: #cccccc; text-decoration: none;">duckhawk</a> · <a href="https://soundcloud.com/duckhawk-520842306/sets/ambient9" title="Ambient9" target="_blank" style="color: #cccccc; text-decoration: none;">Ambient9</a></div>'
+        ]
 
-<script src="https://use.fontawesome.com/2d8e1bc7c7.js"></script>
-    <script src="app.js?v6"></script>
+        document.getElementById('soundcloud_player_iframe_container').innerHTML = playersList[Math.floor(Math.random() * playersList.length)]
+    </script>
+
+    <script src="https://use.fontawesome.com/2d8e1bc7c7.js"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    
-    
+    <script src="app.js?v6"></script>
+
 </body>
 </html>

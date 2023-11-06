@@ -2,10 +2,18 @@
     {
         "name": "North America",
         "airports": [
-            ["phnl_2", "Honolulu", "HNL", ""],
-            ["kmem2_app", "Memphis", "MEM", ""],
             [
-                "ktme",
+                "phnl1_app",
+                "Honolulu",
+                "HNL",
+                ""],
+            [
+                "kmem2_app",
+                "Memphis",
+                "MEM",
+                ""],
+            [
+                "kiah1_1",
                 "Houston",
                 "IAH",
                 "-5"
@@ -53,7 +61,7 @@
                 "-7"
             ],
             [
-                "ktpa2",
+                "ktpa1_app_118800",
                 "Tampa",
                 "TPA",
                 "-4"
@@ -65,21 +73,29 @@
                 "-6"
             ],
             [
-                "kdtw2",
+                "kdtw_dep",
                 "Detroit",
                 "DTW",
                 "-4"
             ],
             [
-                "ksea_twr",
+                "ksea2_twr_e",
                 "Seattle",
                 "SEA",
                 "-7"
             ],
-            ["kokc_app_1242", "Oklahoma City", "OKC", ""],
-            ["mslp", "Monsenor Oscar, San Salvador", "SAL", ""],
-            ["mggt_gnd_twr", "La Aurora, Guatemala", "GUA", ""],
-            ["cymx", "Montreal-Mirabel", "YMX", ""],
+            [
+                "kokc_app_1242",
+                "Oklahoma City",
+                "OKC",
+                ""
+            ],
+            [
+                "cymx2",
+                "Montreal-Mirabel",
+                "YMX",
+                ""
+            ],
             [
                 "kbos_twr",
                 "Boston-Logan",
@@ -93,7 +109,7 @@
                 "-4"
             ],
             [
-                "cyqb2",
+                "cyqb1_gnd_twr",
                 "Quebec",
                 "YQB",
                 "-4"
@@ -123,31 +139,31 @@
                 "-4"
             ],
             [
-                "kbuf_app",
+                "kbuf1_dgta",
                 "Buffalo",
                 "BUF",
                 "-4"
             ],
             [
-                "kclt2",
+                "kclt4_arr",
                 "Charlotte",
                 "CLT",
                 "-4"
             ],
             [
-                "kpit2",
+                "kpit2_app_dep",
                 "Pittsburgh",
                 "PIT",
                 "-4"
             ],
             [
-                "kslc_app",
+                "kslc1_app1",
                 "Salt Lake City",
                 "SLC",
                 "-6"
             ],
             [
-                "kdca3",
+                "kdca1_dep",
                 "Washington",
                 "DCA",
                 "-4"
@@ -165,31 +181,19 @@
                 "-4"
             ],
             [
-                "kric1",
-                "Richmond",
-                "RIC",
-                "-4"
-            ],
-            [
-                "kmvy",
-                "Vineyard Haven",
-                "MVY",
-                "-4"
-            ],
-            [
-                "kaus2",
+                "kaus3_app_dep",
                 "Austin",
                 "KAUS",
                 "-5"
             ],
             [
-                "ksan2",
+                "ksan1_all",
                 "San Diego",
                 "SAN",
                 "-6"
             ],
             [
-                "kmia_twr",
+                "kmia3_twr",
                 "Miami",
                 "KMIA",
                 "-4"
@@ -201,25 +205,25 @@
                 "-5"
             ],
             [
-                "kdfw_twr_hp",
+                "kdfw1_twr1_w",
                 "Dallas, Fort Worth",
                 "DFW",
                 "-5"
             ],
             [
-                "kmsp_twr",
+                "kmsp3_dep_ne",
                 "Minneapolis",
                 "MSP",
                 "-5"
             ],
             [
-                "kcle1_2",
+                "kcle3_twr",
                 "Cleveland-Hopkins",
                 "CLE",
                 "-4"
             ],
             [
-                "cyhz_2",
+                "cyhz3",
                 "Halifax",
                 "YHZ",
                 "-3"
@@ -231,13 +235,13 @@
                 "-7"
             ],
             [
-                "kpdx2",
+                "kpdx3_twr_123775",
                 "Portland",
                 "PDX",
                 "-7"
             ],
             [
-                "kind5",
+                "kind2_app",
                 "Indianapolis",
                 "IND",
                 "-4"
@@ -248,27 +252,31 @@
                 "SJC",
                 "-7"
             ],
-            ["mroc2","San Jose", "SJO", ""],
             [
-                "cywg",
+                "mroc",
+                "San Jose",
+                "SJO",
+                ""],
+            [
+                "cywg2_misc1",
                 "Winnipeg",
                 "YWG",
                 "-5"
             ],
             [
-                "kmke",
+                "kmke3_app_dep",
                 "Milwaukee",
                 "MKE",
                 "-5"
             ],
             [
-                "kcrq2",
+                "kcrq1",
                 "Carlsbad",
                 "CLD",
                 "-7"
             ],
             [
-                "kfll",
+                "kfll1_twr",
                 "Fort Lauderdale",
                 "FLL",
                 "-4"
@@ -286,9 +294,21 @@
                 "-6"
             ],
             [
-                "kapa",
+                "kapa2_twr1",
                 "Denver",
                 "APA",
+                "-6"
+            ],
+            [
+                "mmgl",
+                "Guadalajara,  Mexico",
+                "GDL",
+                ""
+            ],
+            [
+                "mmmx1_app",
+                "Mexico City",
+                "MEX",
                 "-6"
             ],
             [
@@ -297,16 +317,35 @@
                 "TIJ",
                 ""
             ],
-            ["mpto_1181", "Panama City", "PTY",""],
-            ["mggt_gnd_twr", "Guatemala City", "GUA",""]
+            [
+                "mppa2_app_dep",
+                "Panama City",
+                "PTY",
+                ""
+            ]
         ]
     },
     {
         "name": "Europe",
         "airports": [
-            ["lppt_app_1191_2", "Lisbon, Portugal", "LIS", ""],
-            ["eppo2", "Poznan, Poland", "POZ", ""],
-            ["eyvi", "Vilnius, Lithuania", "VNO", ""],
+            [
+                "lppt_app_1191_2",
+                "Lisbon, Portugal",
+                "LIS",
+                ""
+            ],
+            [
+                "eppo2",
+                "Poznan, Poland",
+                "POZ",
+                ""
+            ],
+            [
+                "eyvi",
+                "Vilnius, Lithuania",
+                "VNO",
+                ""
+            ],
             [
                 "eidw3",
                 "Dublin",
@@ -314,33 +353,27 @@
                 "0"
             ],
             [
-                "ebbr_arr",
-                "Brussels",
-                "BRU",
-                "1"
-            ],
-            [
-                "lhbp_app",
+                "lhbp_app2",
                 "Budapest",
                 "BUD",
                 "1"
             ],
-             [
-                "uuee2",
-                "Moscow",
-                "SVO",
+            [
+                "unnt",
+                "Novosibirsk",
+                "OVB",
                 "3"
             ],
-            ["uuww", "Moscow", "VKO", "3" ],
-            ["urkk", "Krasnodar", "KRR", "3" ],
-            ["unnt", "Novosibirsk", "OVB", "3" ],
-            ["urmt", "Stavropol", "STW", "3" ],
-            ["urss", "Sochi", "AER", "3" ],
-            ["usdd", "Salekhard", "SLY", "3" ],
             [
-                "ulli",
-                "Saint Petersburg",
-                "LED",
+                "urss",
+                "Sochi",
+                "AER",
+                "3"
+            ],
+            [
+                "usdd1",
+                "Salekhard",
+                "SLY",
                 "3"
             ],
             [
@@ -356,27 +389,9 @@
                 "1"
             ],
             [
-                "lfp_dep",
-                "Paris",
-                "ORY",
-                "1"
-            ],
-            [
-                "esow",
-                "Stockholm / Västerås",
-                "VST",
-                "1"
-            ],
-            [
-                "engm2_app",
+                "engm4",
                 "Oslo",
                 "OSL",
-                "1"
-            ],
-            [
-                "esgg",
-                "Gothenburg",
-                "GOT",
                 "1"
             ],
             [
@@ -398,21 +413,9 @@
                 "0"
             ],
             [
-                "ekch_twr",
-                "Copenhagen",
-                "CPH",
-                "1"
-            ],
-            [
                 "epwa2",
                 "Warsaw",
                 "WAW",
-                "1"
-            ],
-            [
-                "epmo",
-                "Warsaw",
-                "WMI",
                 "1"
             ],
             [
@@ -422,40 +425,22 @@
                 "1"
             ],
             [
-                "lszh_twr",
+                "lszh1_twr",
                 "Zurich",
                 "ZRH",
                 "1"
             ],
             [
-                "lgav",
-                "Athens",
-                "ATH",
-                "2"
-            ],
-            [
-                "lati",
-                "Tirana",
-                "TIA",
-                "1"
-            ],
-            [
-                "eheh",
+                "eheh3_twr",
                 "Eindhoven",
                 "EIN",
                 "1"
             ],
             [
-                "ltba",
+                "ltfm1_app",
                 "Istanbul",
                 "IST",
                 "3"
-            ],
-            [
-                "ukbb2",
-                "Kyiv",
-                "KBP",
-                "2"
             ],
             [
                 "evra2",
@@ -463,49 +448,29 @@
                 "RIX",
                 "2"
             ],
-            ["epgd","Gdansk", "GDN",""],
-            ["",
-            "Odessa",
-            "ODS",
-            "",
-            true],
-            ["",
-            "Thessaloniki",
-            "SKG",
-            "",
-            true],
-            ["",
-            "Moscow Oblast",
-            "DME",
-            "",
-            true],
-            ["", "Berlin", "TXL", "", true],
-            ["", "Berlin", "SXF", "", true],
-            ["", "Berlin", "BER", "", true],
-            ["", "Frankfurt", "FRA", "", true],
-            ["", "Minsk", "MSQ", "", true],
-            ["", "Domodedovo", "DME", "", true],
-            ["lrop","Bucharest","OTP",""],
-            ["lukk_control", "Chisinau", "KIV", ""],
-            ["lkpr_twr", "Prague", "PRG", ""],
-            ["lktb", "Brno", "BRQ", ""]
+            [
+                "lrop",
+                "Bucharest",
+                "OTP",
+                ""
+            ],
+            [
+                "lukk3",
+                "Chisinau",
+                "KIV",
+                ""
+            ],
+            [
+                "lktb",
+                "Brno",
+                "BRQ",
+                ""
+            ]
         ]
     },
     {
         "name": "Asia",
         "airports": [
-            [
-                "omdb_twr",
-                "Dubai",
-                "DXB",
-                "4"
-            ],
-            [
-                "zbaa",
-                "Beijing",
-                "PEK",
-                "8"
-            ],
             [
                 "rjtt_control",
                 "Tokyo",
@@ -513,16 +478,16 @@
                 "9"
             ],
             [
-                "vhhh_app_1191_2",
+                "vhhh5",
                 "Hong Kong",
                 "HKG",
                 "8"
             ],
             [
-                "wmkk2",
-                "Kuala Lumpur",
-                "KUL",
-                "8"
+                "uhhh2",
+                "Khabarovsk",
+                "KHV",
+                "6"
             ],
             [
                 "unnt",
@@ -537,6 +502,18 @@
                 "6"
             ],
             [
+                "untt",
+                "Tomsk",
+                "TOF",
+                "6"
+            ],
+            [
+                "ustr",
+                "Tumen",
+                "TJM",
+                "6"
+            ],
+            [
                 "rpll",
                 "Manila",
                 "MNL",
@@ -547,38 +524,36 @@
                 "Almaty",
                 "ALA",
                 "6"
-            ],
-            [
-                "",
-                "Perm",
-                "PEE",
-                "",
-                true
-            ],
-            ["", "Astana Kazakhstan", "TSE", "", true],
-            ["", "Aktobe Kazakhstan", "AKX", "", true],
-            ["", "Denpasar", "DPS", "", true]
+            ]
         ]
     },
     {
         "name": "South America / Oceania / Space",
         "airports": [
-            ["sbfi", "Foz do Iguacu, Paraguay", "IGU", ""],
-            ["fmmi", "Antananarivo,  Madagascar", "TNR",""],
-            ["segu", "Jose Joaquin de Olmedo,  Ecuador", "GYE",""],
-            ["spjc2", "Lima, Peru", "LIM", ""],
-            ["sgas", "Asuncion, Paraguay", "ASU",""],
-            ["skbo3","Bogota, El Nuevo Dorado", "BOG",""],
-            ["svva"," Valencia", "VLN",""],
-            ["mmgl", "Guadalajara,  Mexico", "GDL",""],
             [
-                "mmmx1",
-                "Mexico City",
-                "MEX",
-                "-6"
+                "fmmi",
+                "Antananarivo,  Madagascar",
+                "TNR",
+                ""
             ],
-            ["sabe2", "Buenos Aires", "AEP", ""],
-            ["sant", "Tucuman", "TUC", ""],
+            [
+                "segu",
+                "Jose Joaquin de Olmedo,  Ecuador",
+                "GYE",
+                ""
+            ],
+            [
+                "spjc1_app",
+                "Lima, Peru",
+                "LIM",
+                ""
+            ],
+            [
+                "sant",
+                "Tucuman",
+                "TUC",
+                ""
+            ],
             [
                 "scel",
                 "Santiago",
@@ -586,21 +561,36 @@
                 "-3"
             ],
             [
-                "sbbr_acc",
+                "sbbr3_app",
                 "Brasilia",
                 "BSB"
             ],
             [
-                "yssy1",
+                "yssy1_twr",
                 "Sydney",
                 "SYD",
                 "11"
             ],
-            ["ypph_twr", "Perth (Tower)","PER",""],
-            ["ypph_app", "Perth (Approach)","PER",""],
-            ["ypjt", "Perth", "JAD", ""],
             [
-                "ybbn6",
+                "ypph_twr",
+                "Perth (Tower)",
+                "PER",
+                ""
+            ],
+            [
+                "ypph_app",
+                "Perth (Approach)",
+                "PER",
+                ""
+            ],
+            [
+                "ypjt2_misc",
+                "Perth",
+                "JAD",
+                ""
+            ],
+            [
+                "ybaf4_gnd_twr",
                 "Brisbane",
                 "BNE",
                 "10"
@@ -612,18 +602,10 @@
                 "10.5"
             ],
             [
-                "ymml",
+                "ymml3",
                 "Melbourne",
                 "MEL",
                 "11"
-            ],
-            ["", "Ministro Pistarini", "EZE", "", true],
-            ["skbq_app", "Barranquilla", "BAQ",""],
-            [
-                "iss",
-                "ISS Space Station (beta)",
-                "ISS",
-                "0"
             ]
         ]
     }
