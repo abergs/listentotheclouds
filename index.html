@@ -42,30 +42,11 @@
 </head>
 
 <body>
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1284548061596480',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     js.async = true;
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
     <div class="video-background">
-        
+
         <div class="video-foreground">
             <!-- <iframe id="video" width="1280" height="720" src="https://www.youtube-nocookie.com/embed/YgmIibSnZs0?rel=0&amp;controls=0&amp;showinfo=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1" frameborder="0" allowfullscreen></iframe> -->
-            
+
         </div>
         <div class="skyloader"></div>
     </div>
@@ -80,12 +61,12 @@
     </div>
 
     <div id="vidtop-content">
-        
+
         <div id="app">
             <div id="vcontrols">
                 <div class="playpause" :data-state="isPlayingState" @click="changeState">
                     <div class="fa" v-bind:class="[{'fa-pause':isPlaying,'fa-play':!isPlaying}]"></div>
-                    
+
                 </div>
                 <div class="button nxt"><div class="fa fa-forward"></div></div>
                 <div class="clearfix"><span>
@@ -98,26 +79,12 @@
 
                 <h1 class="ybile-r2">Listen to the clouds</h1>
                 <h1 class="ybile-r3">live, as the world flies</h1>
-                <div style="text-align:center; margin-top:60px">
-                    <div class="fb-share-button" data-href="http://listentothe.cloud/" data-layout="button_count" data-size="large" data-mobile-iframe="true">
-                        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flistentothe.cloud%2F&amp;src=sdkpreparse">Share</a>
-                    </div>
-                </div>
+
 
                 <h1 style="margin-top:60px">Airports</h1>
 
                 <p class="airport-info">(This is a live radio transmission, if it's silent, the airports aren't very chatty at the moment)</p>
-                <div style="text-align:center; margin-top: 24px; " class="donate">
-                    <p id="donateq" style="line-height: normal">Would you donate to support this?</p>
-                    <div id="supportbtns">
-                        <button id="yesbtn" @click="donateYes">Yes</button><button id="nobtn" @click="donateNo">No</button></div>
-                    <div id="support">
-                        <h1>You will make me smile!</h1>
-                        <a href="https://www.patreon.com/abergs" class="btn">Become a Patreon</a> or
-                        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatepp" class="btn">PayPal</a>
-                        <!-- <a href="bitcoin:147mn3ptsdGGDvV15p4TSzauHd9xaKFogm" class="btn btcbtn">Bitcoin BTC, click for QR</a>
-                        <a href="eth:0x2083fEB3d13aEd25D59c9Dc46A0505D6F64398B8" class="btn ethbtn">ETH, click for QR</a> -->
-                        
+
                         <div class="wallet btc" style="display:none" >
                             <img src="btc.png" alt="BTC wallet code"/>
                             <br />
@@ -136,7 +103,7 @@
                                     $(".wallet.eth").fadeOut("slow",function () {
                                         $(".btc").fadeIn();
                                     });
-                                    
+
                                     return false;
                                 });
 
@@ -148,11 +115,7 @@
                                     return false;
                                 });
                             });
-                        </script>
-                        
-                        <!--<button id="yesbtn"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QESTW8XN5RYTL" target="_blank" id="donatebtn" class="btn"> Donate to support this </a></button>-->
-                    </div>
-                </div>
+
                 <div id="airports">
                     <div v-for="region in regions">
                         <h3>{{region.name}}</h3>
@@ -205,7 +168,7 @@
                         If you like this or want me to add more airports, ping me on twitter - it will make me smile. <br
                         /><br /> It uses a bunch of open API's, all mentioned below. Inspired by <a href=" http://youarelistening.to/">You are listening to</a>.
                         Thank you <a href="http://www.liveatc.net/">Live ATC</a> for live feeds of flight radio. Some CSS animations are from the beautiful <a href="http://tobiasahlin.com/spinkit/">SpinKit project</a> by Tobias Ahlin. And
-                        the ambient music playing from soundcloud is linked above. Built with love and whipped cream by Anders with awesome contributions from Agnes Stenlund. 
+                        the ambient music playing from soundcloud is linked above. Built with love and whipped cream by Anders with awesome contributions from Agnes Stenlund.
                                  </br> </br>
                                  <a href="http://twitter.com/andersaberg"><img src="andersaberg.jpg" class="me-img"></a>
 
@@ -219,7 +182,7 @@
 <script src="https://use.fontawesome.com/2d8e1bc7c7.js"></script>
     <script src="app.js?v6"></script>
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    
-    
+
+
 </body>
 </html>
