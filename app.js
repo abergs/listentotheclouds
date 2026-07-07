@@ -210,7 +210,7 @@ var a = new Vue({
         spaceModeOn();
       } else {
         spaceModeOff();
-        var url = "https://s1-fmt2.liveatc.net/" + code;
+        var url = "https://api.allorigins.win/raw?url=https://s1-fmt2.liveatc.net/" + code;
         $("#stream").attr("src", url);
       }
 
